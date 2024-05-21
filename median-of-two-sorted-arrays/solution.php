@@ -56,6 +56,7 @@ function findMedianSortedArrays($nums1, $nums2) {
                 $min_of_right = min($nums1[$i], $nums2[$j]);
             }
 
+            // at all at all, if the combined array is even number, it would sha return average of max of the left and minimum of the right, so everywhere good
             return ($max_of_left + $min_of_right) / 2.0;
         }
 
@@ -63,3 +64,8 @@ function findMedianSortedArrays($nums1, $nums2) {
     return 0.0; // hopefully it does not bring this ever
 }
 }
+
+// Let me touch it up with the question to show the right answer, since i have solved it with hands:
+// $solution = new Solution();
+// echo $solution->findMedianSortedArrays([1, 3], [2]) . "\n"; // this should give 2.0
+// echo $solution->findMedianSortedArrays([1, 2], [3, 4]) . "\n"; // this should give 2.5
