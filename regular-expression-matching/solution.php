@@ -34,6 +34,6 @@ function helper($s, $p, $i, $j, &$memo) {
 
 // trying to use the examples they gave in the question (it is not needed tho):
 // $solution = new Solution();
-// var_dump($solution->isMatch("aa", "a"));
-// var_dump($solution->isMatch("aa", "a*"));
-// var_dump($solution->isMatch("aa", ".*"));
+// var_dump($solution->isMatch("aa", "a")); // this is false as added in the question
+// var_dump($solution->isMatch("aa", "a*")); // this is true as stated in the question
+// var_dump($solution->isMatch("aa", ".*")); // this is also boot(true) as stated in the question, if you dont get that, it means you scattered my code
