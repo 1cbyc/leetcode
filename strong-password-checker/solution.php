@@ -59,3 +59,4 @@ $solution = new Solution();
 echo $solution->strongPasswordChecker("a") . "\n";
 echo $solution->strongPasswordChecker("aA1") . "\n";
 echo $solution->strongPasswordChecker("1337C0d3") . "\n";
+ 
