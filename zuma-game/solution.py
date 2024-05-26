@@ -41,3 +41,5 @@ class Solution:
                 return Solution.shrink(board[:i] + board[j:])
             i = j
         return board
+
+# https://leetcode.com/problems/zuma-game/
