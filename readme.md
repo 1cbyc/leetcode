@@ -1,6 +1,6 @@
 ## i will just add my leetcode problems and solutions here
 
-i think i might be doing it well. i still rank 400k now!
+i think i might be doing it well. i still rank 400k now! i am not sure why it's not 300k yet.
 
 Well, how else can i show algorithimic strength without doing this?
 
