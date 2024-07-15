@@ -12,3 +12,7 @@ venv/
 # Ignore other unnecessary files
 *.log
 *.tmp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
