@@ -16,3 +16,13 @@ def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
 # +-------------+-----------+-----------------------+--------+
 
 # the question solved is: https://leetcode.com/problems/display-the-first-three-rows/description/
+
+# DataFrame: employees
+# +-------------+--------+
+# | Column Name | Type   |
+# +-------------+--------+
+# | employee_id | int    |
+# | name        | object |
+# | department  | object |
+# | salary      | int    |
+# +-------------+--------+
