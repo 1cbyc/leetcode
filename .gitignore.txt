@@ -12,3 +12,26 @@ venv/
 # Ignore other unnecessary files
 *.log
 *.tmp
+
+
+# Ignore PyCharm project files
+.idea/
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment folders
+venv/
+.env/
+
+# Ignore other unnecessary files
+*.log
+*.tmp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# for commit
+commit.py
