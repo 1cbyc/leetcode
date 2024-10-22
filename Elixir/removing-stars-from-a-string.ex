@@ -13,3 +13,5 @@ defmodule Solution do
   defp compute([c | s], 0, ret), do: compute(s, 0, [c | ret])
   defp compute([c | s], stars, ret), do: compute(s, stars-1, ret)
 end
+
+# https://leetcode.com/problems/removing-stars-from-a-string/
