@@ -21,3 +21,5 @@ def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
         result.append(i)
     products['quantity'] = result
     return products
+
+# https://leetcode.com/problems/fill-missing-data/
