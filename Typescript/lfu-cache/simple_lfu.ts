@@ -71,7 +71,6 @@ class LFUCache {
         const freqSet = this.freqMap.get(this.minFreq);
         if (!freqSet || freqSet.size === 0) return;
 
-        // Find the least recently used key in the minimum frequency set
         let lruKey = -1;
         let minTime = Infinity;
 
@@ -93,9 +92,3 @@ class LFUCache {
     }
 }
 
-/**
- * Your LFUCache object will be instantiated and called as such:
- * var obj = new LFUCache(capacity)
- * var param_1 = obj.get(key)
- * obj.put(key,value)
- */
