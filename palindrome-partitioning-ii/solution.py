@@ -20,5 +20,3 @@ class Solution:
 solution = Solution()
 s = "aab"
 print("Minimum cuts needed for palindrome partitioning:", solution.minCut(s))
-
-# the question i solved is https://leetcode.com/problems/palindrome-partitioning-ii/
