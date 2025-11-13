@@ -1,6 +1,4 @@
 class Solution {
-    // public int robotSim(int[] commands, int[][] obstacles) {
-// class Solution {
     public int robotSim(int[] commands, int[][] obstacles) {
         int multiplier = 60001;
         Set<Integer> obsCordHashes = new HashSet<>();
