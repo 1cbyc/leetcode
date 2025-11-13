@@ -40,6 +40,4 @@ this is solved using binary search on the possible maximum sum values:
 ## example
 ```typescript
 const nums = [7, 2, 5, 10, 8], k = 2;
-// returns: 18
-// explanation: split as [7,2,5] (sum=14) and [10,8] (sum=18), largest sum is 18
 ```
