@@ -1,6 +1,3 @@
-// package matrixblocksum
-
-// build prefix sums and pull k-sized squares without fuss.
 func matrixBlockSum(mat [][]int, k int) [][]int {
 	if len(mat) == 0 || len(mat[0]) == 0 {
 		return [][]int{}
