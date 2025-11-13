@@ -1,9 +1,5 @@
 class Solution {
 
-/**
- * @param Integer[] $nums
- * @return Integer
- */
 function firstMissingPositive($nums) {
     $n = count($nums);
     
