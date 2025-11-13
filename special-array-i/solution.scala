@@ -1,5 +1,4 @@
 object Solution {
-  // array is special when adjacent numbers have opposite parity.
   def isArraySpecial(nums: Array[Int]): Boolean = {
     if (nums.length <= 1) {
       true
