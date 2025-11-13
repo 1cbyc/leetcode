@@ -1,9 +1,5 @@
 class Solution {
 
-/**
- * @param Integer $n
- * @return Integer
- */
 function countDigitOne($n) {
     if ($n < 0) return 0;
     
