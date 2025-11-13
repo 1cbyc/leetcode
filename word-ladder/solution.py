@@ -2,12 +2,6 @@ from collections import deque
 
 class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
-        """
-        :type beginWord: str
-        :type endWord: str
-        :type wordList: List[str]
-        :rtype: int
-        """
         if endWord not in wordList:
             return 0
 
@@ -34,6 +28,3 @@ endWord = "cog"
 wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
 
 print(solution.ladderLength(beginWord, endWord, wordList))
-
-
-# the question i solved is https://leetcode.com/problems/word-ladder/
