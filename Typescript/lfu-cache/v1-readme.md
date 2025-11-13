@@ -54,14 +54,14 @@ this is implemented using a combination of hashmaps and doubly linked lists:
 ## example
 ```typescript
 const cache = new LFUCache(2);
-cache.put(1, 1);    // cache: {1:1}
-cache.put(2, 2);    // cache: {1:1, 2:2}
-cache.get(1);       // returns 1, cache: {1:1(freq=2), 2:2(freq=1)}
-cache.put(3, 3);    // evicts key 2, cache: {1:1, 3:3}
-cache.get(2);       // returns -1
-cache.get(3);       // returns 3
-cache.put(4, 4);    // evicts key 1, cache: {3:3, 4:4}
-cache.get(1);       // returns -1
-cache.get(3);       // returns 3
-cache.get(4);       // returns 4
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);
+cache.put(3, 3);
+cache.get(2);
+cache.get(3);
+cache.put(4, 4);
+cache.get(1);
+cache.get(3);
+cache.get(4);
 ```
