@@ -1,9 +1,5 @@
 class Solution {
 
-/**
- * @param Integer[][] $points
- * @return Integer
- */
 function maxPoints($points) {
     $n = count($points);
     if ($n <= 2) return $n;
