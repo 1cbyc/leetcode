@@ -3,10 +3,6 @@ from typing import List, Tuple
 
 class Solution:
     def maximizeXor(self, nums: List[int], queries: List[List[int]]) -> List[int]:
-        """
-        sort nums, walk queries with a simple bit trie.
-        keeping the code bare and a bit chatty rather than hyper optimized.
-        """
         nums.sort()
         paired: List[Tuple[int, int, int]] = [
             (limit, value, idx) for idx, (value, limit) in enumerate(queries)
