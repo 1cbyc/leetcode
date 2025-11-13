@@ -68,7 +68,7 @@ export const maximizeAreaOfSquareHoleInGrid: LeetCodePost = {
           <li>
             <a
               href="https://leetcode.com/problems/maximize-the-area-of-a-square-hole-in-a-grid/"
-              className="text-primary underline decoration-dotted underline-offset-4"
+              className="text-sky-600 underline decoration-dotted underline-offset-4 transition hover:text-sky-500"
             >
               LeetCode problem page
             </a>
@@ -76,7 +76,7 @@ export const maximizeAreaOfSquareHoleInGrid: LeetCodePost = {
           <li>
             <span>
               Repository path:{" "}
-              <code className="rounded bg-muted px-2 py-1">
+              <code className="rounded bg-slate-100 px-2 py-1 dark:bg-slate-800">
                 maximize-area-of-square-hole-in-grid/solution.ts
               </code>
             </span>
