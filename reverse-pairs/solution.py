@@ -17,5 +17,3 @@ class Solution:
             return count
         
         return merge_sort(nums, 0, len(nums) - 1)
-
-# https://leetcode.com/problems/reverse-pairs/
