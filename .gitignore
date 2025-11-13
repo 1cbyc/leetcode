@@ -185,3 +185,9 @@ hide
 hi.exe
 hi
 auto.sh
+
+# Next.js docs site
+docs/.next/
+docs/node_modules/
+docs/.vercel/
+docs/out/
