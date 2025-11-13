@@ -40,7 +40,7 @@ ListNode *split(ListNode *head) {
     slow->next = nullptr;
     return second;
 }
-}  // namespace
+}
 
 class Solution {
 public:
