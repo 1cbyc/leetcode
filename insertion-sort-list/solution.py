@@ -9,9 +9,6 @@ class ListNode:
 
 class Solution:
     def insertionSortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        """
-        hand-rolled insertion sort. not the prettiest, but faithful to the problem.
-        """
         if head is None:
             return None
 
