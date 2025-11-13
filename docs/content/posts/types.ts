@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-export type Difficulty = "Easy" | "Medium" | "Hard";
+export type Difficulty = "Easy" | "Medium" | "Hard" | "Unknown";
 
 export type SolutionPath = {
   label?: string;
