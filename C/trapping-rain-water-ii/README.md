@@ -45,6 +45,4 @@ int heightMap[3][6] = {
     {3, 2, 1, 3, 2, 4},
     {2, 3, 3, 2, 3, 1}
 };
-// returns: 4
-// explanation: water can be trapped in various depressions between the heights
 ```
