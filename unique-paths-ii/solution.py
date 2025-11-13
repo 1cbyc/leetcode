@@ -3,10 +3,6 @@ from typing import List
 
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
-        """
-        dynamic programming approach to count paths while respecting obstacles.
-        dp[j] keeps the number of ways to reach the current cell in the row.
-        """
         if not obstacleGrid or not obstacleGrid[0]:
             return 0
 
