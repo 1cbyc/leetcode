@@ -1,7 +1,3 @@
-/*
- * same trick as wiggle sort lite: sort, then weave from both ends.
- * avoids clean arithmetic progressions between neighbors.
- */
 function rearrangeArray(nums: number[]): number[] {
   if (nums.length <= 2) {
     return [...nums];
