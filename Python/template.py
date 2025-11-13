@@ -1,7 +1,7 @@
 from typing import List
 
 class Solution:
-    def solution(self, /* parameters */) -> /* return type */:
+    def solution(self, *args, **kwargs):
         pass
 
 def test_solution():
