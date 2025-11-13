@@ -1,13 +1,7 @@
 class Solution {
 
-/**
- * @param String $s
- * @param String $p
- * @return Boolean
- */
 function isMatch($s, $p) {
     $memo = [];
-    // return $this->helper($s, $p, 0, 0, []);
     return $this->helper($s, $p, 0, 0, $memo);    
 }
 
