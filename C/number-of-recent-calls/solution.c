@@ -54,7 +54,7 @@ int dequeue(Queue* queue) {
 
 int front(Queue* queue) {
     if (isQueueEmpty(queue)) {
-        return EMPTY_VALUE; // queue is empty
+        return EMPTY_VALUE;
     } else {
         return queue->array[(queue->front + 1) % queue->capacity];
     }
@@ -62,7 +62,7 @@ int front(Queue* queue) {
 
 int rear(Queue* queue) {
     if (isQueueEmpty(queue)) {
-        return EMPTY_VALUE; // queue is empty
+        return EMPTY_VALUE;
     } else {
         return queue->array[queue->rear];
     }
@@ -101,5 +101,3 @@ void recentCounterFree(RecentCounter* obj) {
     freeQueue(obj->queue);
     free(obj);
 }
-
-// https://leetcode.com/problems/number-of-recent-calls/
