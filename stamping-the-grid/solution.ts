@@ -1,7 +1,3 @@
-/*
- * brute-force-ish but still reasonable: compute prefix sums for obstacles,
- * mark where a k x l stamp fits, then ensure every zero cell is covered.
- */
 function possibleToStamp(grid: number[][], stampHeight: number, stampWidth: number): boolean {
   const rows = grid.length;
   if (rows === 0) {
