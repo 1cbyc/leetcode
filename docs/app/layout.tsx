@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -43,9 +44,9 @@ export default function RootLayout({
         <div className="min-h-screen">
           <header className="border-b border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-950/70">
             <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 sm:px-8 lg:px-12">
-              <a href="/" className="text-lg font-semibold tracking-tight">
+              <Link href="/" className="text-lg font-semibold tracking-tight">
                 docs.nsisong.com/leetcode
-              </a>
+              </Link>
               <nav className="flex items-center gap-5 text-sm text-slate-600 dark:text-slate-300">
                 <a
                   href="https://leetcode.com"
