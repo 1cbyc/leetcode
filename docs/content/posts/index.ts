@@ -1,17 +1,27 @@
 import { maximizeAreaOfSquareHoleInGrid } from "./maximize-area-of-square-hole-in-grid";
 import { maximumSumOfAnHourglass } from "./maximum-sum-of-an-hourglass";
 import { magicSquaresInGrid } from "./magic-squares-in-grid";
+import { collectGeneratedPosts } from "./generated";
 import { LeetCodePost, byPublishedAtDesc } from "./types";
 
-const registry: LeetCodePost[] = [
+const manualPosts: LeetCodePost[] = [
   maximizeAreaOfSquareHoleInGrid,
   magicSquaresInGrid,
   maximumSumOfAnHourglass,
 ];
 
-export const getAllPosts = () => [...registry].sort(byPublishedAtDesc);
+const manualSlugSet = new Set(manualPosts.map((post) => post.slug));
+
+export const getAllPosts = () => {
+  const generatedPosts = collectGeneratedPosts(
+    manualSlugSet,
+    new Set(manualSlugSet),
+  );
+
+  return [...manualPosts, ...generatedPosts].sort(byPublishedAtDesc);
+};
 
 export const getPostBySlug = (slug: string) =>
-  registry.find((post) => post.slug === slug);
+  getAllPosts().find((post) => post.slug === slug);
 
 
