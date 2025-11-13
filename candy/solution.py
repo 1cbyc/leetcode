@@ -12,5 +12,3 @@ class Solution:
         candies[i] = max(candies[i], candies[i + 1] + 1)
 
     return sum(candies)
-
-  # the question i solved is https://leetcode.com/problems/candy/
