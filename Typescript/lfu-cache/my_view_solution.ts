@@ -16,10 +16,9 @@ class Node {
 
 
 class DoubleLinkedList {
-    
-    head: Node; // Dummy head
-    tail: Node; // Dummy tail
-    size: number; // Nb of elements in list
+    head: Node;
+    tail: Node;
+    size: number;
 
     constructor(){
         this.size = 0;
@@ -46,8 +45,6 @@ class DoubleLinkedList {
     }
 
     popLast(): Node | null {
-        // Edge case if list is empty
-        // (shouldn't be the case with the LFU as it deletes empty list)
         if (this.tail.previous === this.head) {
             return null;
         }
@@ -58,12 +55,11 @@ class DoubleLinkedList {
     }
 }
 
-// Actual LFU
 class LFUCache {
-    capacity: number; // Capacity provided in constructor
-    size: number; // Actual nb of elements in the LFU
-    mapOfLists: Record<number, DoubleLinkedList>; // Map of frequencies -> DoubleLinkedLists
-    mapOfNodes: Record<number, Node>;  // Map of keys -> Nodes
+    capacity: number;
+    size: number;
+    mapOfLists: Record<number, DoubleLinkedList>;
+    mapOfNodes: Record<number, Node>;
 
     constructor(capacity: number) {
         this.capacity = capacity;
@@ -75,99 +71,76 @@ class LFUCache {
     get(key: number): number {
         let node = this.mapOfNodes[key];
         
-        // If not found in
         if (!node) {
             return -1;
         }
         
-        // Remove node from its current list
         let list = this.mapOfLists[node.count];
         list.removeNode(node);
 
-        // Delete list if empty
         if (list.size === 0) {
             delete this.mapOfLists[node.count]; 
         }
         
-        // Increase count
         node.count++;
         
-        // Create new list for this frequency if not present
         if (!this.mapOfLists[node.count]) {
             this.mapOfLists[node.count] = new DoubleLinkedList();
         }
 
-        // Add in new list
          this.mapOfLists[node.count].addNode(node);
         
         return node.value;
     }
 
     put(key: number, value: number): void {
-        
-        // Edge case if no capacity provided
-        // Useless cache
         if (this.capacity === 0) {
             return;
         }
         
         let node: Node | null = null;
         
-        // If key (and thus node) is not yet known
         if (this.mapOfNodes[key] === undefined) {
-            
-            // If already full, delete the LRU
             if (this.capacity === this.size) {
-                // Search for lowest frequency
                 let smallest = -1;
                 for (let key of Object.keys(this.mapOfLists)) {
-                    // Key becomes a string in an object {}
                     const parsedKey = parseInt(key, 10);
                     if (smallest === -1 || smallest > parsedKey) {
                         smallest = parsedKey;
                     }
                 }
                 let list = this.mapOfLists[smallest];
-                // Evict node
                 let nodeToEvict = list.popLast();
                 delete this.mapOfNodes[nodeToEvict.key];
                 
-                // Delete list if it's now empty
                 if (list.size === 0) {
                     delete this.mapOfLists[nodeToEvict.count]; 
                 }
-            } else { // Else if it's not full, just increase the size
+            } else {
                 this.size++;
             }
             
-            // Create new node
             node = new Node(key, value);
             this.mapOfNodes[key] = node;
 
-        } else { // If already exists, reset its "state"
-            
+        } else {
             node = this.mapOfNodes[key];
             
-            // Remove node from its current list
             let list = this.mapOfLists[node.count];
             list.removeNode(node);
 
-            // Delete list if empty
             if (list.size === 0) {
                 delete this.mapOfLists[node.count]; 
             }
             
-            // Update value & count
             node.value = value;
             node.count++;
         }
 
-        // Create list if not present
         if (!this.mapOfLists[node.count]) {
            this.mapOfLists[node.count] = new DoubleLinkedList();
         }
 
-        // Add node
          this.mapOfLists[node.count].addNode(node);
     }
 }
