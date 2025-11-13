@@ -8,10 +8,9 @@ defmodule Solution do
     |> Enum.join("")
   end
 
-  defp compute([], _, ret), do: ret # all done
-  defp compute(["*" | s], stars, ret), do: compute(s, stars+1, ret) # increase star count
+  defp compute([], _, ret), do: ret
+  defp compute(["*" | s], stars, ret), do: compute(s, stars+1, ret)
   defp compute([c | s], 0, ret), do: compute(s, 0, [c | ret])
   defp compute([c | s], stars, ret), do: compute(s, stars-1, ret)
 end
 
-# https://leetcode.com/problems/removing-stars-from-a-string/
