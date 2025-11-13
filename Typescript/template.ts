@@ -1,5 +1,5 @@
-function solution(/* parameters */): /* return type */ {
-    return;
+function solution(...args: any[]): any {
+    return undefined;
 }
 
-console.log(solution(/* test inputs */));
+console.log(solution());
