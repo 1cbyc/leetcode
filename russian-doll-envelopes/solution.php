@@ -1,9 +1,5 @@
 class Solution {
 
-/**
- * @param Integer[][] $envelopes
- * @return Integer
- */
 function maxEnvelopes($envelopes) {
     $n = count($envelopes);
     if ($n == 0) return 0;
