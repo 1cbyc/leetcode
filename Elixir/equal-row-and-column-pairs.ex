@@ -10,4 +10,3 @@ defmodule Solution do
   end
 end
 
-# https://leetcode.com/problems/equal-row-and-column-pairs/
