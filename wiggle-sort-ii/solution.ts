@@ -1,6 +1,3 @@
-/*
- * sort twice and shuffle the halves. nothing too clever, just enough to pass.
- */
 function wiggleSort(nums: number[]): void {
   if (nums.length <= 1) {
     return;
