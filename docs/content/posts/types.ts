@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 export type Difficulty = "Easy" | "Medium" | "Hard";
 
 export type SolutionPath = {
-  label: string;
+  label?: string;
   language: string;
   path: string;
 };
