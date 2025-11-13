@@ -1,24 +1,13 @@
 class Solution {
 
-/**
- * @param Integer[] $nums1
- * @param Integer[] $nums2
- * @return Float
- */
 function findMedianSortedArrays($nums1, $nums2) {
     $m = count($nums1);
     $n = count($nums2);
 
-    // since i know nums1 is the smaller array, i would just specify it
     if ($m > $n) {
         list($nums1, $nums2) = array($nums2, $nums1);
         list($m, $n) = array($n, $m);
     }
-
-    // what i want to do first is to make nums1 a smaller array, that way...
-    // if (count($nums1) > count($nums2)) {
-    //     return $this->findMedianSortedArrays($nums2, $nums1);
-    // }
     
     $m = count($nums1);
     $nnn = count($nums2);
@@ -56,16 +45,10 @@ function findMedianSortedArrays($nums1, $nums2) {
                 $min_of_right = min($nums1[$i], $nums2[$j]);
             }
 
-            // at all at all, if the combined array is even number, it would sha return average of max of the left and minimum of the right, so everywhere good
             return ($max_of_left + $min_of_right) / 2.0;
         }
 
     }
-    return 0.0; // hopefully it does not bring this ever
+    return 0.0;
 }
 }
-
-// Let me touch it up with the question to show the right answer, since i have solved it with hands:
-// $solution = new Solution();
-// echo $solution->findMedianSortedArrays([1, 3], [2]) . "\n"; // this should give 2.0
-// echo $solution->findMedianSortedArrays([1, 2], [3, 4]) . "\n"; // this should give 2.5
