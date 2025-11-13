@@ -3,10 +3,6 @@ from typing import List
 
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
-        """
-        dutch flag shuffle.
-        keeping it in place and bare bones.
-        """
         left = 0
         current = 0
         right = len(nums) - 1
