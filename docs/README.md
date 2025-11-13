@@ -44,6 +44,10 @@ export const twoSum: LeetCodePost = {
 };
 ```
 
+## auto-generated placeholders
+
+every directory in the repo that contains a `solution*` or `problem-*` source file is scraped automatically. the generator fills in quick summaries, languages, and links to each solution file so the index stays complete even when there’s no custom write-up yet. add a handcrafted post whenever you want richer commentary—the manual entry will override the generated one.
+
 ## deploy to vercel
 
 1. run `npm run build` to ensure the site compiles.
