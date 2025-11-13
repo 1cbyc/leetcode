@@ -1,6 +1,6 @@
 # LeetCode docs
 
-I decided to make a documentation hub for problems I solved on my leetcode. Already deployed my site lives in `docs/` so you can access it via `docs.nsisong.com/leetcode`.
+TypeScript-first documentation hub for problems solved in this repository. The site lives in `docs/` so you can deploy it straight to Vercel at `leetcode.nsisong.com`.
 
 ## quick start
 
@@ -50,4 +50,4 @@ export const twoSum: LeetCodePost = {
 2. connect the repo to Vercel and set the project root to `docs`.
 3. use `npm run build` as the build command and `out` (optional) if you ever export a static build.
 
-Every push will redeploy the documentation at `docs.nsisong.com/leetcode`. Feel free to add analytics, a custom domain, or more build steps as needed.
+Every push will redeploy the documentation at `leetcode.nsisong.com`. Feel free to add analytics, a custom domain, or more build steps as needed.
