@@ -1,7 +1,3 @@
-/*
- * big matrix stays immutable; we just keep prefix sums around.
- * api stays close to the leetcode skeleton.
- */
 class NeighborSum {
   private readonly grid: number[][];
   private readonly prefix: number[][];
