@@ -8,7 +8,7 @@ export default function Home() {
     <main className="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-16 px-6 py-20 sm:px-8 lg:px-12">
       <header className="space-y-4">
         <p className="text-sm font-medium uppercase tracking-widest text-sky-600">
-          docs.nsisong.com/leetcode
+          leetcode.nsisong.com
         </p>
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
           LeetCode playbook
