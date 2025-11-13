@@ -38,7 +38,7 @@ this is solved using information theory and combinatorial mathematics:
 ## example
 ```python
 buckets = 1000, minutesToDie = 15, minutesToTest = 60
-# states per pig = (60 // 15) + 1 = 5
-# need 5 pigs since 5^5 = 3125 >= 1000
-# returns: 5
+states_per_pig = (60 // 15) + 1
+needed_pigs = 5
+result = 5
 ```
