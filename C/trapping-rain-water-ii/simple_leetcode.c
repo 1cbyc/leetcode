@@ -93,7 +93,6 @@ int trapRainWater(int** heightMap, int heightMapSize, int* heightMapColSize) {
         visited[i] = (int*)calloc(n, sizeof(int));
     }
 
-    // Add all boundary cells to priority queue
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
             if (i == 0 || i == m - 1 || j == 0 || j == n - 1) {
@@ -106,34 +105,29 @@ int trapRainWater(int** heightMap, int heightMapSize, int* heightMapColSize) {
     int water = 0;
     int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
-    // Process cells from lowest to highest boundary
     while (pq->size > 0) {
         Cell cell = popPQ(pq);
-        int h = cell.height;  // current boundary height
+        int h = cell.height;
         int r = cell.row;
         int c = cell.col;
 
-        // Check all 4 directions
         for (int d = 0; d < 4; d++) {
             int nr = r + dirs[d][0];
             int nc = c + dirs[d][1];
 
-            // If valid cell and not visited
             if (nr >= 0 && nr < m && nc >= 0 && nc < n && !visited[nr][nc]) {
                 visited[nr][nc] = 1;
 
-                // If neighbor is lower than current boundary, water can be trapped
                 if (heightMap[nr][nc] < h) {
                     water += h - heightMap[nr][nc];
-                    pushPQ(pq, h, nr, nc);  // use boundary height
+                    pushPQ(pq, h, nr, nc);
                 } else {
-                    pushPQ(pq, heightMap[nr][nc], nr, nc);  // use neighbor height
+                    pushPQ(pq, heightMap[nr][nc], nr, nc);
                 }
             }
         }
     }
 
-    // Clean up memory
     for (int i = 0; i < m; i++) {
         free(visited[i]);
     }
