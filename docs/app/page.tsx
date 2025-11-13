@@ -14,9 +14,8 @@ export default function Home() {
           LeetCode playbook
         </h1>
         <p className="max-w-2xl text-lg text-slate-600">
-          I keep short, TypeScript-first notes for every problem I solve.
-          Explore the breakdowns, complexity calls, and the exact files that
-          live in this repo.
+          I keep short notes for every problem I solve. Explore the breakdowns,
+          complexity calls, and the exact files that live in this repo.
         </p>
       </header>
       <section className="space-y-8">
