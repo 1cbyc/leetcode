@@ -1,9 +1,5 @@
 class Solution {
 
-/**
- * @param Integer $n
- * @return Integer
- */
 function largestPalindrome($n) {
     if ($n == 1) {
         return 9;
