@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   title: "LeetCode Docs — nsisong",
   description:
     "Personal notes, breakdowns, and TypeScript-first write-ups for solved LeetCode problems.",
-  metadataBase: new URL("https://docs.nsisong.com/leetcode"),
+  metadataBase: new URL("https://leetcode.nsisong.com"),
   openGraph: {
     title: "LeetCode Docs — nsisong",
     description:
       "Personal notes, breakdowns, and TypeScript-first write-ups for solved LeetCode problems.",
-    url: "https://docs.nsisong.com/leetcode",
-    siteName: "docs.nsisong.com/leetcode",
+    url: "https://leetcode.nsisong.com",
+    siteName: "leetcode.nsisong.com",
   },
   twitter: {
     card: "summary_large_image",
@@ -45,7 +45,7 @@ export default function RootLayout({
           <header className="border-b border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-950/70">
             <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 sm:px-8 lg:px-12">
               <Link href="/" className="text-lg font-semibold tracking-tight">
-                docs.nsisong.com/leetcode
+                leetcode.nsisong.com
               </Link>
               <nav className="flex items-center gap-5 text-sm text-slate-600 dark:text-slate-300">
                 <a
