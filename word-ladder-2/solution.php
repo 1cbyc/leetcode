@@ -1,15 +1,7 @@
-// i fucked it up
-
 class Solution {
 
-/**
- * @param String $beginWord
- * @param String $endWord
- * @param String[] $wordList
- * @return String[][]
- */
 function findLadders($beginWord, $endWord, $wordList) {
-    $wordSet = array_flip($wordList);  // used the array flip to simulate a set
+    $wordSet = array_flip($wordList);
     if (!isset($wordSet[$endWord])) {
         return [];
     }
