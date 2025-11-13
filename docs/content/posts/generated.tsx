@@ -224,7 +224,7 @@ export const collectGeneratedPosts = (
         <article className="space-y-6">
           <section className="space-y-3">
             <p>
-              autop-generated entry for {title}. more detailed notes will be
+              auto-generated entry for {title}. more detailed notes will be
               added soon. the solutions below link to files in this repository.
             </p>
             <p>
