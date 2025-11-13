@@ -1,13 +1,7 @@
 class Solution {
 
-/**
- * @param String $s
- * @param String $p
- * @return Boolean
- */
 function isMatch($s, $p) {
     $memo = [];
-    // return $this->helper($s, $p, 0, 0, []);
     return $this->helper($s, $p, 0, 0, $memo);    
 }
 
@@ -28,12 +22,6 @@ function helper($s, $p, $i, $j, &$memo) {
         $memo[$i][$j] = $match && $this->helper($s, $p, $i + 1, $j + 1, $memo);
     }
 
-    return $memo[$i][$j];
+return $memo[$i][$j];
 }
 }
-
-// trying to use the examples they gave in the question (it is not needed tho):
-// $solution = new Solution();
-// var_dump($solution->isMatch("aa", "a")); // this is false as added in the question
-// var_dump($solution->isMatch("aa", "a*")); // this is true as stated in the question
-// var_dump($solution->isMatch("aa", ".*")); // this is also boot(true) as stated in the question, if you dont get that, it means you scattered my code
