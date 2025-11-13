@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-// i added the above because i realized leetcode did not need it but on my pc i need it to run since i use malloc, free and printf
 typedef struct {
     int height;
     int row;
@@ -137,8 +136,6 @@ int trapRainWater(int** heightMap, int heightMapSize, int* heightMapColSize) {
 
     return water;
 }
-
-// i added this for test use
 void test() {
     int m = 3, n = 6;
     int** heights = (int**)malloc(sizeof(int*) * m);
@@ -172,8 +169,6 @@ void test() {
     free(heights);
     free(cols);
 }
-
-// i did not use this on leetcode, but i put this as the main function:
 int main() {
     test();
     return 0;
