@@ -11,10 +11,6 @@ class Solution {
         '9' => ['w', 'x', 'y', 'z'],
     ];
 
-    /**
-     * @param String $digits
-     * @return String[]
-     */
     function letterCombinations($digits) {
         if (empty($digits)) {
             return [];
