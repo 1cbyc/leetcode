@@ -40,6 +40,4 @@ this is solved using depth-first search (dfs) with memoization to avoid redundan
 ## example
 ```typescript
 const stones = [0, 1, 3, 5, 6, 8, 12, 17];
-// returns: true
-// explanation: the frog can jump 1->3(2), 3->5(2), 5->6(1), 6->8(2), 8->12(4), 12->17(5)
 ```
