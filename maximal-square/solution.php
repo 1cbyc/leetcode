@@ -1,13 +1,7 @@
 <?php
 
-// simple dp: each cell grows from the min of three neighbors.
-// not obsessing over tiny optimizations.
 class Solution
 {
-    /**
-     * @param String[][] $matrix
-     * @return Integer
-     */
     public function maximalSquare($matrix)
     {
         if (empty($matrix) || empty($matrix[0])) {
