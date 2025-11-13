@@ -1,9 +1,5 @@
 class Solution {
 
-/**
- * @param Integer[] $asteroids
- * @return Integer[]
- */
 function asteroidCollision($asteroids) {
     $stack = [];
     foreach ($asteroids as $asteroid) {
@@ -21,5 +17,3 @@ function asteroidCollision($asteroids) {
     return $stack;
 }
 }
-
-<!-- https://leetcode.com/problems/asteroid-collision/ -->
