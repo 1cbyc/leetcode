@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LeetCode docs
 
-## Getting Started
+I decided to make a documentation hub for problems I solved on my leetcode. Already deployed my site lives in `docs/` so you can access it via `docs.nsisong.com/leetcode`.
 
-First, run the development server:
+## quick start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- development: http://localhost:3000
+- production build: `npm run build`
+- preview locally: `npm run start`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## writing a new problem post
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. add a file inside `content/posts/` named after the desired slug, for example `content/posts/two-sum.tsx`.
+2. export a `LeetCodePost` object. the `body` property returns JSX, so you can write the full article in TypeScript.
+3. register the post in `content/posts/index.ts` by importing it and pushing it into the `registry` array.
+4. optionally update `solutionPaths` with repo-relative file locations (they surface on the problem page).
 
-## Learn More
+that’s it—the homepage and problem routes are generated from the registry.
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+import { LeetCodePost } from "./types";
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+export const twoSum: LeetCodePost = {
+  slug: "two-sum",
+  title: "Two Sum",
+  summary: "hash map lookup to find complements on the fly.",
+  publishedAt: "2024-11-13",
+  difficulty: "Easy",
+  languages: ["TypeScript"],
+  tags: ["hash-table", "arrays"],
+  solutionPaths: [
+    { language: "TypeScript", path: "../two sum/solution.ts" },
+  ],
+  body: () => (
+    <article className="space-y-4">
+      <p>keep track of numbers we have seen and their indices in a map.</p>
+    </article>
+  ),
+};
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## deploy to vercel
 
-## Deploy on Vercel
+1. run `npm run build` to ensure the site compiles.
+2. connect the repo to Vercel and set the project root to `docs`.
+3. use `npm run build` as the build command and `out` (optional) if you ever export a static build.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Every push will redeploy the documentation at `docs.nsisong.com/leetcode`. Feel free to add analytics, a custom domain, or more build steps as needed.
