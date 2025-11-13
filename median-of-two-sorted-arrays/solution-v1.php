@@ -1,12 +1,6 @@
 class Solution {
 
-/**
- * @param Integer[] $nums1
- * @param Integer[] $nums2
- * @return Float
- */
 function findMedianSortedArrays($nums1, $nums2) {
-    // what i want to do first is to make nums1 a smaller array, that way...
     if (count($nums1) > count($nums2)) {
         return $this->findMedianSortedArrays($nums2, $nums1);
     }
@@ -51,6 +45,6 @@ function findMedianSortedArrays($nums1, $nums2) {
         }
     }
 
-    return 0.0; // This should never be reached
+    return 0.0;
 }
 }
