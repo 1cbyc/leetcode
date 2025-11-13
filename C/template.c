@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-int solution(/* parameters */) {
+int solution(void) {
     return 0;
 }
 
