@@ -56,21 +56,21 @@ export default function RootLayout({
                 >
                   LeetCode
                 </a>
-                <a
-                  href="https://vercel.com/dashboard"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition hover:text-sky-600"
-                >
-                  Vercel
-                </a>
               </nav>
             </div>
           </header>
           {children}
           <footer className="border-t border-slate-200 bg-white/70 py-8 text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-400">
-            <div className="mx-auto flex max-w-5xl justify-center px-6 sm:px-8 lg:px-12">
+            <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-6 sm:flex-row sm:justify-between sm:px-8 lg:px-12">
               <p>&copy; 2023 Emmanuel Isaac</p>
+              <a
+                href="https://nsisong.com"
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-sky-600"
+              >
+                nsisong.com
+              </a>
             </div>
           </footer>
         </div>
