@@ -4,5 +4,3 @@ from typing import List
 def getDataframeSize(players: pd.DataFrame) -> List[int]:
     rows, columns = players.shape
     return [rows, columns]
-
-the question is https://leetcode.com/problems/get-the-size-of-a-dataframe/
