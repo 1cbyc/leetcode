@@ -1,6 +1,3 @@
-/*
- * scan-and-compare approach. no cleverness, just roll through every hourglass.
- */
 function maxSum(grid: number[][]): number {
   const rows = grid.length;
   if (rows < 3) {
