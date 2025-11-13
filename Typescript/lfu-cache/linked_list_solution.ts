@@ -136,14 +136,6 @@ class LFUCache {
     }
 }
 
-/**
- * Your LFUCache object will be instantiated and called as such:
- * var obj = new LFUCache(capacity)
- * var param_1 = obj.get(key)
- * obj.put(key,value)
- */
-
-// Test cases
 const cache = new LFUCache(2);
 console.log("Put (1,1):", cache.put(1, 1));
 console.log("Put (2,2):", cache.put(2, 2));
