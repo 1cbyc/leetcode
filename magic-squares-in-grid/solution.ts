@@ -1,8 +1,3 @@
-/*
- * brute-force check every 3x3 block:
- * - ensure numbers 1..9 show up exactly once
- * - sum rows, cols, diagonals to 15
- */
 function numMagicSquaresInside(grid: number[][]): number {
   const rows = grid.length;
   const cols = rows ? grid[0].length : 0;
