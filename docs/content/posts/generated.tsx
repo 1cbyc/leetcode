@@ -127,6 +127,13 @@ const IGNORED_DIR_NAMES = new Set([
   "dist",
   "build",
   "docs/.next",
+  // language folders that contain multiple problems
+  "Python",
+  "PHP",
+  "Typescript",
+  "TypeScript",
+  "C",
+  "Elixir",
 ]);
 
 const ROOT_DIR = path.resolve(process.cwd(), "..");
