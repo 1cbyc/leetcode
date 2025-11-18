@@ -16,11 +16,12 @@ is_one_bit_character(Bits) ->
 % if we see 1, it's the start of a two-bit char (move 2). if we end up exactly
 % at the last index, the last char is one-bit.
 
-is_one_bit_character(Bits, I, Len) when I >= Len - 1 ->
+is_one_bit_character(_Bits, I, Len) when I >= Len - 1 ->
     I =:= Len - 1;
 is_one_bit_character(Bits, I, Len) ->
-    case lists:nth(I + 1, Bits) of
-        0 -> is_one_bit_character(Bits, I + 1, Len);
-        1 -> is_one_bit_character(Bits, I + 2, Len)
+    Bit = lists:nth(I + 1, Bits),
+    if
+        Bit =:= 0 -> is_one_bit_character(Bits, I + 1, Len);
+        Bit =:= 1 -> is_one_bit_character(Bits, I + 2, Len)
     end.
 
