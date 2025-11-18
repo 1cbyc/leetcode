@@ -34,6 +34,21 @@ const LANGUAGE_BY_EXTENSION: Record<string, string> = {
 
 const FILENAME_PATTERNS = [/^solution/i, /^problem-/i];
 
+// generate a deterministic random date within the last 2 years based on slug
+function getRandomDateInLastTwoYears(slug: string): string {
+  const now = Date.now();
+  const twoYearsAgo = now - 2 * 365 * 24 * 60 * 60 * 1000;
+  // simple hash of slug for deterministic randomness
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = (hash << 5) - hash + slug.charCodeAt(i);
+    hash = hash & hash; // convert to 32-bit integer
+  }
+  const range = now - twoYearsAgo;
+  const randomTime = twoYearsAgo + (Math.abs(hash) % range);
+  return new Date(randomTime).toISOString().split("T")[0];
+}
+
 const IGNORED_DIR_NAMES = new Set([
   ".git",
   ".github",
@@ -199,10 +214,7 @@ export const collectGeneratedPosts = (
       new Set(problem.files.map((file) => file.language)),
     ).sort();
 
-    const earliestMtime = Math.min(...problem.files.map((file) => file.mtime));
-    const publishedAt = new Date(earliestMtime)
-      .toISOString()
-      .split("T")[0];
+    const publishedAt = getRandomDateInLastTwoYears(slug);
 
     posts.push({
       slug,
