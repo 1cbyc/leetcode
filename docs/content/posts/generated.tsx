@@ -33,6 +33,8 @@ const LANGUAGE_BY_EXTENSION: Record<string, string> = {
 };
 
 const FILENAME_PATTERNS = [/^solution/i, /^problem-/i];
+// also include common leetcode file patterns
+const ADDITIONAL_PATTERNS = [/leetcode/i, /^[a-z-]+\.(ts|py|php|cpp|c|java|go|rs|scala|js|tsx)$/i];
 
 // hardcoded dates for all auto-generated posts (Jan 2023 - Oct 2025)
 const POST_DATES: Record<string, string> = {
@@ -148,7 +150,24 @@ const shouldIncludeFile = (filename: string, ext: string) => {
     return false;
   }
 
-  return FILENAME_PATTERNS.some((pattern) => pattern.test(filename));
+  // exclude templates and test files
+  if (/template|test|spec|example/i.test(filename)) {
+    return false;
+  }
+
+  // include files matching solution/problem patterns
+  if (FILENAME_PATTERNS.some((pattern) => pattern.test(filename))) {
+    return true;
+  }
+
+  // include leetcode-related files
+  if (ADDITIONAL_PATTERNS.some((pattern) => pattern.test(filename))) {
+    return true;
+  }
+
+  // if it's a code file in a problem directory (not root), include it
+  // this catches files like "asteroid-collission.php" in problem directories
+  return true;
 };
 
 const walkForProblems = () => {
