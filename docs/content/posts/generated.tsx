@@ -34,24 +34,81 @@ const LANGUAGE_BY_EXTENSION: Record<string, string> = {
 
 const FILENAME_PATTERNS = [/^solution/i, /^problem-/i];
 
-// generate a deterministic random date within the last 2 years based on slug
-function getRandomDateInLastTwoYears(slug: string): string {
-  const now = Date.now();
-  const twoYearsAgo = now - 2 * 365 * 24 * 60 * 60 * 1000;
-  // improved hash function for better distribution
-  let hash = 0;
-  for (let i = 0; i < slug.length; i++) {
-    const char = slug.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash = hash | 0; // convert to 32-bit integer
-  }
-  // use a second hash pass for better distribution
-  hash = hash * 31 + slug.length;
-  hash = hash | 0;
-  const range = now - twoYearsAgo;
-  const randomTime = twoYearsAgo + (Math.abs(hash) % range);
-  return new Date(randomTime).toISOString().split("T")[0];
-}
+// hardcoded dates for all auto-generated posts
+const POST_DATES: Record<string, string> = {
+  "addtwonumbers": "2023-12-08",
+  "array-with-elements-not-equal-to-average-of-neighbors": "2023-12-14",
+  "building-h2o": "2023-11-24",
+  "candy": "2023-12-05",
+  "contains-duplicate-3": "2023-11-22",
+  "convert-sorted-array-to-binary-search-tree": "2023-12-10",
+  "count-artifacts-that-can-be-extracted": "2023-12-01",
+  "count-of-range-sum": "2023-11-29",
+  "create-a-dataframe-from-list": "2023-12-09",
+  "design-neighbor-sum-service": "2023-12-08",
+  "display-the-first-three-rows": "2023-12-10",
+  "dungeon-game": "2023-12-12",
+  "find-minimum-in-rotated-sorted-array-ii": "2023-12-13",
+  "first-missing-positive": "2023-11-30",
+  "frog-jump": "2023-11-20",
+  "game-theory": "2023-11-21",
+  "get-the-size-of-a-dataframe": "2023-11-27",
+  "insertion-sort-list": "2023-11-30",
+  "kth-smallest-in-lexicographical-order": "2023-11-21",
+  "largest-magic-square": "2023-11-21",
+  "largest-palindrome-product": "2023-12-02",
+  "largest-plus-sign": "2023-11-19",
+  "letter-cobinations-of-a-phone-number": "2023-11-29",
+  "lfu-cache": "2023-12-10",
+  "magic-squares-in-grid": "2023-11-20",
+  "matrix-block-sum": "2023-11-20",
+  "max-points-on-line": "2023-12-02",
+  "maximal-square": "2023-11-25",
+  "maximize-area-of-square-hole-in-grid": "2023-12-13",
+  "maximum-sum-of-an-hourglass": "2023-12-09",
+  "maximum-xor-with-an-element-from-array": "2023-12-04",
+  "median-of-two-sorted-arrays": "2023-12-06",
+  "method-chaining": "2023-12-13",
+  "minimum-path-sum": "2023-12-10",
+  "minimum-window-substring": "2023-11-24",
+  "movie-rating": "2023-12-04",
+  "number-of-digit-one": "2023-11-20",
+  "number-of-recent-calls": "2023-12-13",
+  "palindrome-number": "2023-11-24",
+  "palindrome-pairs": "2023-11-29",
+  "palindrome-partitioning-ii": "2023-12-02",
+  "perfect-rectangle": "2023-11-28",
+  "poor-pigs": "2023-11-24",
+  "regular-expression-matching": "2023-12-05",
+  "reshape-data-concatenate": "2023-11-27",
+  "reshape-data-melt": "2023-12-08",
+  "reshape-data-pivot": "2023-12-06",
+  "reverse-pairs": "2023-12-10",
+  "root-equals-sum-of-children": "2023-12-10",
+  "russian-doll-envelopes": "2023-11-21",
+  "search-a-2d-matrix": "2023-12-11",
+  "select-data": "2023-11-30",
+  "set-matrix-zeroes": "2023-12-06",
+  "simplify-path": "2023-12-04",
+  "sliding-window-median": "2023-12-12",
+  "sort-colors": "2023-12-12",
+  "sort-list": "2023-12-10",
+  "special-array-i": "2023-12-08",
+  "split-array-largest-sum": "2023-11-24",
+  "stamping-the-grid": "2023-11-21",
+  "string-compression": "2023-12-07",
+  "strong-password-checker": "2023-11-21",
+  "trapping-rain-water-ii": "2023-12-11",
+  "two-sum": "2023-12-10",
+  "unique-paths-ii": "2023-12-02",
+  "valid-number": "2023-12-10",
+  "walking-robot-simulation": "2023-12-08",
+  "wiggle-sort-ii": "2023-11-25",
+  "wildcard-matching": "2023-11-25",
+  "word-ladder": "2023-11-23",
+  "word-ladder-2": "2023-11-29",
+  "zuma-game": "2023-11-30",
+};
 
 const IGNORED_DIR_NAMES = new Set([
   ".git",
@@ -218,8 +275,8 @@ export const collectGeneratedPosts = (
       new Set(problem.files.map((file) => file.language)),
     ).sort();
 
-    // always use randomized dates for auto-generated posts
-    const publishedAt = getRandomDateInLastTwoYears(slug);
+    // use hardcoded date from mapping, fallback to a default date for new posts
+    const publishedAt = POST_DATES[slug] || "2023-11-15";
 
     posts.push({
       slug,
