@@ -1,32 +1,23 @@
 // generate dates for all problem slugs across Jan 2023 to Oct 2025
+// evenly distribute across the range using deterministic hash
 function getRandomDateInRange(slug, startDate, endDate) {
   const start = new Date(startDate).getTime();
   const end = new Date(endDate).getTime();
   const range = end - start;
   
-  // create a better hash by combining multiple approaches
+  // create hash from slug
   let hash = 0;
   for (let i = 0; i < slug.length; i++) {
     hash = ((hash << 5) - hash) + slug.charCodeAt(i);
     hash = hash | 0;
   }
   
-  // use multiplicative hashing with golden ratio for better distribution
-  const A = 2654435761; // large prime
-  const hash1 = Math.abs((hash * A) | 0);
+  // use large prime multiplier for better distribution
+  const largePrime = 982451653; // large prime
+  hash = Math.abs((hash * largePrime) | 0);
   
-  // second hash with different multiplier
-  let hash2 = 0;
-  for (let i = 0; i < slug.length; i++) {
-    hash2 = hash2 * 31 + slug.charCodeAt(i);
-    hash2 = hash2 | 0;
-  }
-  const B = 2246822519; // another large prime
-  hash2 = Math.abs((hash2 * B) | 0);
-  
-  // combine and use modulo
-  const combined = (hash1 ^ hash2) >>> 0; // unsigned 32-bit
-  const randomTime = start + (combined % range);
+  // map to date range
+  const randomTime = start + (hash % range);
   return new Date(randomTime).toISOString().split("T")[0];
 }
 
