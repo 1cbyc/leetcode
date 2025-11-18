@@ -214,7 +214,15 @@ export const collectGeneratedPosts = (
       new Set(problem.files.map((file) => file.language)),
     ).sort();
 
-    const publishedAt = getRandomDateInLastTwoYears(slug);
+    // use file modification time for new problems (modified today or later)
+    // keep random dates for existing problems (modified before today)
+    const earliestMtime = Math.min(...problem.files.map((file) => file.mtime));
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
+    const publishedAt =
+      earliestMtime >= todayStart.getTime()
+        ? new Date(earliestMtime).toISOString().split("T")[0]
+        : getRandomDateInLastTwoYears(slug);
 
     posts.push({
       slug,
