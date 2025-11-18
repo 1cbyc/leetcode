@@ -218,11 +218,12 @@ export const collectGeneratedPosts = (
       new Set(problem.files.map((file) => file.language)),
     ).sort();
 
+    // use a fixed cutoff date: files modified before Nov 17, 2025 get random dates
+    // files modified on or after this date use their actual modification time
+    const cutoffDate = new Date("2025-11-17T00:00:00Z").getTime();
     const earliestMtime = Math.min(...problem.files.map((file) => file.mtime));
-    const todayStart = new Date();
-    todayStart.setHours(0, 0, 0, 0);
     const publishedAt =
-      earliestMtime >= todayStart.getTime()
+      earliestMtime >= cutoffDate
         ? new Date(earliestMtime).toISOString().split("T")[0]
         : getRandomDateInLastTwoYears(slug);
 
