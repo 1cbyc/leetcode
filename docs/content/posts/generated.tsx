@@ -145,13 +145,18 @@ const titleCase = (value: string) =>
     .map((segment) => segment[0]?.toUpperCase() + segment.slice(1))
     .join(" ");
 
-const shouldIncludeFile = (filename: string, ext: string) => {
+const shouldIncludeFile = (filename: string, ext: string, dirRel: string) => {
   if (!LANGUAGE_BY_EXTENSION[ext]) {
     return false;
   }
 
   // exclude templates and test files
-  if (/template|test|spec|example/i.test(filename)) {
+  if (/template|test|spec|example|new_problem/i.test(filename)) {
+    return false;
+  }
+
+  // exclude root-level files (files directly in repo root)
+  if (dirRel === ".") {
     return false;
   }
 
@@ -165,7 +170,7 @@ const shouldIncludeFile = (filename: string, ext: string) => {
     return true;
   }
 
-  // if it's a code file in a problem directory (not root), include it
+  // if it's a code file in a problem directory, include it
   // this catches files like "asteroid-collission.php" in problem directories
   return true;
 };
@@ -204,7 +209,7 @@ const walkForProblems = () => {
       const ext = path.extname(entry.name).toLowerCase();
       const filename = entry.name.toLowerCase();
 
-      if (!shouldIncludeFile(filename, ext)) {
+      if (!shouldIncludeFile(filename, ext, dirRel)) {
         continue;
       }
 
