@@ -1,4 +1,3 @@
--spec is_one_bit_character(Bits :: [integer()]) -> boolean().
 is_one_bit_character(Bits) ->
     is_one_bit_character(Bits, 0, length(Bits)).
 
