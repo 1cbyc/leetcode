@@ -214,8 +214,6 @@ export const collectGeneratedPosts = (
       new Set(problem.files.map((file) => file.language)),
     ).sort();
 
-    // use file modification time for new problems (modified today or later)
-    // keep random dates for existing problems (modified before today)
     const earliestMtime = Math.min(...problem.files.map((file) => file.mtime));
     const todayStart = new Date();
     todayStart.setHours(0, 0, 0, 0);
