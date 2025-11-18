@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   description:
     "Personal notes, breakdowns, and TypeScript-first write-ups for solved LeetCode problems.",
   metadataBase: new URL("https://leetcode.nsisong.com"),
+  icons: {
+    icon: "https://nsisong.com/profile.webp",
+    shortcut: "https://nsisong.com/profile.webp",
+    apple: "https://nsisong.com/profile.webp",
+  },
   openGraph: {
     title: "My LeetCode Docs — nsisong",
     description:
