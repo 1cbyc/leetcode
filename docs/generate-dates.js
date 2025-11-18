@@ -2,20 +2,17 @@
 function getRandomDateInRange(slug, startDate, endDate) {
   const start = new Date(startDate).getTime();
   const end = new Date(endDate).getTime();
-  // improved hash function with multiple passes for better distribution
-  let hash1 = 0;
-  let hash2 = 0;
+  // use multiple hash passes with large primes for better distribution
+  let hash = 0;
   for (let i = 0; i < slug.length; i++) {
     const char = slug.charCodeAt(i);
-    hash1 = ((hash1 << 5) - hash1) + char;
-    hash1 = hash1 | 0;
-    hash2 = hash2 * 31 + char;
-    hash2 = hash2 | 0;
+    hash = ((hash << 5) - hash) + char;
+    hash = hash | 0;
   }
-  // combine both hashes with slug length for better distribution
-  const combinedHash = Math.abs((hash1 * 31 + hash2 + slug.length * 17) | 0);
+  // multiply by large primes and add slug length for better spread
+  hash = Math.abs((hash * 2654435761 + slug.length * 2246822519) | 0);
   const range = end - start;
-  const randomTime = start + (combinedHash % range);
+  const randomTime = start + (hash % range);
   return new Date(randomTime).toISOString().split("T")[0];
 }
 
