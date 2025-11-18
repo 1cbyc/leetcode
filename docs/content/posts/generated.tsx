@@ -38,12 +38,16 @@ const FILENAME_PATTERNS = [/^solution/i, /^problem-/i];
 function getRandomDateInLastTwoYears(slug: string): string {
   const now = Date.now();
   const twoYearsAgo = now - 2 * 365 * 24 * 60 * 60 * 1000;
-  // simple hash of slug for deterministic randomness
+  // improved hash function for better distribution
   let hash = 0;
   for (let i = 0; i < slug.length; i++) {
-    hash = (hash << 5) - hash + slug.charCodeAt(i);
-    hash = hash & hash; // convert to 32-bit integer
+    const char = slug.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash | 0; // convert to 32-bit integer
   }
+  // use a second hash pass for better distribution
+  hash = hash * 31 + slug.length;
+  hash = hash | 0;
   const range = now - twoYearsAgo;
   const randomTime = twoYearsAgo + (Math.abs(hash) % range);
   return new Date(randomTime).toISOString().split("T")[0];
