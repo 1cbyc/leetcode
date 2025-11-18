@@ -1,6 +1,6 @@
 -spec is_one_bit_character(Bits :: [integer()]) -> boolean().
 is_one_bit_character(Bits) ->
-    is_one_bit_character(Bits, 0).
+    is_one_bit_character(Bits, 0, length(Bits)).
 
 % leetcode: 1-bit and 2-bit characters
 % https://leetcode.com/problems/1-bit-and-2-bit-characters/description/
@@ -12,16 +12,15 @@ is_one_bit_character(Bits) ->
 % given a binary array bits that ends with 0, return true if the last character
 % must be a one-bit character.
 %
-% approach: traverse from the start using pattern matching. if we see 0, it's a
-% one-bit char (move 1). if we see 1, it's the start of a two-bit char (move 2).
-% if we end up exactly at the last index, the last char is one-bit.
+% approach: traverse from the start. if we see 0, it's a one-bit char (move 1).
+% if we see 1, it's the start of a two-bit char (move 2). if we end up exactly
+% at the last index, the last char is one-bit.
 
-is_one_bit_character([], I) ->
-    I =:= 0;
-is_one_bit_character([0], I) ->
-    I =:= 0;
-is_one_bit_character([0 | Rest], I) ->
-    is_one_bit_character(Rest, I + 1);
-is_one_bit_character([1, _ | Rest], I) ->
-    is_one_bit_character(Rest, I + 2).
+is_one_bit_character(Bits, I, Len) when I >= Len - 1 ->
+    I =:= Len - 1;
+is_one_bit_character(Bits, I, Len) ->
+    case lists:nth(I + 1, Bits) of
+        0 -> is_one_bit_character(Bits, I + 1, Len);
+        1 -> is_one_bit_character(Bits, I + 2, Len)
+    end.
 
