@@ -5,19 +5,28 @@ function getRandomDateInRange(slug, startDate, endDate) {
   const end = new Date(endDate).getTime();
   const range = end - start;
   
-  // create hash from slug
+  // create hash from slug using multiple passes
   let hash = 0;
   for (let i = 0; i < slug.length; i++) {
     hash = ((hash << 5) - hash) + slug.charCodeAt(i);
     hash = hash | 0;
   }
   
-  // use large prime multiplier for better distribution
-  const largePrime = 982451653; // large prime
-  hash = Math.abs((hash * largePrime) | 0);
+  // create second hash with different algorithm
+  let hash2 = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash2 = hash2 * 31 + slug.charCodeAt(i);
+    hash2 = hash2 | 0;
+  }
   
-  // map to date range
-  const randomTime = start + (hash % range);
+  // combine hashes and use large multiplier
+  const combined = Math.abs((hash * 2654435761 + hash2 * 2246822519) | 0);
+  
+  // use double hashing approach: hash to get position, then add jitter
+  const position = combined % 1000; // use modulo 1000 to get position in range
+  const jitter = (combined * 982451653) % (range / 1000); // add small jitter
+  
+  const randomTime = start + (position * (range / 1000)) + jitter;
   return new Date(randomTime).toISOString().split("T")[0];
 }
 
