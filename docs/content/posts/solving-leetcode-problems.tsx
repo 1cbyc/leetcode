@@ -14,8 +14,7 @@ export const solvingleetcodeproblems: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "solving leetcode problems - a series" description: "welcome to my leetcode problem solving series..." date: "10/16/2024" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Welcome to my LeetCode Problem Solving Series!</h3>
         <p>Whether you're preparing for coding interviews or just looking to sharpen your problem-solving skills, this series will walk you through a variety of LeetCode challenges. Each post will break down the problem, show the solution step by step, and explain the underlying concepts. Stay tuned as I update the series with more problems and solutions!</p>
