@@ -14,8 +14,7 @@ export const selfcrossing: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 335: Self Crossing - Go Pattern Recognition Solution" description: "Solving the Self Crossing problem using Go with pattern recognition" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 335: Self Crossing</h3>
         <p>i recently solved the self crossing problem on leetcode, and it's a great example of geometric algorithms and pattern recognition. this hard problem tests your understanding of line intersection, spiral patterns, and efficient geometric analysis.</p>
