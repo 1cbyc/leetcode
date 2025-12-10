@@ -62,7 +62,7 @@ export const findmedianfromdatastream: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`import "container/heap"\n\ntype medianfinder struct {\nmaxheap *maxheap // lower half\nminheap *minheap // upper half\n}\n\nfunc constructor() medianfinder {\nreturn medianfinder{\nmaxheap: &maxheap{},\nminheap: &minheap{},\n}\n}\n\nfunc (this *medianfinder) addnum(num int) {\n// add to max heap first\nheap.push(this.maxheap, num)\n\n// move largest element from max heap to min heap\nheap.push(this.minheap, heap.pop(this.maxheap))\n\n// balance heaps: max heap should be larger or equal\nif this.maxheap.len() < this.minheap.len() {\nheap.push(this.maxheap, heap.pop(this.minheap))\n}\n}\n\nfunc (this *medianfinder) findmedian() float64 {\nif this.maxheap.len() > this.minheap.len() {\nreturn float64((*this.maxheap)[0])\n}\nreturn float64((*this.maxheap)[0] + (*this.minheap)[0]) / 2.0\n}\n\n// maxheap implementation\ntype maxheap []int\n\nfunc (h maxheap) len() int           { return len(h) }\nfunc (h maxheap) less(i, j int) bool { return h[i] > h[j] }\nfunc (h maxheap) swap(i, j int)      { h[i], h[j] = h[j], h[i] }\n\nfunc (h *maxheap) push(x interface{}) {\n*h = append(*h, x.(int))\n}\n\nfunc (h *maxheap) pop() interface{} {\nold := *h\nn := len(old)\nx := old[n-1]\n*h = old[0 : n-1]\nreturn x\n}\n\n// minheap implementation\ntype minheap []int\n\nfunc (h minheap) len() int           { return len(h) }\nfunc (h minheap) less(i, j int) bool { return h[i] < h[j] }\nfunc (h minheap) swap(i, j int)      { h[i], h[j] = h[j], h[i] }\n\nfunc (h *minheap) push(x interface{}) {\n*h = append(*h, x.(int))\n}\n\nfunc (h *minheap) pop() interface{} {\nold := *h\nn := len(old)\nx := old[n-1]\n*h = old[0 : n-1]\nreturn x\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`import "container/heap"\n\ntype medianfinder struct {\nmaxheap *maxheap // lower half\nminheap *minheap // upper half\n}\n\nfunc constructor() medianfinder {\nreturn medianfinder{\nmaxheap: &maxheap{},\nminheap: &minheap{},\n}\n}\n\nfunc (this *medianfinder) addnum(num int) {\n// add to max heap first\nheap.push(this.maxheap, num)\n\n// move largest element from max heap to min heap\nheap.push(this.minheap, heap.pop(this.maxheap))\n\n// balance heaps: max heap should be larger or equal\nif this.maxheap.len() &lt; this.minheap.len() {\nheap.push(this.maxheap, heap.pop(this.minheap))\n}\n}\n\nfunc (this *medianfinder) findmedian() float64 {\nif this.maxheap.len() &gt; this.minheap.len() {\nreturn float64((*this.maxheap)[0])\n}\nreturn float64((*this.maxheap)[0] + (*this.minheap)[0]) / 2.0\n}\n\n// maxheap implementation\ntype maxheap []int\n\nfunc (h maxheap) len() int           { return len(h) }\nfunc (h maxheap) less(i, j int) bool { return h[i] &gt; h[j] }\nfunc (h maxheap) swap(i, j int)      { h[i], h[j] = h[j], h[i] }\n\nfunc (h *maxheap) push(x interface{}) {\n*h = append(*h, x.(int))\n}\n\nfunc (h *maxheap) pop() interface{} {\nold := *h\nn := len(old)\nx := old[n-1]\n*h = old[0 : n-1]\nreturn x\n}\n\n// minheap implementation\ntype minheap []int\n\nfunc (h minheap) len() int           { return len(h) }\nfunc (h minheap) less(i, j int) bool { return h[i] &lt; h[j] }\nfunc (h minheap) swap(i, j int)      { h[i], h[j] = h[j], h[i] }\n\nfunc (h *minheap) push(x interface{}) {\n*h = append(*h, x.(int))\n}\n\nfunc (h *minheap) pop() interface{} {\nold := *h\nn := len(old)\nx := old[n-1]\n*h = old[0 : n-1]\nreturn x\n}`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -84,7 +84,7 @@ export const findmedianfromdatastream: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Insertion Logic</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`func (this *medianfinder) addnum(num int) {\n// add to max heap first\nheap.push(this.maxheap, num)\n\n// move largest element from max heap to min heap\nheap.push(this.minheap, heap.pop(this.maxheap))\n\n// balance heaps: max heap should be larger or equal\nif this.maxheap.len() < this.minheap.len() {\nheap.push(this.maxheap, heap.pop(this.minheap))\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`func (this *medianfinder) addnum(num int) {\n// add to max heap first\nheap.push(this.maxheap, num)\n\n// move largest element from max heap to min heap\nheap.push(this.minheap, heap.pop(this.maxheap))\n\n// balance heaps: max heap should be larger or equal\nif this.maxheap.len() &lt; this.minheap.len() {\nheap.push(this.maxheap, heap.pop(this.minheap))\n}\n}`}</code></pre>
         <p>the insertion process:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**add to max heap** - insert the new number</li>
@@ -94,7 +94,7 @@ export const findmedianfromdatastream: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">4. Median Calculation</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`func (this *medianfinder) findmedian() float64 {\nif this.maxheap.len() > this.minheap.len() {\nreturn float64((*this.maxheap)[0])\n}\nreturn float64((*this.maxheap)[0] + (*this.minheap)[0]) / 2.0\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`func (this *medianfinder) findmedian() float64 {\nif this.maxheap.len() &gt; this.minheap.len() {\nreturn float64((*this.maxheap)[0])\n}\nreturn float64((*this.maxheap)[0] + (*this.minheap)[0]) / 2.0\n}`}</code></pre>
         <p>median calculation logic:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**odd count**: return root of max heap</li>
@@ -103,11 +103,11 @@ export const findmedianfromdatastream: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">5. Heap Implementation</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`type maxheap []int\n\nfunc (h maxheap) len() int           { return len(h) }\nfunc (h maxheap) less(i, j int) bool { return h[i] > h[j] }\nfunc (h maxheap) swap(i, j int)      { h[i], h[j] = h[j], h[i] }`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`type maxheap []int\n\nfunc (h maxheap) len() int           { return len(h) }\nfunc (h maxheap) less(i, j int) bool { return h[i] &gt; h[j] }\nfunc (h maxheap) swap(i, j int)      { h[i], h[j] = h[j], h[i] }`}</code></pre>
         <p>implement the heap.interface:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**len()**: return slice length</li>
-          <li>**less()**: define heap property (max heap: parent > children)</li>
+          <li>**less()**: define heap property (max heap: parent &gt; children)</li>
           <li>**swap()**: swap elements</li>
           <li>**push()/pop()**: slice operations</li>
         </ul>
