@@ -14,8 +14,7 @@ export const burstballoons: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 312: Burst Balloons - JavaScript Dynamic Programming Solution" description: "Solving the Burst Balloons problem using JavaScript with dynamic programming and memoization" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 312: Burst Balloons</h3>
         <p>i recently solved the burst balloons problem on leetcode, and it's a great example of dynamic programming and optimal substructure. this hard problem tests your understanding of memoization, recursive algorithms, and efficient problem decomposition.</p>
