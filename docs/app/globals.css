@@ -24,3 +24,22 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Improve code block contrast, especially in dark mode */
+pre,
+code {
+  color: #0f172a; /* slate-900 */
+  background-color: #f8fafc; /* slate-50 */
+}
+
+pre {
+  border: 1px solid #e2e8f0; /* slate-200 */
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
