@@ -14,8 +14,7 @@ export const expressionaddoperators: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 282: Expression Add Operators - PHP Backtracking Solution" description: "Solving the Expression Add Operators problem using PHP with backtracking and multiplication precedence handling" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 282: Expression Add Operators</h3>
         <p>i recently solved the expression add operators problem on leetcode, and it's a great example of backtracking and string manipulation. this hard problem tests your understanding of recursive algorithms, operator precedence, and systematic problem exploration.</p>
