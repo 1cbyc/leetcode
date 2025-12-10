@@ -14,8 +14,7 @@ export const insertdeletegetrandomo1duplicatesallowed: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 381: Insert Delete GetRandom O(1) - Duplicates Allowed - TypeScript HashMap Solution" description: "Solving the Insert Delete GetRandom O(1) - Duplicates Allowed problem using TypeScript with HashMap and Array" date: "2025-01-26" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 381: Insert Delete GetRandom O(1) - Duplicates Allowed</h3>
         <p>i recently solved the insert delete getrandom o(1) - duplicates allowed problem on leetcode, and it's a great example of data structure design and efficient algorithms. this hard problem tests your understanding of hashmap operations, array manipulation, and index management.</p>
