@@ -1,6 +1,6 @@
 import { LeetCodePost } from "./types";
 
-export const addtwonumbers: LeetCodePost = {
+export const addTwoNumbers: LeetCodePost = {
   slug: "add-two-numbers",
   title: "add two numbers",
   summary: "add two numbers",
