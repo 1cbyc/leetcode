@@ -57,7 +57,7 @@ export const countofsmallernumbersafterself: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function countsmaller(nums: number[]): number[] {\nconst n = nums.length;\nconst result: number[] = new array(n).fill(0);\n\n// create array of [value, originalindex] pairs\nconst indexednums: [number, number][] = nums.map((num, index) => [num, index]);\n\nfunction mergesort(arr: [number, number][], start: number, end: number): void {\nif (start >= end) return;\n\nconst mid = math.floor((start + end) / 2);\nmergesort(arr, start, mid);\nmergesort(arr, mid + 1, end);\nmerge(arr, start, mid, end);\n}\n\nfunction merge(arr: [number, number][], start: number, mid: number, end: number): void {\nconst left = arr.slice(start, mid + 1);\nconst right = arr.slice(mid + 1, end + 1);\n\nlet i = 0, j = 0, k = start;\nlet smallercount = 0;\n\nwhile (i < left.length && j < right.length) {\nif (left[i][0] <= right[j][0]) {\n// update count for left element\nresult[left[i][1]] += smallercount;\narr[k++] = left[i++];\n} else {\n// count smaller elements from left\nsmallercount++;\narr[k++] = right[j++];\n}\n}\n\n// handle remaining left elements\nwhile (i < left.length) {\nresult[left[i][1]] += smallercount;\narr[k++] = left[i++];\n}\n\n// handle remaining right elements\nwhile (j < right.length) {\narr[k++] = right[j++];\n}\n}\n\nmergesort(indexednums, 0, n - 1);\nreturn result;\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function countsmaller(nums: number[]): number[] {\nconst n = nums.length;\nconst result: number[] = new array(n).fill(0);\n\n// create array of [value, originalindex] pairs\nconst indexednums: [number, number][] = nums.map((num, index) =&gt; [num, index]);\n\nfunction mergesort(arr: [number, number][], start: number, end: number): void {\nif (start &gt;= end) return;\n\nconst mid = math.floor((start + end) / 2);\nmergesort(arr, start, mid);\nmergesort(arr, mid + 1, end);\nmerge(arr, start, mid, end);\n}\n\nfunction merge(arr: [number, number][], start: number, mid: number, end: number): void {\nconst left = arr.slice(start, mid + 1);\nconst right = arr.slice(mid + 1, end + 1);\n\nlet i = 0, j = 0, k = start;\nlet smallercount = 0;\n\nwhile (i &lt; left.length && j &lt; right.length) {\nif (left[i][0] &lt;= right[j][0]) {\n// update count for left element\nresult[left[i][1]] += smallercount;\narr[k++] = left[i++];\n} else {\n// count smaller elements from left\nsmallercount++;\narr[k++] = right[j++];\n}\n}\n\n// handle remaining left elements\nwhile (i &lt; left.length) {\nresult[left[i][1]] += smallercount;\narr[k++] = left[i++];\n}\n\n// handle remaining right elements\nwhile (j &lt; right.length) {\narr[k++] = right[j++];\n}\n}\n\nmergesort(indexednums, 0, n - 1);\nreturn result;\n}`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -65,7 +65,7 @@ export const countofsmallernumbersafterself: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">1. Initialization</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`const n = nums.length;\nconst result: number[] = new array(n).fill(0);\nconst indexednums: [number, number][] = nums.map((num, index) => [num, index]);`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`const n = nums.length;\nconst result: number[] = new array(n).fill(0);\nconst indexednums: [number, number][] = nums.map((num, index) =&gt; [num, index]);`}</code></pre>
         <p>we set up our data structures:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**result array**: initialize with zeros for all positions</li>
@@ -75,7 +75,7 @@ export const countofsmallernumbersafterself: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. Index Tracking Setup</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`const indexednums: [number, number][] = nums.map((num, index) => [num, index]);`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`const indexednums: [number, number][] = nums.map((num, index) =&gt; [num, index]);`}</code></pre>
         <p>we create indexed pairs:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**value**: the actual number from input</li>
@@ -85,7 +85,7 @@ export const countofsmallernumbersafterself: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Merge Sort Function</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function mergesort(arr: [number, number][], start: number, end: number): void {\nif (start >= end) return;\n\nconst mid = math.floor((start + end) / 2);\nmergesort(arr, start, mid);\nmergesort(arr, mid + 1, end);\nmerge(arr, start, mid, end);\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function mergesort(arr: [number, number][], start: number, end: number): void {\nif (start &gt;= end) return;\n\nconst mid = math.floor((start + end) / 2);\nmergesort(arr, start, mid);\nmergesort(arr, mid + 1, end);\nmerge(arr, start, mid, end);\n}`}</code></pre>
         <p>the merge sort function:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**base case**: single element or empty range</li>
@@ -96,7 +96,7 @@ export const countofsmallernumbersafterself: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">4. Merge Function with Counting</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function merge(arr: [number, number][], start: number, mid: number, end: number): void {\nconst left = arr.slice(start, mid + 1);\nconst right = arr.slice(mid + 1, end + 1);\n\nlet i = 0, j = 0, k = start;\nlet smallercount = 0;\n\nwhile (i < left.length && j < right.length) {\nif (left[i][0] <= right[j][0]) {\n// update count for left element\nresult[left[i][1]] += smallercount;\narr[k++] = left[i++];\n} else {\n// count smaller elements from left\nsmallercount++;\narr[k++] = right[j++];\n}\n}\n\n// handle remaining elements\nwhile (i < left.length) {\nresult[left[i][1]] += smallercount;\narr[k++] = left[i++];\n}\n\nwhile (j < right.length) {\narr[k++] = right[j++];\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function merge(arr: [number, number][], start: number, mid: number, end: number): void {\nconst left = arr.slice(start, mid + 1);\nconst right = arr.slice(mid + 1, end + 1);\n\nlet i = 0, j = 0, k = start;\nlet smallercount = 0;\n\nwhile (i &lt; left.length && j &lt; right.length) {\nif (left[i][0] &lt;= right[j][0]) {\n// update count for left element\nresult[left[i][1]] += smallercount;\narr[k++] = left[i++];\n} else {\n// count smaller elements from left\nsmallercount++;\narr[k++] = right[j++];\n}\n}\n\n// handle remaining elements\nwhile (i &lt; left.length) {\nresult[left[i][1]] += smallercount;\narr[k++] = left[i++];\n}\n\nwhile (j &lt; right.length) {\narr[k++] = right[j++];\n}\n}`}</code></pre>
         <p>the merge function with counting:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**split arrays**: create left and right subarrays</li>
@@ -107,7 +107,7 @@ export const countofsmallernumbersafterself: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">5. Counting Logic</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if (left[i][0] <= right[j][0]) {\n// update count for left element\nresult[left[i][1]] += smallercount;\narr[k++] = left[i++];\n} else {\n// count smaller elements from left\nsmallercount++;\narr[k++] = right[j++];\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if (left[i][0] &lt;= right[j][0]) {\n// update count for left element\nresult[left[i][1]] += smallercount;\narr[k++] = left[i++];\n} else {\n// count smaller elements from left\nsmallercount++;\narr[k++] = right[j++];\n}`}</code></pre>
         <p>the key counting logic:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**left element smaller**: add current count to result</li>
