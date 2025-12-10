@@ -52,7 +52,7 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`use std::rc::Rc;\nuse std::cell::RefCell;\n\nstruct codec;\n\nimpl codec {\nfn new() -> Self {\ncodec\n}\n\nfn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -> String {\nlet mut result = String::new();\nself.serialize_helper(root, &mut result);\nresult\n}\n\nfn serialize_helper(&self, node: Option<Rc<RefCell<TreeNode>>>, result: &mut String) {\nmatch node {\nNone => {\nresult.push_str("#,");\n}\nSome(node_ref) => {\nlet node = node_ref.borrow();\nresult.push_str(&node.val.to_string());\nresult.push(',');\nself.serialize_helper(node.left.clone(), result);\nself.serialize_helper(node.right.clone(), result);\n}\n}\n}\n\nfn deserialize(&self, data: String) -> Option<Rc<RefCell<TreeNode>>> {\nlet mut iter = data.split(',').peekable();\nself.deserialize_helper(&mut iter)\n}\n\nfn deserialize_helper(&self, iter: &mut std::iter::Peekable<std::str::Split<char>>) -> Option<Rc<RefCell<TreeNode>>> {\nif let Some(&val_str) = iter.peek() {\nif val_str == "#" {\niter.next();\nreturn None;\n}\n\nif let Ok(val) = val_str.parse::<i32>() {\niter.next();\nlet mut node = TreeNode::new(val);\nnode.left = self.deserialize_helper(iter);\nnode.right = self.deserialize_helper(iter);\nreturn Some(Rc::new(RefCell::new(node)));\n}\n}\nNone\n}\n}\n\nimpl solution {\nfn serialize(root: Option<Rc<RefCell<TreeNode>>>) -> String {\nlet codec = codec::new();\ncodec.serialize(root)\n}\n\nfn deserialize(data: String) -> Option<Rc<RefCell<TreeNode>>> {\nlet codec = codec::new();\ncodec.deserialize(data)\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`use std::rc::Rc;\nuse std::cell::RefCell;\n\nstruct codec;\n\nimpl codec {\nfn new() -&gt; Self {\ncodec\n}\n\nfn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -&gt; String {\nlet mut result = String::new();\nself.serialize_helper(root, &mut result);\nresult\n}\n\nfn serialize_helper(&self, node: Option<Rc<RefCell<TreeNode>>>, result: &mut String) {\nmatch node {\nNone =&gt; {\nresult.push_str("#,");\n}\nSome(node_ref) =&gt; {\nlet node = node_ref.borrow();\nresult.push_str(&node.val.to_string());\nresult.push(',');\nself.serialize_helper(node.left.clone(), result);\nself.serialize_helper(node.right.clone(), result);\n}\n}\n}\n\nfn deserialize(&self, data: String) -&gt; Option<Rc<RefCell<TreeNode>>&gt; {\nlet mut iter = data.split(',').peekable();\nself.deserialize_helper(&mut iter)\n}\n\nfn deserialize_helper(&self, iter: &mut std::iter::Peekable<std::str::Split<char>>) -&gt; Option<Rc<RefCell<TreeNode>>&gt; {\nif let Some(&val_str) = iter.peek() {\nif val_str == "#" {\niter.next();\nreturn None;\n}\n\nif let Ok(val) = val_str.parse::<i32>() {\niter.next();\nlet mut node = TreeNode::new(val);\nnode.left = self.deserialize_helper(iter);\nnode.right = self.deserialize_helper(iter);\nreturn Some(Rc::new(RefCell::new(node)));\n}\n}\nNone\n}\n}\n\nimpl solution {\nfn serialize(root: Option<Rc<RefCell<TreeNode>>>) -&gt; String {\nlet codec = codec::new();\ncodec.serialize(root)\n}\n\nfn deserialize(data: String) -&gt; Option<Rc<RefCell<TreeNode>>&gt; {\nlet codec = codec::new();\ncodec.deserialize(data)\n}\n}`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -65,12 +65,12 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
         <ul className="list-disc space-y-2 pl-5">
           <li>**val**: integer value</li>
           <li>**left/right**: optional references to child nodes</li>
-          <li>**Rc<RefCell<>>**: shared ownership with interior mutability</li>
+          <li>**Rc<RefCell&lt;>>**: shared ownership with interior mutability</li>
         </ul>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. Serialization Process</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -> String {\nlet mut result = String::new();\nself.serialize_helper(root, &mut result);\nresult\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -&gt; String {\nlet mut result = String::new();\nself.serialize_helper(root, &mut result);\nresult\n}`}</code></pre>
         <p>the serialization process:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>start with empty string</li>
@@ -80,7 +80,7 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Serialization Helper</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn serialize_helper(&self, node: Option<Rc<RefCell<TreeNode>>>, result: &mut String) {\nmatch node {\nNone => {\nresult.push_str("#,");\n}\nSome(node_ref) => {\nlet node = node_ref.borrow();\nresult.push_str(&node.val.to_string());\nresult.push(',');\nself.serialize_helper(node.left.clone(), result);\nself.serialize_helper(node.right.clone(), result);\n}\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn serialize_helper(&self, node: Option<Rc<RefCell<TreeNode>>>, result: &mut String) {\nmatch node {\nNone =&gt; {\nresult.push_str("#,");\n}\nSome(node_ref) =&gt; {\nlet node = node_ref.borrow();\nresult.push_str(&node.val.to_string());\nresult.push(',');\nself.serialize_helper(node.left.clone(), result);\nself.serialize_helper(node.right.clone(), result);\n}\n}\n}`}</code></pre>
         <p>recursive serialization logic:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**null node**: add "#," to string</li>
@@ -90,7 +90,7 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">4. Deserialization Process</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn deserialize(&self, data: String) -> Option<Rc<RefCell<TreeNode>>> {\nlet mut iter = data.split(',').peekable();\nself.deserialize_helper(&mut iter)\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn deserialize(&self, data: String) -&gt; Option<Rc<RefCell<TreeNode>>&gt; {\nlet mut iter = data.split(',').peekable();\nself.deserialize_helper(&mut iter)\n}`}</code></pre>
         <p>deserialization setup:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>split string by commas</li>
@@ -100,7 +100,7 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">5. Deserialization Helper</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn deserialize_helper(&self, iter: &mut std::iter::Peekable<std::str::Split<char>>) -> Option<Rc<RefCell<TreeNode>>> {\nif let Some(&val_str) = iter.peek() {\nif val_str == "#" {\niter.next();\nreturn None;\n}\n\nif let Ok(val) = val_str.parse::<i32>() {\niter.next();\nlet mut node = treenode::new(val);\nnode.left = self.deserialize_helper(iter);\nnode.right = self.deserialize_helper(iter);\nreturn Some(Rc::new(RefCell::new(node)));\n}\n}\nNone\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn deserialize_helper(&self, iter: &mut std::iter::Peekable<std::str::Split<char>>) -&gt; Option<Rc<RefCell<TreeNode>>&gt; {\nif let Some(&val_str) = iter.peek() {\nif val_str == "#" {\niter.next();\nreturn None;\n}\n\nif let Ok(val) = val_str.parse::<i32>() {\niter.next();\nlet mut node = treenode::new(val);\nnode.left = self.deserialize_helper(iter);\nnode.right = self.deserialize_helper(iter);\nreturn Some(Rc::new(RefCell::new(node)));\n}\n}\nNone\n}`}</code></pre>
         <p>reconstruction logic:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**peek at next value** without consuming</li>
@@ -132,7 +132,7 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
         <ul className="list-disc space-y-2 pl-5">
           <li>**preorder traversal** - preserves tree structure for reconstruction</li>
           <li>**null markers** - handle missing nodes in serialization</li>
-          <li>**rust ownership** - use Rc<RefCell<>> for shared mutable ownership</li>
+          <li>**rust ownership** - use Rc<RefCell&lt;>&gt; for shared mutable ownership</li>
           <li>**iterator parsing** - efficient string parsing with peekable iterator</li>
         </ul>
       </section>
@@ -168,7 +168,7 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Rust-Specific Features</h3>
         <ul className="list-disc space-y-2 pl-5">
-          <li>**ownership system** - Rc<RefCell<>> for shared mutable ownership</li>
+          <li>**ownership system** - Rc<RefCell&lt;>&gt; for shared mutable ownership</li>
           <li>**pattern matching** - match expressions for null handling</li>
           <li>**iterator traits** - peekable iterator for efficient parsing</li>
           <li>**error handling** - Result types for parsing operations</li>
