@@ -14,8 +14,7 @@ export const reconstructitinerary: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 332: Reconstruct Itinerary - PHP Hierarchical DFS Solution" description: "Solving the Reconstruct Itinerary problem using PHP with hierarchical DFS and backtracking" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 332: Reconstruct Itinerary</h3>
         <p>i recently solved the reconstruct itinerary problem on leetcode, and it's a great example of graph traversal and eulerian paths. this hard problem tests your understanding of hierarchical dfs, backtracking, and efficient graph algorithms.</p>
