@@ -14,8 +14,7 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 297: Serialize and Deserialize Binary Tree - Rust Preorder Solution" description: "Solving the Serialize and Deserialize Binary Tree problem using Rust with preorder traversal and null markers" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 297: Serialize and Deserialize Binary Tree</h3>
         <p>i recently solved the serialize and deserialize binary tree problem on leetcode, and it's a great example of tree traversal and memory management. this hard problem tests your understanding of binary trees, serialization techniques, and efficient data structure implementation.</p>
