@@ -55,7 +55,7 @@ export const integertoenglishwords: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`class solution:\ndef numbertowords(self, num: int) -> str:\nif num == 0:\nreturn "Zero"\n\n# define number mappings\nones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]\nteens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]\ntens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]\nscales = ["", "Thousand", "Million", "Billion"]\n\ndef convert_less_than_thousand(n):\nif n == 0:\nreturn ""\nelif n < 10:\nreturn ones[n]\nelif n < 20:\nreturn teens[n - 10]\nelif n < 100:\nreturn tens[n // 10] + (" " + ones[n % 10] if n % 10 != 0 else "")\nelse:\nreturn ones[n // 100] + " Hundred" + (" " + convert_less_than_thousand(n % 100) if n % 100 != 0 else "")\n\ndef convert_chunk(n, scale_index):\nif n == 0:\nreturn ""\n\nchunk_words = convert_less_than_thousand(n)\nif scale_index > 0:\nchunk_words += " " + scales[scale_index]\n\nreturn chunk_words\n\n# process number in chunks of 3 digits\nresult = []\nscale_index = 0\n\nwhile num > 0:\nchunk = num % 1000\nif chunk != 0:\nchunk_words = convert_chunk(chunk, scale_index)\nresult.insert(0, chunk_words)\n\nnum //= 1000\nscale_index += 1\n\nreturn " ".join(result)`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`class solution:\ndef numbertowords(self, num: int) -&gt; str:\nif num == 0:\nreturn "Zero"\n\n# define number mappings\nones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]\nteens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]\ntens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]\nscales = ["", "Thousand", "Million", "Billion"]\n\ndef convert_less_than_thousand(n):\nif n == 0:\nreturn ""\nelif n &lt; 10:\nreturn ones[n]\nelif n &lt; 20:\nreturn teens[n - 10]\nelif n &lt; 100:\nreturn tens[n // 10] + (" " + ones[n % 10] if n % 10 != 0 else "")\nelse:\nreturn ones[n // 100] + " Hundred" + (" " + convert_less_than_thousand(n % 100) if n % 100 != 0 else "")\n\ndef convert_chunk(n, scale_index):\nif n == 0:\nreturn ""\n\nchunk_words = convert_less_than_thousand(n)\nif scale_index &gt; 0:\nchunk_words += " " + scales[scale_index]\n\nreturn chunk_words\n\n# process number in chunks of 3 digits\nresult = []\nscale_index = 0\n\nwhile num &gt; 0:\nchunk = num % 1000\nif chunk != 0:\nchunk_words = convert_chunk(chunk, scale_index)\nresult.insert(0, chunk_words)\n\nnum //= 1000\nscale_index += 1\n\nreturn " ".join(result)`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -73,8 +73,8 @@ export const integertoenglishwords: LeetCodePost = {
         </ul>
       </section>
       <section className="space-y-3">
-        <h3 className="text-lg font-semibold">2. Helper Function for Numbers < 1000</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`def convert_less_than_thousand(n):\nif n == 0:\nreturn ""\nelif n < 10:\nreturn ones[n]\nelif n < 20:\nreturn teens[n - 10]\nelif n < 100:\nreturn tens[n // 10] + (" " + ones[n % 10] if n % 10 != 0 else "")\nelse:\nreturn ones[n // 100] + " Hundred" + (" " + convert_less_than_thousand(n % 100) if n % 100 != 0 else "")`}</code></pre>
+        <h3 className="text-lg font-semibold">2. Helper Function for Numbers &lt; 1000</h3>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`def convert_less_than_thousand(n):\nif n == 0:\nreturn ""\nelif n &lt; 10:\nreturn ones[n]\nelif n &lt; 20:\nreturn teens[n - 10]\nelif n &lt; 100:\nreturn tens[n // 10] + (" " + ones[n % 10] if n % 10 != 0 else "")\nelse:\nreturn ones[n // 100] + " Hundred" + (" " + convert_less_than_thousand(n % 100) if n % 100 != 0 else "")`}</code></pre>
         <p>this function handles numbers 0-999:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**0**: return empty string</li>
@@ -86,7 +86,7 @@ export const integertoenglishwords: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Chunk Processing</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`while num > 0:\nchunk = num % 1000\nif chunk != 0:\nchunk_words = convert_chunk(chunk, scale_index)\nresult.insert(0, chunk_words)\n\nnum //= 1000\nscale_index += 1`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`while num &gt; 0:\nchunk = num % 1000\nif chunk != 0:\nchunk_words = convert_chunk(chunk, scale_index)\nresult.insert(0, chunk_words)\n\nnum //= 1000\nscale_index += 1`}</code></pre>
         <p>we process the number from right to left:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>extract chunks of 3 digits using modulo</li>
