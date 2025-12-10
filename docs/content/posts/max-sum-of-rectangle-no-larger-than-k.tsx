@@ -56,7 +56,7 @@ export const maxsumofrectanglenolargerthank: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`/**\n* @param {number[][]} matrix\n* @param {number} k\n* @return {number}\n*/\nvar maxsumsubmatrix = function(matrix, k) {\nconst m = matrix.length;\nconst n = matrix[0].length;\n\n// build 2d prefix sum\nconst prefixsum = array(m + 1).fill().map(() => array(n + 1).fill(0));\n\nfor (let i = 1; i <= m; i++) {\nfor (let j = 1; j <= n; j++) {\nprefixsum[i][j] = matrix[i-1][j-1] +\nprefixsum[i-1][j] +\nprefixsum[i][j-1] -\nprefixsum[i-1][j-1];\n}\n}\n\nlet maxsum = -infinity;\n\n// try all possible rectangle sizes\nfor (let top = 0; top < m; top++) {\nfor (let bottom = top; bottom < m; bottom++) {\nfor (let left = 0; left < n; left++) {\nfor (let right = left; right < n; right++) {\nconst sum = prefixsum[bottom + 1][right + 1] -\nprefixsum[top][right + 1] -\nprefixsum[bottom + 1][left] +\nprefixsum[top][left];\n\nif (sum <= k) {\nmaxsum = math.max(maxsum, sum);\n}\n}\n}\n}\n}\n\nreturn maxsum;\n};`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`/**\n* @param {number[][]} matrix\n* @param {number} k\n* @return {number}\n*/\nvar maxsumsubmatrix = function(matrix, k) {\nconst m = matrix.length;\nconst n = matrix[0].length;\n\n// build 2d prefix sum\nconst prefixsum = array(m + 1).fill().map(() =&gt; array(n + 1).fill(0));\n\nfor (let i = 1; i &lt;= m; i++) {\nfor (let j = 1; j &lt;= n; j++) {\nprefixsum[i][j] = matrix[i-1][j-1] +\nprefixsum[i-1][j] +\nprefixsum[i][j-1] -\nprefixsum[i-1][j-1];\n}\n}\n\nlet maxsum = -infinity;\n\n// try all possible rectangle sizes\nfor (let top = 0; top &lt; m; top++) {\nfor (let bottom = top; bottom &lt; m; bottom++) {\nfor (let left = 0; left &lt; n; left++) {\nfor (let right = left; right &lt; n; right++) {\nconst sum = prefixsum[bottom + 1][right + 1] -\nprefixsum[top][right + 1] -\nprefixsum[bottom + 1][left] +\nprefixsum[top][left];\n\nif (sum &lt;= k) {\nmaxsum = math.max(maxsum, sum);\n}\n}\n}\n}\n}\n\nreturn maxsum;\n};`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -64,7 +64,7 @@ export const maxsumofrectanglenolargerthank: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">1. Prefix Sum Construction</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`const prefixsum = array(m + 1).fill().map(() => array(n + 1).fill(0));\n\nfor (let i = 1; i <= m; i++) {\nfor (let j = 1; j <= n; j++) {\nprefixsum[i][j] = matrix[i-1][j-1] +\nprefixsum[i-1][j] +\nprefixsum[i][j-1] -\nprefixsum[i-1][j-1];\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`const prefixsum = array(m + 1).fill().map(() =&gt; array(n + 1).fill(0));\n\nfor (let i = 1; i &lt;= m; i++) {\nfor (let j = 1; j &lt;= n; j++) {\nprefixsum[i][j] = matrix[i-1][j-1] +\nprefixsum[i-1][j] +\nprefixsum[i][j-1] -\nprefixsum[i-1][j-1];\n}\n}`}</code></pre>
         <p>we build the 2d prefix sum array:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**initialization**: create (m+1) x (n+1) array filled with zeros</li>
@@ -74,7 +74,7 @@ export const maxsumofrectanglenolargerthank: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. Rectangle Enumeration</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for (let top = 0; top < m; top++) {\nfor (let bottom = top; bottom < m; bottom++) {\nfor (let left = 0; left < n; left++) {\nfor (let right = left; right < n; right++) {\n// calculate sum for this rectangle\n}\n}\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for (let top = 0; top &lt; m; top++) {\nfor (let bottom = top; bottom &lt; m; bottom++) {\nfor (let left = 0; left &lt; n; left++) {\nfor (let right = left; right &lt; n; right++) {\n// calculate sum for this rectangle\n}\n}\n}\n}`}</code></pre>
         <p>we enumerate all possible rectangles:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**top**: starting row (0 to m-1)</li>
@@ -95,7 +95,7 @@ export const maxsumofrectanglenolargerthank: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">4. Constraint Handling</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if (sum <= k) {\nmaxsum = math.max(maxsum, sum);\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if (sum &lt;= k) {\nmaxsum = math.max(maxsum, sum);\n}`}</code></pre>
         <p>we check the constraint and update maximum:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**constraint check**: ensure sum ≤ k</li>
@@ -117,7 +117,7 @@ export const maxsumofrectanglenolargerthank: LeetCodePost = {
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Example Walkthrough</h3>
         <p>let's trace through the example: matrix = [[1,0,1],[0,-2,3]], k = 2</p>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`step 1: build prefix sum\noriginal matrix:\n[1, 0, 1]\n[0, -2, 3]\n\nprefix sum:\n[0, 0, 0, 0]\n[0, 1, 1, 2]\n[0, 1, -1, 2]\n\nstep 2: try rectangles\nrectangle (0,0,0,0): sum = 1 ≤ 2, maxsum = 1\nrectangle (0,0,0,1): sum = 1 ≤ 2, maxsum = 1\nrectangle (0,0,0,2): sum = 2 ≤ 2, maxsum = 2\nrectangle (0,1,0,2): sum = 3 > 2, skip\nrectangle (1,1,2,2): sum = 3 > 2, skip\n\nresult: 2`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`step 1: build prefix sum\noriginal matrix:\n[1, 0, 1]\n[0, -2, 3]\n\nprefix sum:\n[0, 0, 0, 0]\n[0, 1, 1, 2]\n[0, 1, -1, 2]\n\nstep 2: try rectangles\nrectangle (0,0,0,0): sum = 1 ≤ 2, maxsum = 1\nrectangle (0,0,0,1): sum = 1 ≤ 2, maxsum = 1\nrectangle (0,0,0,2): sum = 2 ≤ 2, maxsum = 2\nrectangle (0,1,0,2): sum = 3 &gt; 2, skip\nrectangle (1,1,2,2): sum = 3 &gt; 2, skip\n\nresult: 2`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Time and Space Complexity</h3>
