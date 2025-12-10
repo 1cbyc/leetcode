@@ -51,7 +51,7 @@ export const shortestpalindrome: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`def shortestPalindrome(self, s: str) -> str:\nif not s:\nreturn ""\n\n# create pattern: s + '#' + reverse(s)\npattern = s + '#' + s[::-1]\n\n# build lps array\nlps = [0] * len(pattern)\ni = 1\nlength = 0\n\nwhile i < len(pattern):\nif pattern[i] == pattern[length]:\nlength += 1\nlps[i] = length\ni += 1\nelse:\nif length != 0:\nlength = lps[length - 1]\nelse:\nlps[i] = 0\ni += 1\n\n# find longest palindromic prefix\nlongest_palindrome = lps[-1]\n\n# construct result\nreturn s[longest_palindrome:][::-1] + s`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`def shortestPalindrome(self, s: str) -&gt; str:\nif not s:\nreturn ""\n\n# create pattern: s + '#' + reverse(s)\npattern = s + '#' + s[::-1]\n\n# build lps array\nlps = [0] * len(pattern)\ni = 1\nlength = 0\n\nwhile i &lt; len(pattern):\nif pattern[i] == pattern[length]:\nlength += 1\nlps[i] = length\ni += 1\nelse:\nif length != 0:\nlength = lps[length - 1]\nelse:\nlps[i] = 0\ni += 1\n\n# find longest palindromic prefix\nlongest_palindrome = lps[-1]\n\n# construct result\nreturn s[longest_palindrome:][::-1] + s`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -69,7 +69,7 @@ export const shortestpalindrome: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. LPS Array Construction</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`lps = [0] * len(pattern)\ni = 1\nlength = 0\n\nwhile i < len(pattern):\nif pattern[i] == pattern[length]:\nlength += 1\nlps[i] = length\ni += 1\nelse:\nif length != 0:\nlength = lps[length - 1]\nelse:\nlps[i] = 0\ni += 1`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`lps = [0] * len(pattern)\ni = 1\nlength = 0\n\nwhile i &lt; len(pattern):\nif pattern[i] == pattern[length]:\nlength += 1\nlps[i] = length\ni += 1\nelse:\nif length != 0:\nlength = lps[length - 1]\nelse:\nlps[i] = 0\ni += 1`}</code></pre>
         <p><strong>lps array:</strong> stores the length of the longest proper prefix that is also a suffix <strong>matching:</strong> when characters match, increment length <strong>backtracking:</strong> when characters don't match, use previous lps value</p>
       </section>
       <section className="space-y-3">
