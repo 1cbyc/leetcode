@@ -36,7 +36,7 @@ export const addTwoNumbers: LeetCodePost = {
         <ul className="list-disc space-y-2 pl-5">
           <li>**start from least significant digit** - which is the head of both lists</li>
           <li>**add corresponding digits** - along with any carry from previous step</li>
-          <li>**handle carry** - if sum >= 10, carry 1 to next position</li>
+          <li>**handle carry** - if sum &gt;= 10, carry 1 to next position</li>
           <li>**create result list** - build the result as we go</li>
         </ul>
       </section>
@@ -53,7 +53,7 @@ export const addTwoNumbers: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:\n# dummy head for result list\ndummy = ListNode(0)\ncurrent = dummy\ncarry = 0\n\n# traverse both lists\nwhile l1 or l2 or carry:\n# get values from lists (0 if list is exhausted)\nval1 = l1.val if l1 else 0\nval2 = l2.val if l2 else 0\n\n# calculate sum and new carry\ntotal = val1 + val2 + carry\ncarry = total // 10\ndigit = total % 10\n\n# create new node and move to next\ncurrent.next = ListNode(digit)\ncurrent = current.next\n\n# move to next nodes in input lists\nif l1:\nl1 = l1.next\nif l2:\nl2 = l2.next\n\nreturn dummy.next`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&gt; Optional[ListNode]:\n# dummy head for result list\ndummy = ListNode(0)\ncurrent = dummy\ncarry = 0\n\n# traverse both lists\nwhile l1 or l2 or carry:\n# get values from lists (0 if list is exhausted)\nval1 = l1.val if l1 else 0\nval2 = l2.val if l2 else 0\n\n# calculate sum and new carry\ntotal = val1 + val2 + carry\ncarry = total // 10\ndigit = total % 10\n\n# create new node and move to next\ncurrent.next = ListNode(digit)\ncurrent = current.next\n\n# move to next nodes in input lists\nif l1:\nl1 = l1.next\nif l2:\nl2 = l2.next\n\nreturn dummy.next`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
