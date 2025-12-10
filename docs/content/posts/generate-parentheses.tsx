@@ -14,8 +14,7 @@ export const generateparentheses: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 22: Generate Parentheses - Backtracking" description: "Solving the Generate Parentheses problem using backtracking" date: "2024-10-20" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 22: Generate Parentheses</h3>
         <p>i recently solved the generate parentheses problem on leetcode, and it's a great example of string, backtracking techniques. this medium problem tests your understanding of string, backtracking.</p>
