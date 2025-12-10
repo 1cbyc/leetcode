@@ -14,8 +14,7 @@ export const patchingarray: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 330: Patching Array - Python 3 Greedy Solution" description: "Solving the Patching Array problem using Python 3 with greedy algorithm" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 330: Patching Array</h3>
         <p>i recently solved the patching array problem on leetcode, and it's a great example of greedy algorithms and number theory. this hard problem tests your understanding of optimal strategies and efficient problem-solving techniques.</p>
