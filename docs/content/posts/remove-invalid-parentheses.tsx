@@ -59,10 +59,55 @@ export const removeinvalidparentheses: LeetCodePost = {
         <h3 className="text-lg font-semibold">My Solution</h3>
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`remove_invalid_parentheses(S) ->\ncase is_valid(S) of\ntrue -&gt; [S];\nfalse -&gt; bfs_remove(S)\nend.`}</code></pre>
         <p>bfs_remove(S) -&gt; Queue = queue:in(S, queue:new()), Visited = sets:add_element(S, sets:new()), bfs_helper(Queue, Visited, []).</p>
-        <p>bfs_helper(Queue, Visited, Result) -&gt; case queue:out(Queue) of {empty, _} -&gt; Result; {{value, Current}, RestQueue} -&gt; case is_valid(Current) of true -&gt; case Result of [] -&gt; NewQueue = queue:in(Current, RestQueue), bfs_helper(NewQueue, Visited, [Current]); _ -&gt; bfs_helper(RestQueue, Visited, [Current | Result]) end; false -&gt; case Result of [] -&gt; Children = generate_children(Current), {NewQueue, NewVisited} = add_children(Children, RestQueue, Visited), bfs_helper(NewQueue, NewVisited, Result); _ -&gt; Result end end end.</p>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`bfs_helper(Queue, Visited, Result) ->
+  case queue:out(Queue) of
+    {empty, _} -> Result;
+    {{value, Current}, RestQueue} ->
+      case is_valid(Current) of
+        true ->
+          case Result of
+            [] ->
+              NewQueue = queue:in(Current, RestQueue),
+              bfs_helper(NewQueue, Visited, [Current]);
+            _ ->
+              bfs_helper(RestQueue, Visited, [Current | Result])
+          end;
+        false ->
+          case Result of
+            [] ->
+              Children = generate_children(Current),
+              {NewQueue, NewVisited} = add_children(Children, RestQueue, Visited),
+              bfs_helper(NewQueue, NewVisited, Result);
+            _ ->
+              Result
+          end
+      end
+  end.`}</code></pre>
         <p>generate_children(Str) -&gt; generate_children(Str, Str, 0, []).</p>
-        <p>generate_children([], OriginalStr, _, Acc) -&gt; Acc; generate_children([H|T], OriginalStr, Index, Acc) -&gt; case H of $( -&gt; NewStr = string:slice(OriginalStr, 0, Index) ++ string:slice(OriginalStr, Index + 1), generate_children(T, OriginalStr, Index + 1, [NewStr | Acc]); $) -&gt; NewStr = string:slice(OriginalStr, 0, Index) ++ string:slice(OriginalStr, Index + 1), generate_children(T, OriginalStr, Index + 1, [NewStr | Acc]); _ -&gt; generate_children(T, OriginalStr, Index + 1, Acc) end.</p>
-        <p>add_children([], Queue, Visited) -&gt; {Queue, Visited}; add_children([Child|Rest], Queue, Visited) -&gt; case sets:is_element(Child, Visited) of true -&gt; add_children(Rest, Queue, Visited); false -&gt; NewQueue = queue:in(Child, Queue), NewVisited = sets:add_element(Child, Visited), add_children(Rest, NewQueue, NewVisited) end.</p>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`generate_children([], OriginalStr, _, Acc) -> Acc;
+generate_children([H|T], OriginalStr, Index, Acc) ->
+  case H of
+    $( ->
+      NewStr = string:slice(OriginalStr, 0, Index) ++ string:slice(OriginalStr, Index + 1),
+      generate_children(T, OriginalStr, Index + 1, [NewStr | Acc]);
+    $) ->
+      NewStr = string:slice(OriginalStr, 0, Index) ++ string:slice(OriginalStr, Index + 1),
+      generate_children(T, OriginalStr, Index + 1, [NewStr | Acc]);
+    _ ->
+      generate_children(T, OriginalStr, Index + 1, Acc)
+  end.
+
+add_children([], Queue, Visited) ->
+  {Queue, Visited};
+add_children([Child|Rest], Queue, Visited) ->
+  case sets:is_element(Child, Visited) of
+    true ->
+      add_children(Rest, Queue, Visited);
+    false ->
+      NewQueue = queue:in(Child, Queue),
+      NewVisited = sets:add_element(Child, Visited),
+      add_children(Rest, NewQueue, NewVisited)
+  end.`}</code></pre>
         <p>is_valid(S) -&gt; is_valid(S, 0).</p>
         <p>is_valid([], Count) -&gt; Count =:= 0; is_valid([H|T], Count) -&gt; case H of $( -&gt; case Count &gt;= 0 of true -&gt; is_valid(T, Count + 1); false -&gt; false end; $) -&gt; case Count &gt; 0 of true -&gt; is_valid(T, Count - 1); false -&gt; false end; _ -&gt; is_valid(T, Count) end.</p>
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`\n## Code Breakdown\n\nlet me walk through how this solution works:\n\n### 1. Main Function`}</code></pre>
@@ -70,11 +115,31 @@ export const removeinvalidparentheses: LeetCodePost = {
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`\nthe main function:\n- checks if input string is already valid\n- if valid, returns the string as single element list\n- if invalid, starts bfs exploration\n\n### 2. BFS Setup`}</code></pre>
         <p>bfs_remove(S) -&gt; Queue = queue:in(S, queue:new()), Visited = sets:add_element(S, sets:new()), bfs_helper(Queue, Visited, []).</p>
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`\nbfs initialization:\n- create queue with initial string\n- create visited set to avoid duplicates\n- start bfs helper with empty result list\n\n### 3. BFS Helper Function`}</code></pre>
-        <p>bfs_helper(Queue, Visited, Result) -&gt; case queue:out(Queue) of {empty, _} -&gt; Result; {{value, Current}, RestQueue} -&gt; case is_valid(Current) of true -&gt; % handle valid string false -&gt; % handle invalid string end end.</p>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`bfs_helper(Queue, Visited, Result) ->
+  case queue:out(Queue) of
+    {empty, _} ->
+      Result;
+    {{value, Current}, RestQueue} ->
+      case is_valid(Current) of
+        true ->
+          % handle valid string
+          Result;
+        false ->
+          % handle invalid string
+          Result
+      end
+  end.`}</code></pre>
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`\nbfs logic:\n- dequeue next string to process\n- check if string is valid\n- handle valid and invalid cases differently\n\n### 4. Valid String Handling`}</code></pre>
         <p>case Result of [] -&gt; NewQueue = queue:in(Current, RestQueue), bfs_helper(NewQueue, Visited, [Current]); _ -&gt; bfs_helper(RestQueue, Visited, [Current | Result]) end</p>
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`\nwhen valid string found:\n- if first valid string (Result = []): continue bfs to find more\n- if not first: add to result and continue\n\n### 5. Invalid String Handling`}</code></pre>
-        <p>case Result of [] -&gt; Children = generate_children(Current), {NewQueue, NewVisited} = add_children(Children, RestQueue, Visited), bfs_helper(NewQueue, NewVisited, Result); _ -&gt; Result end</p>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`case Result of
+  [] ->
+    Children = generate_children(Current),
+    {NewQueue, NewVisited} = add_children(Children, RestQueue, Visited),
+    bfs_helper(NewQueue, NewVisited, Result);
+  _ ->
+    Result
+end.`}</code></pre>
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`\nwhen invalid string found:\n- if no valid strings found yet: generate children and continue\n- if valid strings already found: return current results\n\n### 6. Child Generation`}</code></pre>
         <p>generate_children([H|T], Index, Acc) -&gt; case H of $( -&gt; NewStr = string:slice(S, 0, Index) ++ string:slice(S, Index + 1), generate_children(T, Index + 1, [NewStr | Acc]); $) -&gt; NewStr = string:slice(S, 0, Index) ++ string:slice(S, Index + 1), generate_children(T, Index + 1, [NewStr | Acc]); _ -&gt; generate_children(T, Index + 1, Acc) end.</p>
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`\ngenerate all possible strings by removing one parenthesis:\n- iterate through each character\n- for '(' and ')': create new string without that character\n- for other characters: skip\n\n### 7. Validation Function`}</code></pre>
