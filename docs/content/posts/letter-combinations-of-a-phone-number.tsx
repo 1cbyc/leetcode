@@ -14,8 +14,7 @@ export const letterCombinationsOfAPhoneNumber: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 17: Letter Combinations of a Phone Number - Backtracking" description: "Solving the Letter Combinations of a Phone Number problem using backtracking" date: "2024-10-30" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 17: Letter Combinations of a Phone Number</h3>
         <p>i recently solved the letter combinations of a phone number problem on leetcode, and it's a great example of string, backtracking techniques. this medium problem tests your understanding of string, backtracking.</p>
