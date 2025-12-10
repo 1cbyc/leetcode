@@ -14,8 +14,7 @@ export const removenthnodefromendoflist: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 19: Remove Nth Node From End of List - Two Pointers" description: "Solving the Remove Nth Node From End of List problem using two pointers" date: "2024-10-28" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 19: Remove Nth Node From End of List</h3>
         <p>i recently solved the remove nth node from end of list problem on leetcode, and it's a great example of linked list, two pointers techniques. this medium problem tests your understanding of linked list, two pointers.</p>
