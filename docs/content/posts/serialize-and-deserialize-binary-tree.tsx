@@ -65,7 +65,10 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
         <ul className="list-disc space-y-2 pl-5">
           <li>**val**: integer value</li>
           <li>**left/right**: optional references to child nodes</li>
-          <li>**Rc<RefCell&lt;>>**: shared ownership with interior mutability</li>
+          <li>
+            <strong>Rc&lt;RefCell&lt;&gt;&gt;</strong>: shared ownership with interior
+            mutability
+          </li>
         </ul>
       </section>
       <section className="space-y-3">
@@ -132,7 +135,10 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
         <ul className="list-disc space-y-2 pl-5">
           <li>**preorder traversal** - preserves tree structure for reconstruction</li>
           <li>**null markers** - handle missing nodes in serialization</li>
-          <li>**rust ownership** - use Rc<RefCell&lt;>&gt; for shared mutable ownership</li>
+          <li>
+            <strong>rust ownership</strong> - use{" "}
+            <code>Rc&lt;RefCell&lt;&gt;&gt;</code> for shared mutable ownership
+          </li>
           <li>**iterator parsing** - efficient string parsing with peekable iterator</li>
         </ul>
       </section>
@@ -168,7 +174,10 @@ export const serializeanddeserializebinarytree: LeetCodePost = {
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Rust-Specific Features</h3>
         <ul className="list-disc space-y-2 pl-5">
-          <li>**ownership system** - Rc<RefCell&lt;>&gt; for shared mutable ownership</li>
+          <li>
+            <strong>ownership system</strong> - use{" "}
+            <code>Rc&lt;RefCell&lt;&gt;&gt;</code> for shared mutable ownership
+          </li>
           <li>**pattern matching** - match expressions for null handling</li>
           <li>**iterator traits** - peekable iterator for efficient parsing</li>
           <li>**error handling** - Result types for parsing operations</li>
