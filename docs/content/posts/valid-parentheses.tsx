@@ -14,8 +14,7 @@ export const validparentheses: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 20: Valid Parentheses - Stack" description: "Solving the Valid Parentheses problem using stack" date: "2024-10-25" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 20: Valid Parentheses</h3>
         <p>i recently solved the valid parentheses problem on leetcode, and it's a great example of string, stack techniques. this easy problem tests your understanding of string, stack.</p>
