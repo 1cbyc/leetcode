@@ -14,8 +14,7 @@ export const p3sum: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 15: 3Sum - Sort + Two Pointers" description: "Solving the 3Sum problem using sort + two pointers" date: "2024-11-01" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 15: 3Sum</h3>
         <p>i recently solved the 3sum problem on leetcode, and it's a great example of array, two pointers techniques. this medium problem tests your understanding of array, two pointers.</p>
