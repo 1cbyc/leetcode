@@ -14,8 +14,7 @@ export const skylineproblem: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 218: The Skyline Problem - A Complex Geometry Challenge" description: "Solving the Skyline Problem using a line sweep algorithm with priority queues" date: "2024-12-10" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 218: The Skyline Problem</h3>
         <p>the skyline problem is one of the most challenging problems i've encountered on leetcode. it's a perfect example of how geometric problems can be solved using algorithmic techniques like line sweep and priority queues.</p>
