@@ -14,8 +14,7 @@ export const maxsumofrectanglenolargerthank: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 363: Max Sum of Rectangle No Larger Than K - JavaScript 2D Prefix Sum Solution" description: "Solving the Max Sum of Rectangle No Larger Than K problem using JavaScript with 2D prefix sum and binary search" date: "2025-01-25" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 363: Max Sum of Rectangle No Larger Than K</h3>
         <p>i recently solved the max sum of rectangle no larger than k problem on leetcode, and it's a great example of dynamic programming and 2d range queries. this hard problem tests your understanding of prefix sums, rectangle enumeration, and efficient constraint handling.</p>
