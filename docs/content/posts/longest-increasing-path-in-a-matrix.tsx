@@ -58,7 +58,7 @@ export const longestincreasingpathinamatrix: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`int directions[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};\n\nint dfs(int** matrix, int matrixsize, int* matrixcolsize, int row, int col, int** memo) {\nif (memo[row][col] != 0) {\nreturn memo[row][col];\n}\n\nint maxlength = 1;\n\nfor (int i = 0; i < 4; i++) {\nint newrow = row + directions[i][0];\nint newcol = col + directions[i][1];\n\nif (newrow >= 0 && newrow < matrixsize &&\nnewcol >= 0 && newcol < matrixcolsize[0] &&\nmatrix[newrow][newcol] > matrix[row][col]) {\n\nmaxlength = fmax(maxlength, 1 + dfs(matrix, matrixsize, matrixcolsize, newrow, newcol, memo));\n}\n}\n\nmemo[row][col] = maxlength;\nreturn maxlength;\n}\n\nint longestincreasingpath(int** matrix, int matrixsize, int* matrixcolsize) {\nif (matrixsize == 0 || matrixcolsize[0] == 0) {\nreturn 0;\n}\n\nint rows = matrixsize;\nint cols = matrixcolsize[0];\n\n// initialize memoization array\nint** memo = (int**)malloc(rows * sizeof(int*));\nfor (int i = 0; i < rows; i++) {\nmemo[i] = (int*)calloc(cols, sizeof(int));\n}\n\nint maxlength = 0;\n\n// try starting from each cell\nfor (int i = 0; i < rows; i++) {\nfor (int j = 0; j < cols; j++) {\nmaxlength = fmax(maxlength, dfs(matrix, matrixsize, matrixcolsize, i, j, memo));\n}\n}\n\n// free allocated memory\nfor (int i = 0; i < rows; i++) {\nfree(memo[i]);\n}\nfree(memo);\n\nreturn maxlength;\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`int directions[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};\n\nint dfs(int** matrix, int matrixsize, int* matrixcolsize, int row, int col, int** memo) {\nif (memo[row][col] != 0) {\nreturn memo[row][col];\n}\n\nint maxlength = 1;\n\nfor (int i = 0; i &lt; 4; i++) {\nint newrow = row + directions[i][0];\nint newcol = col + directions[i][1];\n\nif (newrow &gt;= 0 && newrow &lt; matrixsize &&\nnewcol &gt;= 0 && newcol &lt; matrixcolsize[0] &&\nmatrix[newrow][newcol] &gt; matrix[row][col]) {\n\nmaxlength = fmax(maxlength, 1 + dfs(matrix, matrixsize, matrixcolsize, newrow, newcol, memo));\n}\n}\n\nmemo[row][col] = maxlength;\nreturn maxlength;\n}\n\nint longestincreasingpath(int** matrix, int matrixsize, int* matrixcolsize) {\nif (matrixsize == 0 || matrixcolsize[0] == 0) {\nreturn 0;\n}\n\nint rows = matrixsize;\nint cols = matrixcolsize[0];\n\n// initialize memoization array\nint** memo = (int**)malloc(rows * sizeof(int*));\nfor (int i = 0; i &lt; rows; i++) {\nmemo[i] = (int*)calloc(cols, sizeof(int));\n}\n\nint maxlength = 0;\n\n// try starting from each cell\nfor (int i = 0; i &lt; rows; i++) {\nfor (int j = 0; j &lt; cols; j++) {\nmaxlength = fmax(maxlength, dfs(matrix, matrixsize, matrixcolsize, i, j, memo));\n}\n}\n\n// free allocated memory\nfor (int i = 0; i &lt; rows; i++) {\nfree(memo[i]);\n}\nfree(memo);\n\nreturn maxlength;\n}`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -77,7 +77,7 @@ export const longestincreasingpathinamatrix: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. DFS Function</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`int dfs(int** matrix, int matrixsize, int* matrixcolsize, int row, int col, int** memo) {\nif (memo[row][col] != 0) {\nreturn memo[row][col];\n}\n\nint maxlength = 1;\n\n// explore all directions\nfor (int i = 0; i < 4; i++) {\nint newrow = row + directions[i][0];\nint newcol = col + directions[i][1];\n\nif (newrow >= 0 && newrow < matrixsize &&\nnewcol >= 0 && newcol < matrixcolsize[0] &&\nmatrix[newrow][newcol] > matrix[row][col]) {\n\nmaxlength = fmax(maxlength, 1 + dfs(matrix, matrixsize, matrixcolsize, newrow, newcol, memo));\n}\n}\n\nmemo[row][col] = maxlength;\nreturn maxlength;\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`int dfs(int** matrix, int matrixsize, int* matrixcolsize, int row, int col, int** memo) {\nif (memo[row][col] != 0) {\nreturn memo[row][col];\n}\n\nint maxlength = 1;\n\n// explore all directions\nfor (int i = 0; i &lt; 4; i++) {\nint newrow = row + directions[i][0];\nint newcol = col + directions[i][1];\n\nif (newrow &gt;= 0 && newrow &lt; matrixsize &&\nnewcol &gt;= 0 && newcol &lt; matrixcolsize[0] &&\nmatrix[newrow][newcol] &gt; matrix[row][col]) {\n\nmaxlength = fmax(maxlength, 1 + dfs(matrix, matrixsize, matrixcolsize, newrow, newcol, memo));\n}\n}\n\nmemo[row][col] = maxlength;\nreturn maxlength;\n}`}</code></pre>
         <p>the dfs function:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**memoization check**: return cached result if available</li>
@@ -90,7 +90,7 @@ export const longestincreasingpathinamatrix: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Main Function</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`int longestincreasingpath(int** matrix, int matrixsize, int* matrixcolsize) {\nif (matrixsize == 0 || matrixcolsize[0] == 0) {\nreturn 0;\n}\n\nint rows = matrixsize;\nint cols = matrixcolsize[0];\n\n// initialize memoization array\nint** memo = (int**)malloc(rows * sizeof(int*));\nfor (int i = 0; i < rows; i++) {\nmemo[i] = (int*)calloc(cols, sizeof(int));\n}\n\nint maxlength = 0;\n\n// try starting from each cell\nfor (int i = 0; i < rows; i++) {\nfor (int j = 0; j < cols; j++) {\nmaxlength = fmax(maxlength, dfs(matrix, matrixsize, matrixcolsize, i, j, memo));\n}\n}\n\n// free allocated memory\nfor (int i = 0; i < rows; i++) {\nfree(memo[i]);\n}\nfree(memo);\n\nreturn maxlength;\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`int longestincreasingpath(int** matrix, int matrixsize, int* matrixcolsize) {\nif (matrixsize == 0 || matrixcolsize[0] == 0) {\nreturn 0;\n}\n\nint rows = matrixsize;\nint cols = matrixcolsize[0];\n\n// initialize memoization array\nint** memo = (int**)malloc(rows * sizeof(int*));\nfor (int i = 0; i &lt; rows; i++) {\nmemo[i] = (int*)calloc(cols, sizeof(int));\n}\n\nint maxlength = 0;\n\n// try starting from each cell\nfor (int i = 0; i &lt; rows; i++) {\nfor (int j = 0; j &lt; cols; j++) {\nmaxlength = fmax(maxlength, dfs(matrix, matrixsize, matrixcolsize, i, j, memo));\n}\n}\n\n// free allocated memory\nfor (int i = 0; i &lt; rows; i++) {\nfree(memo[i]);\n}\nfree(memo);\n\nreturn maxlength;\n}`}</code></pre>
         <p>the main function:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**edge case handling**: check for empty matrix</li>
@@ -102,17 +102,17 @@ export const longestincreasingpathinamatrix: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">4. Boundary and Value Checks</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if (newrow >= 0 && newrow < matrixsize &&\nnewcol >= 0 && newcol < matrixcolsize[0] &&\nmatrix[newrow][newcol] > matrix[row][col]) {\n// valid move\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if (newrow &gt;= 0 && newrow &lt; matrixsize &&\nnewcol &gt;= 0 && newcol &lt; matrixcolsize[0] &&\nmatrix[newrow][newcol] &gt; matrix[row][col]) {\n// valid move\n}`}</code></pre>
         <p>we check three conditions:</p>
         <ul className="list-disc space-y-2 pl-5">
-          <li>**row bounds**: newrow >= 0 && newrow < matrixsize</li>
-          <li>**column bounds**: newcol >= 0 && newcol < matrixcolsize[0]</li>
-          <li>**increasing value**: matrix[newrow][newcol] > matrix[row][col]</li>
+          <li>**row bounds**: newrow &gt;= 0 && newrow &lt; matrixsize</li>
+          <li>**column bounds**: newcol &gt;= 0 && newcol &lt; matrixcolsize[0]</li>
+          <li>**increasing value**: matrix[newrow][newcol] &gt; matrix[row][col]</li>
         </ul>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">5. Memory Management</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`// allocation\nint** memo = (int**)malloc(rows * sizeof(int*));\nfor (int i = 0; i < rows; i++) {\nmemo[i] = (int*)calloc(cols, sizeof(int));\n}\n\n// cleanup\nfor (int i = 0; i < rows; i++) {\nfree(memo[i]);\n}\nfree(memo);`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`// allocation\nint** memo = (int**)malloc(rows * sizeof(int*));\nfor (int i = 0; i &lt; rows; i++) {\nmemo[i] = (int*)calloc(cols, sizeof(int));\n}\n\n// cleanup\nfor (int i = 0; i &lt; rows; i++) {\nfree(memo[i]);\n}\nfree(memo);`}</code></pre>
         <p>proper memory management:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**allocation**: create 2d array for memoization</li>
