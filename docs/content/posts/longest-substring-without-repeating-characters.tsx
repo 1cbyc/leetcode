@@ -14,8 +14,7 @@ export const longestsubstringwithoutrepeatingcharacters: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 3: Longest Substring Without Repeating Characters - Sliding Window with Hash Set" description: "Solving the Longest Substring Without Repeating Characters problem using sliding window with hash set" date: "2024-11-10" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 3: Longest Substring Without Repeating Characters</h3>
         <p>i recently solved the longest substring without repeating characters problem on leetcode, and it's a great example of string, sliding window techniques. this medium problem tests your understanding of string, sliding window.</p>
