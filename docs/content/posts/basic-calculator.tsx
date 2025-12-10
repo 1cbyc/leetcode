@@ -14,8 +14,7 @@ export const basiccalculator: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 224: Basic Calculator - My Solution Walkthrough" description: "Solving the Basic Calculator problem with a stack-based approach and operator precedence handling" date: "2024-12-15" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 224: Basic Calculator</h3>
         <p>i recently solved the basic calculator problem on leetcode, and i want to share my thought process and solution. this problem tests your understanding of parsing expressions, handling operator precedence, and managing parentheses.</p>
