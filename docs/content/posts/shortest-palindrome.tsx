@@ -14,8 +14,7 @@ export const shortestpalindrome: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 214: Shortest Palindrome - KMP Algorithm Approach" description: "Solving the Shortest Palindrome problem using KMP algorithm to find the longest palindromic prefix" date: "2024-11-20" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 214: Shortest Palindrome</h3>
         <p>i recently solved the shortest palindrome problem on leetcode, and it's a great example of how the kmp (knuth-morris-pratt) algorithm can be applied to string problems. this problem tests your understanding of string matching and palindrome properties.</p>
