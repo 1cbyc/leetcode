@@ -14,8 +14,7 @@ export const findmedianfromdatastream: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 295: Find Median from Data Stream - Go Two-Heap Solution" description: "Solving the Find Median from Data Stream problem using Go with two-heap approach for efficient streaming median" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 295: Find Median from Data Stream</h3>
         <p>i recently solved the find median from data stream problem on leetcode, and it's a great example of heap data structures and streaming algorithms. this hard problem tests your understanding of priority queues, data structure design, and efficient algorithm implementation.</p>
