@@ -14,8 +14,7 @@ export const containerwithmostwater: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 11: Container With Most Water - Two Pointers" description: "Solving the Container With Most Water problem using two pointers" date: "2024-11-03" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 11: Container With Most Water</h3>
         <p>i recently solved the container with most water problem on leetcode, and it's a great example of array, two pointers techniques. this medium problem tests your understanding of array, two pointers.</p>
