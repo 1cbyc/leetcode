@@ -14,8 +14,7 @@ export const longestpalindromicsubstring: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 5: Longest Palindromic Substring - Expand Around Center" description: "Solving the Longest Palindromic Substring problem using expand around center" date: "2024-11-05" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 5: Longest Palindromic Substring</h3>
         <p>i recently solved the longest palindromic substring problem on leetcode, and it's a great example of string, dynamic programming techniques. this medium problem tests your understanding of string, dynamic programming.</p>
