@@ -14,8 +14,7 @@ export const tripsandusers: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 262: Trips and Users - MySQL Joins and Aggregation" description: "Solving the Trips and Users problem using MySQL joins and aggregation for data analysis" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 262: Trips and Users</h3>
         <p>i recently solved the trips and users problem on leetcode, and it's a great example of mysql joins and data aggregation. this hard problem tests your understanding of database operations, joins, aggregation, and business logic implementation in mysql.</p>
