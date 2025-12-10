@@ -37,7 +37,7 @@ export const stringCompression: LeetCodePost = {
         <ul className="list-disc space-y-2 pl-5">
           <li>read pointer: finds end of current character group</li>
           <li>write pointer: writes compressed representation</li>
-          <li>only write count if count > 1</li>
+          <li>only write count if count &gt; 1</li>
           <li>truncate array to final write position</li>
         </ul>
       </section>
