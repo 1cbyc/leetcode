@@ -172,7 +172,10 @@ export const burstballoons: LeetCodePost = {
         <ul className="list-disc space-y-2 pl-5">
           <li>**spread operator** - [1, ...nums, 1] for array construction</li>
           <li>**map data structure** - efficient key-value storage</li>
-          <li>**template literals** - `${left},${right}` for string keys</li>
+          <li>
+            <strong>template literals</strong> - <code>{'${left},${right}'}</code> for
+            string keys
+          </li>
           <li>**arrow functions** - concise function syntax</li>
           <li>**destructuring** - modern javascript features</li>
         </ul>
