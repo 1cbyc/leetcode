@@ -88,8 +88,14 @@ export const reconstructitinerary: LeetCodePost = {
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`private function dfs($airport) {\nwhile (isset($this->graph[$airport]) && !empty($this->graph[$airport])) {\n$next = array_shift($this->graph[$airport]);\n$this->dfs($next);\n}\n$this->result[] = $airport;\n}`}</code></pre>
         <p>the hierarchical dfs function:</p>
         <ul className="list-disc space-y-2 pl-5">
-          <li>**existence check**: isset($this->graph[$airport])</li>
-          <li>**non-empty check**: !empty($this->graph[$airport])</li>
+          <li>
+            <strong>existence check</strong>:{" "}
+            <code>isset($this-&gt;graph[$airport])</code>
+          </li>
+          <li>
+            <strong>non-empty check</strong>:{" "}
+            <code>!empty($this-&gt;graph[$airport])</code>
+          </li>
           <li>**ticket removal**: array_shift() removes and returns first element</li>
           <li>**recursive call**: dfs($next) for next airport</li>
           <li>**result building**: add airport to result array</li>
