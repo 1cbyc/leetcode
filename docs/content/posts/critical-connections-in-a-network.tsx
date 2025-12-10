@@ -14,8 +14,7 @@ export const criticalconnectionsinanetwork: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 1192: Critical Connections in a Network - Tarjan's Algorithm" description: "Solving the Critical Connections in a Network problem using Tarjan's algorithm to find bridges in a graph" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 1192: Critical Connections in a Network</h3>
         <p>i recently solved the critical connections in a network problem on leetcode, and it's a great example of graph algorithms and tarjan's algorithm. this hard problem tests your understanding of graph theory, depth-first search, and bridge detection.</p>
