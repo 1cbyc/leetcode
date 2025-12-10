@@ -14,8 +14,7 @@ export const mergetwosortedlists: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 21: Merge Two Sorted Lists - Iterative Merge" description: "Solving the Merge Two Sorted Lists problem using iterative merge" date: "2024-10-22" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 21: Merge Two Sorted Lists</h3>
         <p>i recently solved the merge two sorted lists problem on leetcode, and it's a great example of linked list techniques. this easy problem tests your understanding of linked list.</p>
