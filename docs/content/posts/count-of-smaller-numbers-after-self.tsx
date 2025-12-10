@@ -14,8 +14,7 @@ export const countofsmallernumbersafterself: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 315: Count of Smaller Numbers After Self - TypeScript Merge Sort Solution" description: "Solving the Count of Smaller Numbers After Self problem using TypeScript with merge sort and counting" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 315: Count of Smaller Numbers After Self</h3>
         <p>i recently solved the count of smaller numbers after self problem on leetcode, and it's a great example of advanced algorithms and data structures. this hard problem tests your understanding of merge sort, counting inversions, and efficient problem-solving techniques.</p>
