@@ -50,7 +50,7 @@ export const insertdeletegetrandomo1duplicatesallowed: LeetCodePost = {
         <h3 className="text-lg font-semibold">Solution Strategy</h3>
         <p>i decided to use a <strong>hashmap + array approach</strong> with the following strategy:</p>
         <ul className="list-disc space-y-2 pl-5">
-          <li>**data structure** - use hashmap to track value -> indices mapping</li>
+          <li>**data structure** - use hashmap to track value -&gt; indices mapping</li>
           <li>**array storage** - use array for O(1) random access</li>
           <li>**index management** - track all indices for each value</li>
           <li>**efficient operations** - optimize insert, delete, and getrandom</li>
@@ -70,7 +70,7 @@ export const insertdeletegetrandomo1duplicatesallowed: LeetCodePost = {
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`class randomizedcollection {\nprivate map: map<number, set<number>>;\nprivate arr: number[];\n\nconstructor() {\nthis.map = new map();\nthis.arr = [];\n}\n}`}</code></pre>
         <p>we set up our data structures:</p>
         <ul className="list-disc space-y-2 pl-5">
-          <li>**map**: tracks value -> set of indices mapping</li>
+          <li>**map**: tracks value -&gt; set of indices mapping</li>
           <li>**arr**: stores all values for O(1) random access</li>
           <li>**constructor**: initialize empty map and array</li>
         </ul>
@@ -124,7 +124,7 @@ export const insertdeletegetrandomo1duplicatesallowed: LeetCodePost = {
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Example Walkthrough</h3>
         <p>let's trace through the example: insert(1), insert(1), insert(2), getrandom(), remove(1), getrandom()</p>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`step 1: insert(1)\n- arr = [1], map = {1 -> {0}}, return true\n\nstep 2: insert(1)\n- arr = [1,1], map = {1 -> {0,1}}, return false\n\nstep 3: insert(2)\n- arr = [1,1,2], map = {1 -> {0,1}, 2 -> {2}}, return true\n\nstep 4: getrandom()\n- random index in [0,3), return random element from [1,1,2]\n\nstep 5: remove(1)\n- remove index 0, swap with last element\n- arr = [2,1], map = {1 -> {1}, 2 -> {0}}, return true\n\nstep 6: getrandom()\n- random index in [0,2), return random element from [2,1]`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`step 1: insert(1)\n- arr = [1], map = {1 -&gt; {0}}, return true\n\nstep 2: insert(1)\n- arr = [1,1], map = {1 -&gt; {0,1}}, return false\n\nstep 3: insert(2)\n- arr = [1,1,2], map = {1 -&gt; {0,1}, 2 -&gt; {2}}, return true\n\nstep 4: getrandom()\n- random index in [0,3), return random element from [1,1,2]\n\nstep 5: remove(1)\n- remove index 0, swap with last element\n- arr = [2,1], map = {1 -&gt; {1}, 2 -&gt; {0}}, return true\n\nstep 6: getrandom()\n- random index in [0,2), return random element from [2,1]`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Time and Space Complexity</h3>
