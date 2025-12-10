@@ -14,8 +14,7 @@ export const nextpermutation: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 31: Next Permutation - Two Pass Algorithm" description: "Solving the Next Permutation problem using two pass algorithm" date: "2024-10-15" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 31: Next Permutation</h3>
         <p>i recently solved the next permutation problem on leetcode, and it's a great example of array techniques. this medium problem tests your understanding of array.</p>
