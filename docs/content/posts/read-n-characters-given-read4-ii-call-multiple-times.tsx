@@ -14,8 +14,7 @@ export const readncharactersgivenread4iicallmultipletimes: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 158: Read N Characters Given Read4 II - Call Multiple Times" description: "Solving the Read N Characters Given Read4 II problem using buffer-based approach with state management" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 158: Read N Characters Given Read4 II - Call Multiple Times</h3>
         <p>i recently solved the read n characters given read4 ii problem on leetcode, and it's a great example of system design and file i/o operations. this hard problem tests your understanding of buffering, state management, and efficient file reading.</p>
