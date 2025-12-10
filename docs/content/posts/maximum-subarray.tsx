@@ -14,8 +14,7 @@ export const maximumsubarray: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 53: Maximum Subarray - Kadane's Algorithm" description: "Solving the Maximum Subarray problem using kadane's algorithm" date: "2024-09-25" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 53: Maximum Subarray</h3>
         <p>i recently solved the maximum subarray problem on leetcode, and it's a great example of array, dynamic programming techniques. this medium problem tests your understanding of array, dynamic programming.</p>
