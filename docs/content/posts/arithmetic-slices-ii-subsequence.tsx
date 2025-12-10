@@ -14,8 +14,7 @@ export const arithmeticslicesiisubsequence: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 446: Arithmetic Slices II - Subsequence - TypeScript Dynamic Programming Solution" description: "Solving the Arithmetic Slices II - Subsequence problem using TypeScript with dynamic programming" date: "2025-01-28" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 446: Arithmetic Slices II - Subsequence</h3>
         <p>i recently solved the arithmetic slices ii - subsequence problem on leetcode, and it's a great example of advanced dynamic programming and subsequence counting. this hard problem tests your understanding of dp, hash maps, and mathematical sequences.</p>
