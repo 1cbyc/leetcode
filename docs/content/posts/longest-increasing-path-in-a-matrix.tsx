@@ -14,8 +14,7 @@ export const longestincreasingpathinamatrix: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 329: Longest Increasing Path in a Matrix - C DFS Solution" description: "Solving the Longest Increasing Path in a Matrix problem using C with DFS and memoization" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 329: Longest Increasing Path in a Matrix</h3>
         <p>i recently solved the longest increasing path in a matrix problem on leetcode, and it's a great example of dynamic programming and graph traversal. this hard problem tests your understanding of dfs, memoization, and efficient matrix traversal techniques.</p>
