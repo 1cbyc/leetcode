@@ -59,7 +59,7 @@ export const selfcrossing: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`func isselfcrossing(distance []int) bool {\nn := len(distance)\n\n// handle edge cases\nif n < 4 {\nreturn false\n}\n\n// check for type 1 crossing: line 4 crosses line 1\nfor i := 3; i < n; i++ {\nif distance[i] >= distance[i-2] && distance[i-1] <= distance[i-3] {\nreturn true\n}\n}\n\n// check for type 2 crossing: line 5 crosses line 1\nfor i := 4; i < n; i++ {\nif distance[i-1] == distance[i-3] && distance[i] >= distance[i-2]-distance[i-4] {\nreturn true\n}\n}\n\n// check for type 3 crossing: line 6 crosses line 1\nfor i := 5; i < n; i++ {\nif distance[i-2] >= distance[i-4] &&\ndistance[i-3] >= distance[i-1] &&\ndistance[i-1] >= distance[i-3]-distance[i-5] &&\ndistance[i] >= distance[i-2]-distance[i-4] {\nreturn true\n}\n}\n\nreturn false\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`func isselfcrossing(distance []int) bool {\nn := len(distance)\n\n// handle edge cases\nif n &lt; 4 {\nreturn false\n}\n\n// check for type 1 crossing: line 4 crosses line 1\nfor i := 3; i &lt; n; i++ {\nif distance[i] &gt;= distance[i-2] && distance[i-1] &lt;= distance[i-3] {\nreturn true\n}\n}\n\n// check for type 2 crossing: line 5 crosses line 1\nfor i := 4; i &lt; n; i++ {\nif distance[i-1] == distance[i-3] && distance[i] &gt;= distance[i-2]-distance[i-4] {\nreturn true\n}\n}\n\n// check for type 3 crossing: line 6 crosses line 1\nfor i := 5; i &lt; n; i++ {\nif distance[i-2] &gt;= distance[i-4] &&\ndistance[i-3] &gt;= distance[i-1] &&\ndistance[i-1] &gt;= distance[i-3]-distance[i-5] &&\ndistance[i] &gt;= distance[i-2]-distance[i-4] {\nreturn true\n}\n}\n\nreturn false\n}`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -67,7 +67,7 @@ export const selfcrossing: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">1. Edge Case Handling</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`n := len(distance)\nif n < 4 {\nreturn false\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`n := len(distance)\nif n &lt; 4 {\nreturn false\n}`}</code></pre>
         <p>we handle edge cases first:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**length check**: paths with less than 4 moves cannot self-cross</li>
@@ -77,27 +77,27 @@ export const selfcrossing: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. Type 1 Crossing Check</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for i := 3; i < n; i++ {\nif distance[i] >= distance[i-2] && distance[i-1] <= distance[i-3] {\nreturn true\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for i := 3; i &lt; n; i++ {\nif distance[i] &gt;= distance[i-2] && distance[i-1] &lt;= distance[i-3] {\nreturn true\n}\n}`}</code></pre>
         <p>we check for the first type of crossing:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**condition**: line 4 crosses line 1</li>
-          <li>**pattern**: distance[i] >= distance[i-2] && distance[i-1] <= distance[i-3]</li>
+          <li>**pattern**: distance[i] &gt;= distance[i-2] && distance[i-1] &lt;= distance[i-3]</li>
           <li>**logic**: when the fourth move is long enough and third move is short enough</li>
         </ul>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Type 2 Crossing Check</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for i := 4; i < n; i++ {\nif distance[i-1] == distance[i-3] && distance[i] >= distance[i-2]-distance[i-4] {\nreturn true\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for i := 4; i &lt; n; i++ {\nif distance[i-1] == distance[i-3] && distance[i] &gt;= distance[i-2]-distance[i-4] {\nreturn true\n}\n}`}</code></pre>
         <p>we check for the second type of crossing:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**condition**: line 5 crosses line 1</li>
-          <li>**pattern**: distance[i-1] == distance[i-3] && distance[i] >= distance[i-2]-distance[i-4]</li>
+          <li>**pattern**: distance[i-1] == distance[i-3] && distance[i] &gt;= distance[i-2]-distance[i-4]</li>
           <li>**logic**: when third and fifth moves are equal and sixth move is long enough</li>
         </ul>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">4. Type 3 Crossing Check</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for i := 5; i < n; i++ {\nif distance[i-2] >= distance[i-4] &&\ndistance[i-3] >= distance[i-1] &&\ndistance[i-1] >= distance[i-3]-distance[i-5] &&\ndistance[i] >= distance[i-2]-distance[i-4] {\nreturn true\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for i := 5; i &lt; n; i++ {\nif distance[i-2] &gt;= distance[i-4] &&\ndistance[i-3] &gt;= distance[i-1] &&\ndistance[i-1] &gt;= distance[i-3]-distance[i-5] &&\ndistance[i] &gt;= distance[i-2]-distance[i-4] {\nreturn true\n}\n}`}</code></pre>
         <p>we check for the third type of crossing:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**condition**: line 6 crosses line 1</li>
@@ -119,7 +119,7 @@ export const selfcrossing: LeetCodePost = {
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Example Walkthrough</h3>
         <p>let's trace through the example: distance = [2,1,1,2]</p>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`step 1: edge case check\n- n = 4 >= 4, continue\n\nstep 2: type 1 crossing check (i=3)\n- distance[3] = 2 >= distance[1] = 1 ✓\n- distance[2] = 1 <= distance[0] = 2 ✓\n- both conditions true, return true\n\nresult: true (path crosses itself)`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`step 1: edge case check\n- n = 4 &gt;= 4, continue\n\nstep 2: type 1 crossing check (i=3)\n- distance[3] = 2 &gt;= distance[1] = 1 ✓\n- distance[2] = 1 &lt;= distance[0] = 2 ✓\n- both conditions true, return true\n\nresult: true (path crosses itself)`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Time and Space Complexity</h3>
