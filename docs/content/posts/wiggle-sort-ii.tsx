@@ -36,9 +36,10 @@ export const wiggleSortIi: LeetCodePost = {
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">pattern</h2>
         <p>
-          the interleaving pattern ensures nums[i] < nums[i+1] > nums[i+2] for
-          all valid indices. we traverse from the middle of each half outward to
-          maintain this relationship.
+          the interleaving pattern ensures{" "}
+          <code>nums[i] &lt; nums[i+1] &gt; nums[i+2]</code> for all valid
+          indices. we traverse from the middle of each half outward to maintain
+          this relationship.
         </p>
       </section>
       <section className="space-y-3">
