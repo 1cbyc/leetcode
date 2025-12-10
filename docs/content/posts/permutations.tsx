@@ -14,8 +14,7 @@ export const permutations: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 46: Permutations - Backtracking" description: "Solving the Permutations problem using backtracking" date: "2024-10-03" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 46: Permutations</h3>
         <p>i recently solved the permutations problem on leetcode, and it's a great example of array, backtracking techniques. this medium problem tests your understanding of array, backtracking.</p>
