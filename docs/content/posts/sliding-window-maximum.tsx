@@ -14,8 +14,7 @@ export const slidingwindowmaximum: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 239: Sliding Window Maximum - Monotonic Deque Approach" description: "Solving the Sliding Window Maximum problem using monotonic deque for efficient O(n) solution" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 239: Sliding Window Maximum</h3>
         <p>i recently solved the sliding window maximum problem on leetcode, and it's a great example of sliding window techniques and efficient data structures. this hard problem tests your understanding of monotonic data structures, deque operations, and optimization techniques.</p>
