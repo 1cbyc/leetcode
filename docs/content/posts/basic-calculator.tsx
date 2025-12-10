@@ -58,7 +58,7 @@ export const basiccalculator: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`def calculate(self, s: str) -> int:\nstack = []\nnum = 0\nsign = 1\nresult = 0\n\nfor char in s:\nif char.isdigit():\nnum = num * 10 + int(char)\nelif char == '+':\nresult += sign * num\nnum = 0\nsign = 1\nelif char == '-':\nresult += sign * num\nnum = 0\nsign = -1\nelif char == '(':\nstack.append(result)\nstack.append(sign)\nresult = 0\nsign = 1\nelif char == ')':\nresult += sign * num\nnum = 0\nresult *= stack.pop()  # sign\nresult += stack.pop()  # previous result\n\nresult += sign * num\nreturn result`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`def calculate(self, s: str) -&gt; int:\nstack = []\nnum = 0\nsign = 1\nresult = 0\n\nfor char in s:\nif char.isdigit():\nnum = num * 10 + int(char)\nelif char == '+':\nresult += sign * num\nnum = 0\nsign = 1\nelif char == '-':\nresult += sign * num\nnum = 0\nsign = -1\nelif char == '(':\nstack.append(result)\nstack.append(sign)\nresult = 0\nsign = 1\nelif char == ')':\nresult += sign * num\nnum = 0\nresult *= stack.pop()  # sign\nresult += stack.pop()  # previous result\n\nresult += sign * num\nreturn result`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
