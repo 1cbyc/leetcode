@@ -14,8 +14,7 @@ export const groupanagrams: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 49: Group Anagrams - Hash Map" description: "Solving the Group Anagrams problem using hash map" date: "2024-09-28" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 49: Group Anagrams</h3>
         <p>i recently solved the group anagrams problem on leetcode, and it's a great example of string, hash table techniques. this medium problem tests your understanding of string, hash table.</p>
