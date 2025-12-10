@@ -26,7 +26,7 @@ export const burstballoons: LeetCodePost = {
         <p>if you burst the ith balloon, you will get nums[i - 1] * nums[i] * nums[i + 1] coins. if i - 1 or i + 1 goes out of bounds of the array, then treat it as if there is a balloon with a 1 painted on it.</p>
         <p>return the maximum coins you can collect by bursting the balloons wisely.</p>
         <p><strong>example 1:</strong></p>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`input: nums = [3,1,5,8]\noutput: 167\n\nexplanation:\nnums = [3,1,5,8] --> [3,5,8] --> [3,8] --> [8] --> []\ncoins =  3*1*5    +   3*5*8   +  1*3*8  + 1*8*1 = 167`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`input: nums = [3,1,5,8]\noutput: 167\n\nexplanation:\nnums = [3,1,5,8] --&gt; [3,5,8] --&gt; [3,8] --&gt; [8] --&gt; []\ncoins =  3*1*5    +   3*5*8   +  1*3*8  + 1*8*1 = 167`}</code></pre>
         <p><strong>example 2:</strong></p>
         <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`input: nums = [1,5]\noutput: 10`}</code></pre>
       </section>
@@ -56,7 +56,7 @@ export const burstballoons: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`/**\n* @param {number[]} nums\n* @return {number}\n*/\nvar maxcoins = function(nums) {\n// add boundary balloons with value 1\nconst balloons = [1, ...nums, 1];\nconst n = balloons.length;\n\n// memoization map: key = "left,right", value = max coins\nconst memo = new map();\n\nfunction dp(left, right) {\n// base case: no balloons to burst\nif (left + 1 >= right) {\nreturn 0;\n}\n\n// check memoization\nconst key = \`\${left},\${right}\`;\nif (memo.has(key)) {\nreturn memo.get(key);\n}\n\nlet maxcoins = 0;\n\n// try bursting each balloon between left and right\nfor (let i = left + 1; i < right; i++) {\n// coins from bursting balloon i\nconst coins = balloons[left] * balloons[i] * balloons[right];\n\n// recursively solve left and right subproblems\nconst leftcoins = dp(left, i);\nconst rightcoins = dp(i, right);\n\n// total coins for this choice\nconst totalcoins = coins + leftcoins + rightcoins;\n\nmaxcoins = math.max(maxcoins, totalcoins);\n}\n\n// store result in memoization\nmemo.set(key, maxcoins);\nreturn maxcoins;\n}\n\nreturn dp(0, n - 1);\n};`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`/**\n* @param {number[]} nums\n* @return {number}\n*/\nvar maxcoins = function(nums) {\n// add boundary balloons with value 1\nconst balloons = [1, ...nums, 1];\nconst n = balloons.length;\n\n// memoization map: key = "left,right", value = max coins\nconst memo = new map();\n\nfunction dp(left, right) {\n// base case: no balloons to burst\nif (left + 1 &gt;= right) {\nreturn 0;\n}\n\n// check memoization\nconst key = \`\${left},\${right}\`;\nif (memo.has(key)) {\nreturn memo.get(key);\n}\n\nlet maxcoins = 0;\n\n// try bursting each balloon between left and right\nfor (let i = left + 1; i &lt; right; i++) {\n// coins from bursting balloon i\nconst coins = balloons[left] * balloons[i] * balloons[right];\n\n// recursively solve left and right subproblems\nconst leftcoins = dp(left, i);\nconst rightcoins = dp(i, right);\n\n// total coins for this choice\nconst totalcoins = coins + leftcoins + rightcoins;\n\nmaxcoins = math.max(maxcoins, totalcoins);\n}\n\n// store result in memoization\nmemo.set(key, maxcoins);\nreturn maxcoins;\n}\n\nreturn dp(0, n - 1);\n};`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -84,7 +84,7 @@ export const burstballoons: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Dynamic Programming Function</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function dp(left, right) {\n// base case: no balloons to burst\nif (left + 1 >= right) {\nreturn 0;\n}\n\n// check memoization\nconst key = \`\${left},\${right}\`;\nif (memo.has(key)) {\nreturn memo.get(key);\n}\n\n// ... recursive logic\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function dp(left, right) {\n// base case: no balloons to burst\nif (left + 1 &gt;= right) {\nreturn 0;\n}\n\n// check memoization\nconst key = \`\${left},\${right}\`;\nif (memo.has(key)) {\nreturn memo.get(key);\n}\n\n// ... recursive logic\n}`}</code></pre>
         <p>the dp function:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**base case**: no balloons between left and right</li>
@@ -94,7 +94,7 @@ export const burstballoons: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">4. Recursive Logic</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for (let i = left + 1; i < right; i++) {\n// coins from bursting balloon i\nconst coins = balloons[left] * balloons[i] * balloons[right];\n\n// recursively solve left and right subproblems\nconst leftcoins = dp(left, i);\nconst rightcoins = dp(i, right);\n\n// total coins for this choice\nconst totalcoins = coins + leftcoins + rightcoins;\n\nmaxcoins = math.max(maxcoins, totalcoins);\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for (let i = left + 1; i &lt; right; i++) {\n// coins from bursting balloon i\nconst coins = balloons[left] * balloons[i] * balloons[right];\n\n// recursively solve left and right subproblems\nconst leftcoins = dp(left, i);\nconst rightcoins = dp(i, right);\n\n// total coins for this choice\nconst totalcoins = coins + leftcoins + rightcoins;\n\nmaxcoins = math.max(maxcoins, totalcoins);\n}`}</code></pre>
         <p>for each balloon choice:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**calculate coins**: left * current * right</li>
