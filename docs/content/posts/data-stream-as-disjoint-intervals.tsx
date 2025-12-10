@@ -59,7 +59,7 @@ export const datastreamasdisjointintervals: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`use std::collections::btreeset;\n\nstruct summaryranges {\nintervals: btreeset<(i32, i32)>,\n}\n\nimpl summaryranges {\nfn new() -> self {\nsummaryranges {\nintervals: btreeset::new(),\n}\n}\n\nfn addnum(&mut self, value: i32) {\n// find the interval that ends just before value\nlet mut left_bound = value;\nlet mut right_bound = value;\n\n// check if value is already in an existing interval\nif let some(&(start, end)) = self.intervals.range(..(value, i32::max)).next_back() {\nif end >= value {\nreturn; // value is already in an interval\n}\nif end + 1 == value {\nleft_bound = start;\nself.intervals.remove(&(start, end));\n}\n}\n\n// check if value can extend an interval to the right\nif let some(&(start, end)) = self.intervals.range((value, i32::min)..).next() {\nif start == value + 1 {\nright_bound = end;\nself.intervals.remove(&(start, end));\n}\n}\n\n// insert the new merged interval\nself.intervals.insert((left_bound, right_bound));\n}\n\nfn getintervals(&self) -> vec<vec<i32>> {\nself.intervals\n.iter()\n.map(|&(start, end)| vec![start, end])\n.collect()\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`use std::collections::btreeset;\n\nstruct summaryranges {\nintervals: btreeset&lt;(i32, i32)>,\n}\n\nimpl summaryranges {\nfn new() -&gt; self {\nsummaryranges {\nintervals: btreeset::new(),\n}\n}\n\nfn addnum(&mut self, value: i32) {\n// find the interval that ends just before value\nlet mut left_bound = value;\nlet mut right_bound = value;\n\n// check if value is already in an existing interval\nif let some(&(start, end)) = self.intervals.range(..(value, i32::max)).next_back() {\nif end &gt;= value {\nreturn; // value is already in an interval\n}\nif end + 1 == value {\nleft_bound = start;\nself.intervals.remove(&(start, end));\n}\n}\n\n// check if value can extend an interval to the right\nif let some(&(start, end)) = self.intervals.range((value, i32::min)..).next() {\nif start == value + 1 {\nright_bound = end;\nself.intervals.remove(&(start, end));\n}\n}\n\n// insert the new merged interval\nself.intervals.insert((left_bound, right_bound));\n}\n\nfn getintervals(&self) -&gt; vec<vec<i32>&gt; {\nself.intervals\n.iter()\n.map(|&(start, end)| vec![start, end])\n.collect()\n}\n}`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -67,7 +67,7 @@ export const datastreamasdisjointintervals: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">1. Data Structure Setup</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`use std::collections::btreeset;\n\nstruct summaryranges {\nintervals: btreeset<(i32, i32)>,\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`use std::collections::btreeset;\n\nstruct summaryranges {\nintervals: btreeset&lt;(i32, i32)>,\n}`}</code></pre>
         <p>we use btreeset for efficient interval management:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**btreeset**: maintains sorted order automatically</li>
@@ -77,7 +77,7 @@ export const datastreamasdisjointintervals: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. Constructor</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`impl summaryranges {\nfn new() -> self {\nsummaryranges {\nintervals: btreeset::new(),\n}\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`impl summaryranges {\nfn new() -&gt; self {\nsummaryranges {\nintervals: btreeset::new(),\n}\n}\n}`}</code></pre>
         <p>the constructor:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**initialize**: create empty btreeset</li>
@@ -87,7 +87,7 @@ export const datastreamasdisjointintervals: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Add Number Logic</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn addnum(&mut self, value: i32) {\nlet mut left = value;\nlet mut right = value;\n\n// find intervals that can be merged\nlet mut to_remove = vec![];\n\n// check for left neighbor\nif let some(&(start, end)) = self.intervals.range(..(value, i32::max)).next_back() {\nif end + 1 >= value {\nleft = start;\nto_remove.push((start, end));\n}\n}\n\n// check for right neighbor\nif let some(&(start, end)) = self.intervals.range((value, i32::min)..).next() {\nif start <= value + 1 {\nright = end;\nto_remove.push((start, end));\n}\n}\n\n// remove old intervals\nfor interval in to_remove {\nself.intervals.remove(&interval);\n}\n\n// insert new merged interval\nself.intervals.insert((left, right));\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn addnum(&mut self, value: i32) {\nlet mut left = value;\nlet mut right = value;\n\n// find intervals that can be merged\nlet mut to_remove = vec![];\n\n// check for left neighbor\nif let some(&(start, end)) = self.intervals.range(..(value, i32::max)).next_back() {\nif end + 1 &gt;= value {\nleft = start;\nto_remove.push((start, end));\n}\n}\n\n// check for right neighbor\nif let some(&(start, end)) = self.intervals.range((value, i32::min)..).next() {\nif start &lt;= value + 1 {\nright = end;\nto_remove.push((start, end));\n}\n}\n\n// remove old intervals\nfor interval in to_remove {\nself.intervals.remove(&interval);\n}\n\n// insert new merged interval\nself.intervals.insert((left, right));\n}`}</code></pre>
         <p>the add number function:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**initialization**: set left and right to value</li>
@@ -99,27 +99,27 @@ export const datastreamasdisjointintervals: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">4. Left Neighbor Check</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if let some(&(start, end)) = self.intervals.range(..(value, i32::max)).next_back() {\nif end + 1 >= value {\nleft = start;\nto_remove.push((start, end));\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if let some(&(start, end)) = self.intervals.range(..(value, i32::max)).next_back() {\nif end + 1 &gt;= value {\nleft = start;\nto_remove.push((start, end));\n}\n}`}</code></pre>
         <p>we check for left neighbor:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**range query**: find intervals ending before value</li>
-          <li>**overlap check**: end + 1 >= value means overlap</li>
+          <li>**overlap check**: end + 1 &gt;= value means overlap</li>
           <li>**merge preparation**: mark for removal and update left</li>
         </ul>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">5. Right Neighbor Check</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if let some(&(start, end)) = self.intervals.range((value, i32::min)..).next() {\nif start <= value + 1 {\nright = end;\nto_remove.push((start, end));\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if let some(&(start, end)) = self.intervals.range((value, i32::min)..).next() {\nif start &lt;= value + 1 {\nright = end;\nto_remove.push((start, end));\n}\n}`}</code></pre>
         <p>we check for right neighbor:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**range query**: find intervals starting after value</li>
-          <li>**overlap check**: start <= value + 1 means overlap</li>
+          <li>**overlap check**: start &lt;= value + 1 means overlap</li>
           <li>**merge preparation**: mark for removal and update right</li>
         </ul>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">6. Get Intervals Function</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn getintervals(&self) -> vec<vec<i32>> {\nself.intervals\n.iter()\n.map(|&(start, end)| vec![start, end])\n.collect()\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`fn getintervals(&self) -&gt; vec<vec<i32>&gt; {\nself.intervals\n.iter()\n.map(|&(start, end)| vec![start, end])\n.collect()\n}`}</code></pre>
         <p>the get intervals function:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**iteration**: iterate through sorted intervals</li>
