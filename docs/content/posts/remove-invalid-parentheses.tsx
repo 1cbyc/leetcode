@@ -14,8 +14,7 @@ export const removeinvalidparentheses: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 301: Remove Invalid Parentheses - Erlang BFS Solution" description: "Solving the Remove Invalid Parentheses problem using Erlang with BFS and pruning for minimum removals" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 301: Remove Invalid Parentheses</h3>
         <p>i recently solved the remove invalid parentheses problem on leetcode, and it's a great example of backtracking and string manipulation. this hard problem tests your understanding of recursive algorithms, string processing, and efficient search strategies.</p>
