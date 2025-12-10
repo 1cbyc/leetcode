@@ -56,7 +56,7 @@ export const reconstructitinerary: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`class solution {\nprivate $graph = [];\nprivate $result = [];\n\nfunction finditinerary($tickets) {\n// build adjacency list\nforeach ($tickets as $ticket) {\n$from = $ticket[0];\n$to = $ticket[1];\nif (!isset($this->graph[$from])) {\n$this->graph[$from] = [];\n}\n$this->graph[$from][] = $to;\n}\n\n// sort destinations for lexicographical order\nforeach ($this->graph as $from => &$destinations) {\nsort($destinations);\n}\n\n$this->dfs('jfk');\nreturn array_reverse($this->result);\n}\n\nprivate function dfs($airport) {\nwhile (isset($this->graph[$airport]) && !empty($this->graph[$airport])) {\n$next = array_shift($this->graph[$airport]);\n$this->dfs($next);\n}\n$this->result[] = $airport;\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`class solution {\nprivate $graph = [];\nprivate $result = [];\n\nfunction finditinerary($tickets) {\n// build adjacency list\nforeach ($tickets as $ticket) {\n$from = $ticket[0];\n$to = $ticket[1];\nif (!isset($this->graph[$from])) {\n$this->graph[$from] = [];\n}\n$this->graph[$from][] = $to;\n}\n\n// sort destinations for lexicographical order\nforeach ($this->graph as $from =&gt; &$destinations) {\nsort($destinations);\n}\n\n$this->dfs('jfk');\nreturn array_reverse($this->result);\n}\n\nprivate function dfs($airport) {\nwhile (isset($this->graph[$airport]) && !empty($this->graph[$airport])) {\n$next = array_shift($this->graph[$airport]);\n$this->dfs($next);\n}\n$this->result[] = $airport;\n}\n}`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -75,7 +75,7 @@ export const reconstructitinerary: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. Sorting for Lexicographical Order</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`foreach ($this->graph as $from => &$destinations) {\nsort($destinations);\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`foreach ($this->graph as $from =&gt; &$destinations) {\nsort($destinations);\n}`}</code></pre>
         <p>we sort destinations for each airport:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**reference operator**: &$destinations for direct modification</li>
@@ -120,7 +120,7 @@ export const reconstructitinerary: LeetCodePost = {
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Example Walkthrough</h3>
         <p>let's trace through the example: [["jfk","sfo"],["jfk","atl"],["sfo","atl"],["atl","jfk"],["atl","sfo"]]</p>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`step 1: build graph\njfk -> [atl, sfo]  (sorted)\nsfo -> [atl]\natl -> [jfk, sfo]  (sorted)\n\nstep 2: dfs from jfk\n- choose atl (lexicographically smaller)\n- dfs from atl: choose jfk\n- dfs from jfk: choose sfo\n- dfs from sfo: choose atl\n- dfs from atl: no more destinations\n\nstep 3: build result (reverse order)\nresult = [sfo, atl, sfo, jfk, atl, jfk]\nreversed = [jfk, atl, jfk, sfo, atl, sfo]`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`step 1: build graph\njfk -&gt; [atl, sfo]  (sorted)\nsfo -&gt; [atl]\natl -&gt; [jfk, sfo]  (sorted)\n\nstep 2: dfs from jfk\n- choose atl (lexicographically smaller)\n- dfs from atl: choose jfk\n- dfs from jfk: choose sfo\n- dfs from sfo: choose atl\n- dfs from atl: no more destinations\n\nstep 3: build result (reverse order)\nresult = [sfo, atl, sfo, jfk, atl, jfk]\nreversed = [jfk, atl, jfk, sfo, atl, sfo]`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Time and Space Complexity</h3>
