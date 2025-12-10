@@ -14,8 +14,7 @@ export const myleetcodejourney: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "My LeetCode Journey - 314+ Problems Solved" description: "A comprehensive overview of my LeetCode problem-solving journey, achievements, and solutions" date: "2025-02-30" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My LeetCode Journey - 314+ Problems Solved</h3>
         <p>i've been solving leetcode problems for quite some time now, and i'm excited to share my journey with you. as of now, i've solved <strong>314+ problems</strong> across various difficulty levels and categories. this post is a comprehensive overview of my leetcode experience, achievements, and approach to problem-solving.</p>
