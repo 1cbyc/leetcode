@@ -14,8 +14,7 @@ export const trappingrainwater: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 42: Trapping Rain Water - Two Pointers" description: "Solving the Trapping Rain Water problem using two pointers" date: "2024-10-05" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 42: Trapping Rain Water</h3>
         <p>i recently solved the trapping rain water problem on leetcode, and it's a great example of array, two pointers techniques. this hard problem tests your understanding of array, two pointers.</p>
