@@ -14,8 +14,7 @@ export const datastreamasdisjointintervals: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 352: Data Stream as Disjoint Intervals - Rust BTreeSet Solution" description: "Solving the Data Stream as Disjoint Intervals problem using Rust with BTreeSet for efficient interval management" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 352: Data Stream as Disjoint Intervals</h3>
         <p>i recently solved the data stream as disjoint intervals problem on leetcode, and it's a great example of data structure design and interval management. this hard problem tests your understanding of efficient interval operations, data structure selection, and rust's ownership system.</p>
