@@ -1,6 +1,6 @@
 import { LeetCodePost } from "./types";
 
-export const medianoftwosortedarrays: LeetCodePost = {
+export const medianOfTwoSortedArrays: LeetCodePost = {
   slug: "median-of-two-sorted-arrays",
   title: "median of two sorted arrays",
   summary: "median of two sorted arrays",
