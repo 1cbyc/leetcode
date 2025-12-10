@@ -14,8 +14,7 @@ export const integertoenglishwords: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 273: Integer to English Words - Python Recursive Approach" description: "Solving the Integer to English Words problem using Python with recursive helper functions" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 273: Integer to English Words</h3>
         <p>i recently solved the integer to english words problem on leetcode, and it's a great example of string manipulation and recursive programming. this hard problem tests your understanding of number systems, string building, and systematic problem decomposition.</p>
