@@ -22,9 +22,9 @@ export const candy: LeetCodePost = {
     <article className="space-y-6">
       <section className="space-y-3">
         <p>
-          first pass left to right: if rating[i] > rating[i-1], give one more
-          candy than previous. second pass right to left: if rating[i] >
-          rating[i+1], ensure we have more than next.
+          first pass left to right: if rating[i] &gt; rating[i-1], give one
+          more candy than previous. second pass right to left: if rating[i]
+          &gt; rating[i+1], ensure we have more than next.
         </p>
         <p>
           take maximum of both passes to satisfy both left and right constraints.
