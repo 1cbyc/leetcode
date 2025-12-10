@@ -14,8 +14,7 @@ export const mergeksortedlists: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 23: Merge k Sorted Lists - Min Heap" description: "Solving the Merge k Sorted Lists problem using min heap" date: "2024-10-18" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 23: Merge k Sorted Lists</h3>
         <p>i recently solved the merge k sorted lists problem on leetcode, and it's a great example of linked list, heap techniques. this hard problem tests your understanding of linked list, heap.</p>
