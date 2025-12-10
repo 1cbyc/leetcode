@@ -14,8 +14,7 @@ export const addTwoNumbers: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 2: Add Two Numbers - Linked List Manipulation" description: "Solving the Add Two Numbers problem using linked list traversal and carry handling" date: "2024-11-12" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 2: Add Two Numbers</h3>
         <p>i recently solved the add two numbers problem on leetcode, and it's a great example of linked list manipulation and digit-by-digit arithmetic. this problem tests your understanding of linked lists, carry handling, and edge cases.</p>
