@@ -14,8 +14,7 @@ export const rotateimage: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 48: Rotate Image - Transpose + Reverse" description: "Solving the Rotate Image problem using transpose + reverse" date: "2024-10-01" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 48: Rotate Image</h3>
         <p>i recently solved the rotate image problem on leetcode, and it's a great example of array techniques. this medium problem tests your understanding of array.</p>
