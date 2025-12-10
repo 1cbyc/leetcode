@@ -58,7 +58,7 @@ export const patchingarray: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`class solution:\ndef minpatches(self, nums: list[int], n: int) -> int:\npatches = 0\nreachable = 0  # maximum achievable sum\ni = 0\n\nwhile reachable < n:\n# if we can use the current number from array\nif i < len(nums) and nums[i] <= reachable + 1:\nreachable += nums[i]\ni += 1\nelse:\n# add the smallest missing number (reachable + 1)\nreachable += reachable + 1\npatches += 1\n\nreturn patches`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`class solution:\ndef minpatches(self, nums: list[int], n: int) -&gt; int:\npatches = 0\nreachable = 0  # maximum achievable sum\ni = 0\n\nwhile reachable &lt; n:\n# if we can use the current number from array\nif i &lt; len(nums) and nums[i] &lt;= reachable + 1:\nreachable += nums[i]\ni += 1\nelse:\n# add the smallest missing number (reachable + 1)\nreachable += reachable + 1\npatches += 1\n\nreturn patches`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -76,20 +76,20 @@ export const patchingarray: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. Main Loop</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`while reachable < n:\n# process array elements or add patches`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`while reachable &lt; n:\n# process array elements or add patches`}</code></pre>
         <p>the main loop continues until we can reach the target number n:</p>
         <ul className="list-disc space-y-2 pl-5">
-          <li>**condition**: reachable < n</li>
+          <li>**condition**: reachable &lt; n</li>
           <li>**goal**: extend reachable range to cover n</li>
         </ul>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Array Element Processing</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if i < len(nums) and nums[i] <= reachable + 1:\nreachable += nums[i]\ni += 1`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if i &lt; len(nums) and nums[i] &lt;= reachable + 1:\nreachable += nums[i]\ni += 1`}</code></pre>
         <p>we process array elements when possible:</p>
         <ul className="list-disc space-y-2 pl-5">
-          <li>**boundary check**: i < len(nums)</li>
-          <li>**usability check**: nums[i] <= reachable + 1</li>
+          <li>**boundary check**: i &lt; len(nums)</li>
+          <li>**usability check**: nums[i] &lt;= reachable + 1</li>
           <li>**range extension**: add the element to reachable sum</li>
           <li>**index increment**: move to next array element</li>
         </ul>
@@ -117,7 +117,7 @@ export const patchingarray: LeetCodePost = {
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Example Walkthrough</h3>
         <p>let's trace through the example: nums = [1,3], n = 6</p>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`initial state:\n- reachable = 0, patches = 0, i = 0\n\nstep 1: reachable = 0, nums[0] = 1\n- condition: 1 <= 0 + 1 (true)\n- use 1: reachable = 1, i = 1\n\nstep 2: reachable = 1, nums[1] = 3\n- condition: 3 <= 1 + 1 (false)\n- add patch: reachable = 1 + 1 = 2, patches = 1\n\nstep 3: reachable = 2, nums[1] = 3\n- condition: 3 <= 2 + 1 (true)\n- use 3: reachable = 2 + 3 = 5, i = 2\n\nstep 4: reachable = 5, i = 2 (end of array)\n- condition: 5 < 6 (true)\n- add patch: reachable = 5 + 5 + 1 = 11, patches = 2\n\nresult: 1 patch (we can reach 6 without the second patch)`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`initial state:\n- reachable = 0, patches = 0, i = 0\n\nstep 1: reachable = 0, nums[0] = 1\n- condition: 1 &lt;= 0 + 1 (true)\n- use 1: reachable = 1, i = 1\n\nstep 2: reachable = 1, nums[1] = 3\n- condition: 3 &lt;= 1 + 1 (false)\n- add patch: reachable = 1 + 1 = 2, patches = 1\n\nstep 3: reachable = 2, nums[1] = 3\n- condition: 3 &lt;= 2 + 1 (true)\n- use 3: reachable = 2 + 3 = 5, i = 2\n\nstep 4: reachable = 5, i = 2 (end of array)\n- condition: 5 &lt; 6 (true)\n- add patch: reachable = 5 + 5 + 1 = 11, patches = 2\n\nresult: 1 patch (we can reach 6 without the second patch)`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Time and Space Complexity</h3>
@@ -180,7 +180,7 @@ export const patchingarray: LeetCodePost = {
           <li>**type hints** - list[int] for better code clarity</li>
           <li>**class methods** - object-oriented approach</li>
           <li>**list operations** - len(), indexing for array access</li>
-          <li>**comparison operators** - <= for boundary checking</li>
+          <li>**comparison operators** - &lt;= for boundary checking</li>
           <li>**increment operators** - += for efficient updates</li>
         </ul>
       </section>
