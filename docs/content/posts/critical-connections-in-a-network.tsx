@@ -48,12 +48,12 @@ export const criticalconnectionsinanetwork: LeetCodePost = {
           <li>**build adjacency list** - create graph representation</li>
           <li>**dfs traversal** - perform depth-first search with discovery times</li>
           <li>**track lowest reachable** - maintain lowest discovery time reachable from each node</li>
-          <li>**detect bridges** - identify edges where low[v] > disc[u]</li>
+          <li>**detect bridges** - identify edges where low[v] &gt; disc[u]</li>
         </ul>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function criticalConnections(n: number, connections: number[][]): number[][] {\n// build adjacency list\nconst graph: number[][] = Array.from({ length: n }, () => []);\nfor (const [u, v] of connections) {\ngraph[u].push(v);\ngraph[v].push(u);\n}\n\nconst result: number[][] = [];\nconst disc: number[] = new Array(n).fill(-1);  // discovery times\nconst low: number[] = new Array(n).fill(-1);   // lowest reachable times\nlet time = 0;\n\nfunction dfs(u: number, parent: number): void {\ndisc[u] = low[u] = time++;\n\nfor (const v of graph[u]) {\nif (v === parent) continue; // skip parent to avoid back edge\n\nif (disc[v] === -1) {\n// v is not visited, recur for it\ndfs(v, u);\n\n// check if the subtree rooted with v has a connection\n// to one of the ancestors of u\nlow[u] = Math.min(low[u], low[v]);\n\n// if the lowest vertex reachable from subtree under v\n// is below u in dfs tree, then u-v is a bridge\nif (low[v] > disc[u]) {\nresult.push([u, v]);\n}\n} else {\n// update low value of u for parent function calls\nlow[u] = Math.min(low[u], disc[v]);\n}\n}\n}\n\n// find all bridges using dfs\nfor (let i = 0; i < n; i++) {\nif (disc[i] === -1) {\ndfs(i, -1);\n}\n}\n\nreturn result;\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function criticalConnections(n: number, connections: number[][]): number[][] {\n// build adjacency list\nconst graph: number[][] = Array.from({ length: n }, () =&gt; []);\nfor (const [u, v] of connections) {\ngraph[u].push(v);\ngraph[v].push(u);\n}\n\nconst result: number[][] = [];\nconst disc: number[] = new Array(n).fill(-1);  // discovery times\nconst low: number[] = new Array(n).fill(-1);   // lowest reachable times\nlet time = 0;\n\nfunction dfs(u: number, parent: number): void {\ndisc[u] = low[u] = time++;\n\nfor (const v of graph[u]) {\nif (v === parent) continue; // skip parent to avoid back edge\n\nif (disc[v] === -1) {\n// v is not visited, recur for it\ndfs(v, u);\n\n// check if the subtree rooted with v has a connection\n// to one of the ancestors of u\nlow[u] = Math.min(low[u], low[v]);\n\n// if the lowest vertex reachable from subtree under v\n// is below u in dfs tree, then u-v is a bridge\nif (low[v] &gt; disc[u]) {\nresult.push([u, v]);\n}\n} else {\n// update low value of u for parent function calls\nlow[u] = Math.min(low[u], disc[v]);\n}\n}\n}\n\n// find all bridges using dfs\nfor (let i = 0; i &lt; n; i++) {\nif (disc[i] === -1) {\ndfs(i, -1);\n}\n}\n\nreturn result;\n}`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -61,7 +61,7 @@ export const criticalconnectionsinanetwork: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">1. Graph Construction</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`const graph: number[][] = Array.from({ length: n }, () => []);\nfor (const [u, v] of connections) {\ngraph[u].push(v);\ngraph[v].push(u);\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`const graph: number[][] = Array.from({ length: n }, () =&gt; []);\nfor (const [u, v] of connections) {\ngraph[u].push(v);\ngraph[v].push(u);\n}`}</code></pre>
         <p>we build an adjacency list representation of the undirected graph. each node maintains a list of its neighbors.</p>
       </section>
       <section className="space-y-3">
@@ -75,13 +75,13 @@ export const criticalconnectionsinanetwork: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Bridge Detection Logic</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if (low[v] > disc[u]) {\nresult.push([u, v]);\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if (low[v] &gt; disc[u]) {\nresult.push([u, v]);\n}`}</code></pre>
         <p>this is the key insight: an edge (u,v) is a bridge if the subtree rooted at v cannot reach any ancestor of u. this means removing the edge would disconnect the graph.</p>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Example Walkthrough</h3>
         <p>let's trace through the example: n = 4, connections = [[0,1],[1,2],[2,0],[1,3]]</p>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`step 1: start dfs from node 0\n- disc[0] = low[0] = 0\n\nstep 2: visit node 1 (neighbor of 0)\n- disc[1] = low[1] = 1\n\nstep 3: visit node 2 (neighbor of 1)\n- disc[2] = low[2] = 2\n\nstep 4: node 2 connects back to 0 (back edge)\n- low[2] = min(low[2], disc[0]) = min(2, 0) = 0\n\nstep 5: backtrack to node 1\n- low[1] = min(low[1], low[2]) = min(1, 0) = 0\n\nstep 6: visit node 3 (neighbor of 1)\n- disc[3] = low[3] = 3\n\nstep 7: check edge (1,3)\n- low[3] = 3 > disc[1] = 1, so (1,3) is a bridge\n\nresult: [[1,3]]`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`step 1: start dfs from node 0\n- disc[0] = low[0] = 0\n\nstep 2: visit node 1 (neighbor of 0)\n- disc[1] = low[1] = 1\n\nstep 3: visit node 2 (neighbor of 1)\n- disc[2] = low[2] = 2\n\nstep 4: node 2 connects back to 0 (back edge)\n- low[2] = min(low[2], disc[0]) = min(2, 0) = 0\n\nstep 5: backtrack to node 1\n- low[1] = min(low[1], low[2]) = min(1, 0) = 0\n\nstep 6: visit node 3 (neighbor of 1)\n- disc[3] = low[3] = 3\n\nstep 7: check edge (1,3)\n- low[3] = 3 &gt; disc[1] = 1, so (1,3) is a bridge\n\nresult: [[1,3]]`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Time and Space Complexity</h3>
