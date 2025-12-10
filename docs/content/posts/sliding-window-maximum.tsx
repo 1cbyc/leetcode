@@ -52,7 +52,7 @@ export const slidingwindowmaximum: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function maxslidingwindow(nums: number[], k: number): number[] {\nconst result: number[] = [];\nconst deque: number[] = []; // stores indices\n\nfor (let i = 0; i < nums.length; i++) {\n// remove elements outside the current window\nwhile (deque.length > 0 && deque[0] <= i - k) {\ndeque.shift();\n}\n\n// remove smaller elements from the back\n// they can't be maximum in any future window\nwhile (deque.length > 0 && nums[deque[deque.length - 1]] <= nums[i]) {\ndeque.pop();\n}\n\n// add current element\ndeque.push(i);\n\n// add maximum to result when window is complete\nif (i >= k - 1) {\nresult.push(nums[deque[0]]);\n}\n}\n\nreturn result;\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function maxslidingwindow(nums: number[], k: number): number[] {\nconst result: number[] = [];\nconst deque: number[] = []; // stores indices\n\nfor (let i = 0; i &lt; nums.length; i++) {\n// remove elements outside the current window\nwhile (deque.length &gt; 0 && deque[0] &lt;= i - k) {\ndeque.shift();\n}\n\n// remove smaller elements from the back\n// they can't be maximum in any future window\nwhile (deque.length &gt; 0 && nums[deque[deque.length - 1]] &lt;= nums[i]) {\ndeque.pop();\n}\n\n// add current element\ndeque.push(i);\n\n// add maximum to result when window is complete\nif (i &gt;= k - 1) {\nresult.push(nums[deque[0]]);\n}\n}\n\nreturn result;\n}`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -70,12 +70,12 @@ export const slidingwindowmaximum: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. Window Boundary Management</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`while (deque.length > 0 && deque[0] <= i - k) {\ndeque.shift();\n}`}</code></pre>
-        <p>we remove elements that are outside the current window (indices <= i-k). this ensures our deque only contains elements from the current window.</p>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`while (deque.length &gt; 0 && deque[0] &lt;= i - k) {\ndeque.shift();\n}`}</code></pre>
+        <p>we remove elements that are outside the current window (indices &lt;= i-k). this ensures our deque only contains elements from the current window.</p>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">3. Monotonic Property Maintenance</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`while (deque.length > 0 && nums[deque[deque.length - 1]] <= nums[i]) {\ndeque.pop();\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`while (deque.length &gt; 0 && nums[deque[deque.length - 1]] &lt;= nums[i]) {\ndeque.pop();\n}`}</code></pre>
         <p>we remove smaller elements from the back of the deque because:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>they can't be maximum in the current window</li>
@@ -85,8 +85,8 @@ export const slidingwindowmaximum: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">4. Maximum Extraction</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if (i >= k - 1) {\nresult.push(nums[deque[0]]);\n}`}</code></pre>
-        <p>once the window is complete (i >= k-1), the front of the deque contains the maximum element for the current window.</p>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`if (i &gt;= k - 1) {\nresult.push(nums[deque[0]]);\n}`}</code></pre>
+        <p>once the window is complete (i &gt;= k-1), the front of the deque contains the maximum element for the current window.</p>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Example Walkthrough</h3>
@@ -138,7 +138,7 @@ export const slidingwindowmaximum: LeetCodePost = {
         <ul className="list-disc space-y-2 pl-5">
           <li>**k = 1** - each element is its own maximum</li>
           <li>**k = n** - entire array is one window</li>
-          <li>**k > n** - invalid input, should handle gracefully</li>
+          <li>**k &gt; n** - invalid input, should handle gracefully</li>
           <li>**duplicate elements** - algorithm handles duplicates correctly</li>
           <li>**all same elements** - deque maintains all indices</li>
         </ul>
