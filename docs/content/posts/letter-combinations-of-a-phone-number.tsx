@@ -1,6 +1,6 @@
 import { LeetCodePost } from "./types";
 
-export const lettercombinationsofaphonenumber: LeetCodePost = {
+export const letterCombinationsOfAPhoneNumber: LeetCodePost = {
   slug: "letter-combinations-of-a-phone-number",
   title: "letter combinations of a phone number",
   summary: "letter combinations of a phone number",
