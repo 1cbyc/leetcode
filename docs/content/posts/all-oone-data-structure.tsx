@@ -14,8 +14,7 @@ export const alloonedatastructure: LeetCodePost = {
   body: () => (
     <article className="space-y-6">
       <section className="space-y-3">
-        <p>--- title: "LeetCode 432: All O'one Data Structure - C Hash Table and Doubly Linked List Solution" description: "Solving the All O'one Data Structure problem using C with hash table and doubly linked list" date: "2025-01-27" draft: false ---</p>
-      </section>
+</section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">LeetCode 432: All O'one Data Structure</h3>
         <p>i recently solved the all o'one data structure problem on leetcode, and it's a great example of complex data structure design and efficient algorithms. this hard problem tests your understanding of hash tables, linked lists, and memory management in c.</p>
