@@ -50,13 +50,13 @@ export const arithmeticslicesiisubsequence: LeetCodePost = {
           <li>**hash map tracking** - use map to track subsequences by common difference</li>
           <li>**state definition** - dp[i][diff] = number of arithmetic subsequences ending at i with difference diff</li>
           <li>**transition** - for each pair (i, j), calculate diff and update counts</li>
-          <li>**counting** - count all valid subsequences of length >= 3</li>
+          <li>**counting** - count all valid subsequences of length &gt;= 3</li>
           <li>**optimization** - use map for efficient diff tracking</li>
         </ul>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">My Solution</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function numberOfArithmeticSlices(nums: number[]): number {\nconst n = nums.length;\nif (n < 3) return 0;\n\n// dp[i][diff] = number of arithmetic subsequences ending at i with difference diff\nconst dp: Map<number, number>[] = Array(n).fill(null).map(() => new Map());\nlet result = 0;\n\nfor (let i = 1; i < n; i++) {\nfor (let j = 0; j < i; j++) {\nconst diff = nums[i] - nums[j];\n\n// get count of subsequences ending at j with difference diff\nconst prevCount = dp[j].get(diff) || 0;\n\n// add new subsequences ending at i\nconst currentCount = dp[i].get(diff) || 0;\ndp[i].set(diff, currentCount + prevCount + 1);\n\n// add to result if we have at least 3 elements\nresult += prevCount;\n}\n}\n\nreturn result;\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`function numberOfArithmeticSlices(nums: number[]): number {\nconst n = nums.length;\nif (n &lt; 3) return 0;\n\n// dp[i][diff] = number of arithmetic subsequences ending at i with difference diff\nconst dp: Map<number, number>[] = Array(n).fill(null).map(() =&gt; new Map());\nlet result = 0;\n\nfor (let i = 1; i &lt; n; i++) {\nfor (let j = 0; j &lt; i; j++) {\nconst diff = nums[i] - nums[j];\n\n// get count of subsequences ending at j with difference diff\nconst prevCount = dp[j].get(diff) || 0;\n\n// add new subsequences ending at i\nconst currentCount = dp[i].get(diff) || 0;\ndp[i].set(diff, currentCount + prevCount + 1);\n\n// add to result if we have at least 3 elements\nresult += prevCount;\n}\n}\n\nreturn result;\n}`}</code></pre>
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">Code Breakdown</h3>
@@ -64,7 +64,7 @@ export const arithmeticslicesiisubsequence: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">1. Initialization</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`const n = nums.length;\nif (n < 3) return 0;\n\nconst dp: Map<number, number>[] = Array(n).fill(null).map(() => new Map());\nlet result = 0;`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`const n = nums.length;\nif (n &lt; 3) return 0;\n\nconst dp: Map<number, number>[] = Array(n).fill(null).map(() =&gt; new Map());\nlet result = 0;`}</code></pre>
         <p>we initialize:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**array length check**: return 0 if less than 3 elements</li>
@@ -74,7 +74,7 @@ export const arithmeticslicesiisubsequence: LeetCodePost = {
       </section>
       <section className="space-y-3">
         <h3 className="text-lg font-semibold">2. Dynamic Programming Loop</h3>
-        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for (let i = 1; i < n; i++) {\nfor (let j = 0; j < i; j++) {\nconst diff = nums[i] - nums[j];\n\nconst prevCount = dp[j].get(diff) || 0;\nconst currentCount = dp[i].get(diff) || 0;\ndp[i].set(diff, currentCount + prevCount + 1);\n\nresult += prevCount;\n}\n}`}</code></pre>
+        <pre className="bg-gray-100 p-4 rounded overflow-x-auto"><code>{`for (let i = 1; i &lt; n; i++) {\nfor (let j = 0; j &lt; i; j++) {\nconst diff = nums[i] - nums[j];\n\nconst prevCount = dp[j].get(diff) || 0;\nconst currentCount = dp[i].get(diff) || 0;\ndp[i].set(diff, currentCount + prevCount + 1);\n\nresult += prevCount;\n}\n}`}</code></pre>
         <p>the main logic:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>**outer loop**: iterate through each position i</li>
@@ -93,7 +93,7 @@ export const arithmeticslicesiisubsequence: LeetCodePost = {
           <li>**prevCount**: number of subsequences ending at j with difference diff</li>
           <li>**currentCount**: existing count at position i for this difference</li>
           <li>**new count**: prevCount + currentCount + 1 (the +1 is for the new pair [j, i])</li>
-          <li>**result addition**: add prevCount to result (these are valid subsequences of length >= 3)</li>
+          <li>**result addition**: add prevCount to result (these are valid subsequences of length &gt;= 3)</li>
         </ul>
       </section>
       <section className="space-y-3">
@@ -122,7 +122,7 @@ export const arithmeticslicesiisubsequence: LeetCodePost = {
           <li>**hash map optimization** - efficient storage and lookup of differences</li>
           <li>**state definition** - dp[i][diff] tracks subsequences ending at i with difference diff</li>
           <li>**transition logic** - build new subsequences from existing ones</li>
-          <li>**counting strategy** - count valid subsequences of length >= 3</li>
+          <li>**counting strategy** - count valid subsequences of length &gt;= 3</li>
         </ul>
       </section>
       <section className="space-y-3">
