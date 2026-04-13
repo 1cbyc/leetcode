@@ -1,14 +1,4 @@
 def isSubsequence(s, t):
-    """
-    Check if s is a subsequence of t.
-
-    Args:
-        s: str - potential subsequence
-        t: str - string to check against
-
-    Returns:
-        bool - true if s is a subsequence of t
-    """
     s_idx = 0
 
     for char in t:
