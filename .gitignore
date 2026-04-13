@@ -197,3 +197,9 @@ docs/out/
 !1-easy/
 !1-easy/problems/
 !1-easy/problems/**
+
+# Local medium-problem build sources and reports
+2-medium/*
+!2-medium/
+!2-medium/problems/
+!2-medium/problems/**
