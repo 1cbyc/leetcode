@@ -1,13 +1,4 @@
 def fizzBuzz(n):
-    """
-    Return a list of fizz buzz results.
-
-    Args:
-        n: int - upper bound (inclusive)
-
-    Returns:
-        List[str] - fizz buzz result
-    """
     result = []
 
     for i in range(1, n + 1):
