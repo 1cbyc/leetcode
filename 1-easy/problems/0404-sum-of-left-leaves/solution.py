@@ -1,13 +1,4 @@
 def sumOfLeftLeaves(root):
-    """
-    Sum all left leaf nodes in a binary tree.
-
-    Args:
-        root: TreeNode - root of the binary tree
-
-    Returns:
-        int - sum of all left leaves
-    """
     def dfs(node, is_left):
         if not node:
             return 0
