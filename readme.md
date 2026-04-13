@@ -8,3 +8,5 @@ Well, how else can i show algorithimic strength without doing this?
 
 but it seem like i will start doing so. very hectic work, but i should.
 i just want to build stuffs that makes financial services sweeter.
+
+shit! it's been 19 months i did stuff on this, maybe it is time i pushed all my solutions on easy problems to the public then.
