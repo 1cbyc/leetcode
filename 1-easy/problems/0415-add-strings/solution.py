@@ -1,14 +1,4 @@
 def addStrings(num1, num2):
-    """
-    Add two non-negative integer strings.
-
-    Args:
-        num1: str - first number as string
-        num2: str - second number as string
-
-    Returns:
-        str - sum as string
-    """
     result = []
     carry = 0
     i, j = len(num1) - 1, len(num2) - 1
