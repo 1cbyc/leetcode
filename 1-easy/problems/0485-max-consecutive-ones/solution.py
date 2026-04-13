@@ -1,13 +1,4 @@
 def findMaxConsecutiveOnes(nums):
-    """
-    Find the maximum number of consecutive 1s in an array.
-
-    Args:
-        nums: List[int] - array of 0s and 1s
-
-    Returns:
-        int - maximum consecutive 1s
-    """
     max_count = 0
     current_count = 0
 
