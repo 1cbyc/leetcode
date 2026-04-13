@@ -193,6 +193,7 @@ docs/.vercel/
 docs/out/
 
 # Local easy-problem build sources and reports
-easy/*
-!easy/problems/
-!easy/problems/**
+1-easy/*
+!1-easy/
+!1-easy/problems/
+!1-easy/problems/**
