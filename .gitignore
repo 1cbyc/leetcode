@@ -191,5 +191,8 @@ docs/.next/
 docs/node_modules/
 docs/.vercel/
 docs/out/
-easy/README.md
-easy/EXPORT_SUMMARY.md
+
+# Local easy-problem build sources and reports
+easy/*
+!easy/problems/
+!easy/problems/**
