@@ -1,13 +1,4 @@
 def findWords(words):
-    """
-    Find words that can be typed using letters from one row on keyboard.
-
-    Args:
-        words: List[str] - list of words
-
-    Returns:
-        List[str] - words that use one keyboard row
-    """
     rows = [
         set('qwertyuiop'),
         set('asdfghjkl'),
