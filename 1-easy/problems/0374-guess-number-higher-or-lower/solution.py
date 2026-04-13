@@ -1,14 +1,4 @@
 def guessNumber(n):
-    """
-    Binary search to find the guessed number.
-    Uses the guess(x) API function provided by LeetCode.
-
-    Args:
-        n: int - upper bound of range
-
-    Returns:
-        int - the guessed number
-    """
     left, right = 1, n
 
     while left <= right:
