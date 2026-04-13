@@ -191,3 +191,5 @@ docs/.next/
 docs/node_modules/
 docs/.vercel/
 docs/out/
+easy/README.md
+easy/EXPORT_SUMMARY.md
