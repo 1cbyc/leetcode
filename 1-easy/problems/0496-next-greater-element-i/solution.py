@@ -1,14 +1,4 @@
 def nextGreaterElement(nums1, nums2):
-    """
-    Find next greater element for each element in nums1.
-
-    Args:
-        nums1: List[int] - subset array
-        nums2: List[int] - parent array
-
-    Returns:
-        List[int] - next greater elements (-1 if none)
-    """
     next_greater = {}
     stack = []
 
