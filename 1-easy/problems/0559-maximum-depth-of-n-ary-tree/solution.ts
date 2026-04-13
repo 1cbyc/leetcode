@@ -1,15 +1,3 @@
-/**
- * Definition for _Node.
- * class _Node {
- *     val: number
- *     children: _Node[]
- *     constructor(val?: number) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.children = []
- *     }
- * }
- */
-
 function maxDepth(root: _Node | null): number {
     if (!root) {
         return 0;
