@@ -1,13 +1,4 @@
 def reverseVowels(s):
-    """
-    Reverse only the vowels in a string.
-
-    Args:
-        s: str - input string
-
-    Returns:
-        str - string with vowels reversed
-    """
     vowels = set('aeiouAEIOU')
     s_list = list(s)
     left, right = 0, len(s_list) - 1
