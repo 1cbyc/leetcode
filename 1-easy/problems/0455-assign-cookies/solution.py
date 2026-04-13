@@ -1,14 +1,4 @@
 def findContentChildren(g, s):
-    """
-    Assign cookies to maximize content children.
-
-    Args:
-        g: List[int] - greed factors of children
-        s: List[int] - sizes of cookies
-
-    Returns:
-        int - number of content children
-    """
     g.sort()
     s.sort()
 
