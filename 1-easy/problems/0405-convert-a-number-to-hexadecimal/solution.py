@@ -1,13 +1,4 @@
 def toHex(num):
-    """
-    Convert an integer to its hexadecimal representation.
-
-    Args:
-        num: int - the number to convert
-
-    Returns:
-        str - hexadecimal representation
-    """
     if num == 0:
         return "0"
 
