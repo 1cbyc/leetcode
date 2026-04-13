@@ -1,13 +1,4 @@
 def isPerfectSquare(num):
-    """
-    Determine if a number is a perfect square.
-
-    Args:
-        num: int - the number to check
-
-    Returns:
-        bool - true if num is a perfect square
-    """
     if num < 1:
         return False
 
