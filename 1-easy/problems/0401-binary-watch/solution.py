@@ -1,13 +1,4 @@
 def readBinaryWatch(num):
-    """
-    Display times on a binary watch based on number of lit LEDs.
-
-    Args:
-        num: int - number of lit LEDs
-
-    Returns:
-        List[str] - all possible times
-    """
     result = []
 
     for h in range(12):
