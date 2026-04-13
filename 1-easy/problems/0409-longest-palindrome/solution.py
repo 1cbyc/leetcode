@@ -1,13 +1,4 @@
 def longestPalindrome(s):
-    """
-    Find the length of the longest palindrome that can be built.
-
-    Args:
-        s: str - input string
-
-    Returns:
-        int - length of longest palindrome
-    """
     from collections import Counter
 
     char_count = Counter(s)
