@@ -1,0 +1,611 @@
+{
+  "generated_on": "2026-04-13",
+  "solved_in_repo": 119,
+  "public_easy_total": 808,
+  "remaining_supported_total": 600,
+  "remaining_unsupported_total": 94,
+  "next_supported": [
+    {
+      "id": 589,
+      "title": "N-ary Tree Preorder Traversal",
+      "slug": "n-ary-tree-preorder-traversal",
+      "url": "https://leetcode.com/problems/n-ary-tree-preorder-traversal/"
+    },
+    {
+      "id": 590,
+      "title": "N-ary Tree Postorder Traversal",
+      "slug": "n-ary-tree-postorder-traversal",
+      "url": "https://leetcode.com/problems/n-ary-tree-postorder-traversal/"
+    },
+    {
+      "id": 594,
+      "title": "Longest Harmonious Subsequence",
+      "slug": "longest-harmonious-subsequence",
+      "url": "https://leetcode.com/problems/longest-harmonious-subsequence/"
+    },
+    {
+      "id": 598,
+      "title": "Range Addition II",
+      "slug": "range-addition-ii",
+      "url": "https://leetcode.com/problems/range-addition-ii/"
+    },
+    {
+      "id": 599,
+      "title": "Minimum Index Sum of Two Lists",
+      "slug": "minimum-index-sum-of-two-lists",
+      "url": "https://leetcode.com/problems/minimum-index-sum-of-two-lists/"
+    },
+    {
+      "id": 605,
+      "title": "Can Place Flowers",
+      "slug": "can-place-flowers",
+      "url": "https://leetcode.com/problems/can-place-flowers/"
+    },
+    {
+      "id": 617,
+      "title": "Merge Two Binary Trees",
+      "slug": "merge-two-binary-trees",
+      "url": "https://leetcode.com/problems/merge-two-binary-trees/"
+    },
+    {
+      "id": 628,
+      "title": "Maximum Product of Three Numbers",
+      "slug": "maximum-product-of-three-numbers",
+      "url": "https://leetcode.com/problems/maximum-product-of-three-numbers/"
+    },
+    {
+      "id": 637,
+      "title": "Average of Levels in Binary Tree",
+      "slug": "average-of-levels-in-binary-tree",
+      "url": "https://leetcode.com/problems/average-of-levels-in-binary-tree/"
+    },
+    {
+      "id": 643,
+      "title": "Maximum Average Subarray I",
+      "slug": "maximum-average-subarray-i",
+      "url": "https://leetcode.com/problems/maximum-average-subarray-i/"
+    },
+    {
+      "id": 645,
+      "title": "Set Mismatch",
+      "slug": "set-mismatch",
+      "url": "https://leetcode.com/problems/set-mismatch/"
+    },
+    {
+      "id": 653,
+      "title": "Two Sum IV - Input is a BST",
+      "slug": "two-sum-iv-input-is-a-bst",
+      "url": "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/"
+    },
+    {
+      "id": 657,
+      "title": "Robot Return to Origin",
+      "slug": "robot-return-to-origin",
+      "url": "https://leetcode.com/problems/robot-return-to-origin/"
+    },
+    {
+      "id": 661,
+      "title": "Image Smoother",
+      "slug": "image-smoother",
+      "url": "https://leetcode.com/problems/image-smoother/"
+    },
+    {
+      "id": 671,
+      "title": "Second Minimum Node In a Binary Tree",
+      "slug": "second-minimum-node-in-a-binary-tree",
+      "url": "https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/"
+    },
+    {
+      "id": 674,
+      "title": "Longest Continuous Increasing Subsequence",
+      "slug": "longest-continuous-increasing-subsequence",
+      "url": "https://leetcode.com/problems/longest-continuous-increasing-subsequence/"
+    },
+    {
+      "id": 680,
+      "title": "Valid Palindrome II",
+      "slug": "valid-palindrome-ii",
+      "url": "https://leetcode.com/problems/valid-palindrome-ii/"
+    },
+    {
+      "id": 682,
+      "title": "Baseball Game",
+      "slug": "baseball-game",
+      "url": "https://leetcode.com/problems/baseball-game/"
+    },
+    {
+      "id": 693,
+      "title": "Binary Number with Alternating Bits",
+      "slug": "binary-number-with-alternating-bits",
+      "url": "https://leetcode.com/problems/binary-number-with-alternating-bits/"
+    },
+    {
+      "id": 696,
+      "title": "Count Binary Substrings",
+      "slug": "count-binary-substrings",
+      "url": "https://leetcode.com/problems/count-binary-substrings/"
+    },
+    {
+      "id": 697,
+      "title": "Degree of an Array",
+      "slug": "degree-of-an-array",
+      "url": "https://leetcode.com/problems/degree-of-an-array/"
+    },
+    {
+      "id": 700,
+      "title": "Search in a Binary Search Tree",
+      "slug": "search-in-a-binary-search-tree",
+      "url": "https://leetcode.com/problems/search-in-a-binary-search-tree/"
+    },
+    {
+      "id": 703,
+      "title": "Kth Largest Element in a Stream",
+      "slug": "kth-largest-element-in-a-stream",
+      "url": "https://leetcode.com/problems/kth-largest-element-in-a-stream/"
+    },
+    {
+      "id": 704,
+      "title": "Binary Search",
+      "slug": "binary-search",
+      "url": "https://leetcode.com/problems/binary-search/"
+    },
+    {
+      "id": 705,
+      "title": "Design HashSet",
+      "slug": "design-hashset",
+      "url": "https://leetcode.com/problems/design-hashset/"
+    },
+    {
+      "id": 706,
+      "title": "Design HashMap",
+      "slug": "design-hashmap",
+      "url": "https://leetcode.com/problems/design-hashmap/"
+    },
+    {
+      "id": 709,
+      "title": "To Lower Case",
+      "slug": "to-lower-case",
+      "url": "https://leetcode.com/problems/to-lower-case/"
+    },
+    {
+      "id": 717,
+      "title": "1-bit and 2-bit Characters",
+      "slug": "1-bit-and-2-bit-characters",
+      "url": "https://leetcode.com/problems/1-bit-and-2-bit-characters/"
+    },
+    {
+      "id": 724,
+      "title": "Find Pivot Index",
+      "slug": "find-pivot-index",
+      "url": "https://leetcode.com/problems/find-pivot-index/"
+    },
+    {
+      "id": 728,
+      "title": "Self Dividing Numbers",
+      "slug": "self-dividing-numbers",
+      "url": "https://leetcode.com/problems/self-dividing-numbers/"
+    },
+    {
+      "id": 733,
+      "title": "Flood Fill",
+      "slug": "flood-fill",
+      "url": "https://leetcode.com/problems/flood-fill/"
+    },
+    {
+      "id": 744,
+      "title": "Find Smallest Letter Greater Than Target",
+      "slug": "find-smallest-letter-greater-than-target",
+      "url": "https://leetcode.com/problems/find-smallest-letter-greater-than-target/"
+    },
+    {
+      "id": 746,
+      "title": "Min Cost Climbing Stairs",
+      "slug": "min-cost-climbing-stairs",
+      "url": "https://leetcode.com/problems/min-cost-climbing-stairs/"
+    },
+    {
+      "id": 747,
+      "title": "Largest Number At Least Twice of Others",
+      "slug": "largest-number-at-least-twice-of-others",
+      "url": "https://leetcode.com/problems/largest-number-at-least-twice-of-others/"
+    },
+    {
+      "id": 748,
+      "title": "Shortest Completing Word",
+      "slug": "shortest-completing-word",
+      "url": "https://leetcode.com/problems/shortest-completing-word/"
+    },
+    {
+      "id": 762,
+      "title": "Prime Number of Set Bits in Binary Representation",
+      "slug": "prime-number-of-set-bits-in-binary-representation",
+      "url": "https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/"
+    },
+    {
+      "id": 766,
+      "title": "Toeplitz Matrix",
+      "slug": "toeplitz-matrix",
+      "url": "https://leetcode.com/problems/toeplitz-matrix/"
+    },
+    {
+      "id": 771,
+      "title": "Jewels and Stones",
+      "slug": "jewels-and-stones",
+      "url": "https://leetcode.com/problems/jewels-and-stones/"
+    },
+    {
+      "id": 783,
+      "title": "Minimum Distance Between BST Nodes",
+      "slug": "minimum-distance-between-bst-nodes",
+      "url": "https://leetcode.com/problems/minimum-distance-between-bst-nodes/"
+    },
+    {
+      "id": 796,
+      "title": "Rotate String",
+      "slug": "rotate-string",
+      "url": "https://leetcode.com/problems/rotate-string/"
+    },
+    {
+      "id": 804,
+      "title": "Unique Morse Code Words",
+      "slug": "unique-morse-code-words",
+      "url": "https://leetcode.com/problems/unique-morse-code-words/"
+    },
+    {
+      "id": 806,
+      "title": "Number of Lines To Write String",
+      "slug": "number-of-lines-to-write-string",
+      "url": "https://leetcode.com/problems/number-of-lines-to-write-string/"
+    },
+    {
+      "id": 812,
+      "title": "Largest Triangle Area",
+      "slug": "largest-triangle-area",
+      "url": "https://leetcode.com/problems/largest-triangle-area/"
+    },
+    {
+      "id": 819,
+      "title": "Most Common Word",
+      "slug": "most-common-word",
+      "url": "https://leetcode.com/problems/most-common-word/"
+    },
+    {
+      "id": 821,
+      "title": "Shortest Distance to a Character",
+      "slug": "shortest-distance-to-a-character",
+      "url": "https://leetcode.com/problems/shortest-distance-to-a-character/"
+    },
+    {
+      "id": 824,
+      "title": "Goat Latin",
+      "slug": "goat-latin",
+      "url": "https://leetcode.com/problems/goat-latin/"
+    },
+    {
+      "id": 830,
+      "title": "Positions of Large Groups",
+      "slug": "positions-of-large-groups",
+      "url": "https://leetcode.com/problems/positions-of-large-groups/"
+    },
+    {
+      "id": 832,
+      "title": "Flipping an Image",
+      "slug": "flipping-an-image",
+      "url": "https://leetcode.com/problems/flipping-an-image/"
+    },
+    {
+      "id": 836,
+      "title": "Rectangle Overlap",
+      "slug": "rectangle-overlap",
+      "url": "https://leetcode.com/problems/rectangle-overlap/"
+    },
+    {
+      "id": 844,
+      "title": "Backspace String Compare",
+      "slug": "backspace-string-compare",
+      "url": "https://leetcode.com/problems/backspace-string-compare/"
+    }
+  ],
+  "unsupported_examples": [
+    {
+      "id": 175,
+      "title": "Combine Two Tables",
+      "slug": "combine-two-tables",
+      "url": "https://leetcode.com/problems/combine-two-tables/"
+    },
+    {
+      "id": 181,
+      "title": "Employees Earning More Than Their Managers",
+      "slug": "employees-earning-more-than-their-managers",
+      "url": "https://leetcode.com/problems/employees-earning-more-than-their-managers/"
+    },
+    {
+      "id": 182,
+      "title": "Duplicate Emails",
+      "slug": "duplicate-emails",
+      "url": "https://leetcode.com/problems/duplicate-emails/"
+    },
+    {
+      "id": 183,
+      "title": "Customers Who Never Order",
+      "slug": "customers-who-never-order",
+      "url": "https://leetcode.com/problems/customers-who-never-order/"
+    },
+    {
+      "id": 193,
+      "title": "Valid Phone Numbers",
+      "slug": "valid-phone-numbers",
+      "url": "https://leetcode.com/problems/valid-phone-numbers/"
+    },
+    {
+      "id": 195,
+      "title": "Tenth Line",
+      "slug": "tenth-line",
+      "url": "https://leetcode.com/problems/tenth-line/"
+    },
+    {
+      "id": 196,
+      "title": "Delete Duplicate Emails",
+      "slug": "delete-duplicate-emails",
+      "url": "https://leetcode.com/problems/delete-duplicate-emails/"
+    },
+    {
+      "id": 197,
+      "title": "Rising Temperature",
+      "slug": "rising-temperature",
+      "url": "https://leetcode.com/problems/rising-temperature/"
+    },
+    {
+      "id": 511,
+      "title": "Game Play Analysis I",
+      "slug": "game-play-analysis-i",
+      "url": "https://leetcode.com/problems/game-play-analysis-i/"
+    },
+    {
+      "id": 577,
+      "title": "Employee Bonus",
+      "slug": "employee-bonus",
+      "url": "https://leetcode.com/problems/employee-bonus/"
+    },
+    {
+      "id": 584,
+      "title": "Find Customer Referee",
+      "slug": "find-customer-referee",
+      "url": "https://leetcode.com/problems/find-customer-referee/"
+    },
+    {
+      "id": 586,
+      "title": "Customer Placing the Largest Number of Orders",
+      "slug": "customer-placing-the-largest-number-of-orders",
+      "url": "https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/"
+    },
+    {
+      "id": 595,
+      "title": "Big Countries",
+      "slug": "big-countries",
+      "url": "https://leetcode.com/problems/big-countries/"
+    },
+    {
+      "id": 596,
+      "title": "Classes With at Least 5 Students",
+      "slug": "classes-with-at-least-5-students",
+      "url": "https://leetcode.com/problems/classes-with-at-least-5-students/"
+    },
+    {
+      "id": 607,
+      "title": "Sales Person",
+      "slug": "sales-person",
+      "url": "https://leetcode.com/problems/sales-person/"
+    },
+    {
+      "id": 610,
+      "title": "Triangle Judgement",
+      "slug": "triangle-judgement",
+      "url": "https://leetcode.com/problems/triangle-judgement/"
+    },
+    {
+      "id": 619,
+      "title": "Biggest Single Number",
+      "slug": "biggest-single-number",
+      "url": "https://leetcode.com/problems/biggest-single-number/"
+    },
+    {
+      "id": 620,
+      "title": "Not Boring Movies",
+      "slug": "not-boring-movies",
+      "url": "https://leetcode.com/problems/not-boring-movies/"
+    },
+    {
+      "id": 627,
+      "title": "Swap Sex of Employees",
+      "slug": "swap-sex-of-employees",
+      "url": "https://leetcode.com/problems/swap-sex-of-employees/"
+    },
+    {
+      "id": 1050,
+      "title": "Actors and Directors Who Cooperated At Least Three Times",
+      "slug": "actors-and-directors-who-cooperated-at-least-three-times",
+      "url": "https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/"
+    },
+    {
+      "id": 1068,
+      "title": "Product Sales Analysis I",
+      "slug": "product-sales-analysis-i",
+      "url": "https://leetcode.com/problems/product-sales-analysis-i/"
+    },
+    {
+      "id": 1075,
+      "title": "Project Employees I",
+      "slug": "project-employees-i",
+      "url": "https://leetcode.com/problems/project-employees-i/"
+    },
+    {
+      "id": 1084,
+      "title": "Sales Analysis III",
+      "slug": "sales-analysis-iii",
+      "url": "https://leetcode.com/problems/sales-analysis-iii/"
+    },
+    {
+      "id": 1114,
+      "title": "Print in Order",
+      "slug": "print-in-order",
+      "url": "https://leetcode.com/problems/print-in-order/"
+    },
+    {
+      "id": 1141,
+      "title": "User Activity for the Past 30 Days I",
+      "slug": "user-activity-for-the-past-30-days-i",
+      "url": "https://leetcode.com/problems/user-activity-for-the-past-30-days-i/"
+    },
+    {
+      "id": 1148,
+      "title": "Article Views I",
+      "slug": "article-views-i",
+      "url": "https://leetcode.com/problems/article-views-i/"
+    },
+    {
+      "id": 1179,
+      "title": "Reformat Department Table",
+      "slug": "reformat-department-table",
+      "url": "https://leetcode.com/problems/reformat-department-table/"
+    },
+    {
+      "id": 1211,
+      "title": "Queries Quality and Percentage",
+      "slug": "queries-quality-and-percentage",
+      "url": "https://leetcode.com/problems/queries-quality-and-percentage/"
+    },
+    {
+      "id": 1251,
+      "title": "Average Selling Price",
+      "slug": "average-selling-price",
+      "url": "https://leetcode.com/problems/average-selling-price/"
+    },
+    {
+      "id": 1280,
+      "title": "Students and Examinations",
+      "slug": "students-and-examinations",
+      "url": "https://leetcode.com/problems/students-and-examinations/"
+    },
+    {
+      "id": 1327,
+      "title": "List the Products Ordered in a Period",
+      "slug": "list-the-products-ordered-in-a-period",
+      "url": "https://leetcode.com/problems/list-the-products-ordered-in-a-period/"
+    },
+    {
+      "id": 1378,
+      "title": "Replace Employee ID With The Unique Identifier",
+      "slug": "replace-employee-id-with-the-unique-identifier",
+      "url": "https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/"
+    },
+    {
+      "id": 1407,
+      "title": "Top Travellers",
+      "slug": "top-travellers",
+      "url": "https://leetcode.com/problems/top-travellers/"
+    },
+    {
+      "id": 1484,
+      "title": "Group Sold Products By The Date",
+      "slug": "group-sold-products-by-the-date",
+      "url": "https://leetcode.com/problems/group-sold-products-by-the-date/"
+    },
+    {
+      "id": 1517,
+      "title": "Find Users With Valid E-Mails",
+      "slug": "find-users-with-valid-e-mails",
+      "url": "https://leetcode.com/problems/find-users-with-valid-e-mails/"
+    },
+    {
+      "id": 1527,
+      "title": "Patients With a Condition",
+      "slug": "patients-with-a-condition",
+      "url": "https://leetcode.com/problems/patients-with-a-condition/"
+    },
+    {
+      "id": 1581,
+      "title": "Customer Who Visited but Did Not Make Any Transactions",
+      "slug": "customer-who-visited-but-did-not-make-any-transactions",
+      "url": "https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/"
+    },
+    {
+      "id": 1587,
+      "title": "Bank Account Summary II",
+      "slug": "bank-account-summary-ii",
+      "url": "https://leetcode.com/problems/bank-account-summary-ii/"
+    },
+    {
+      "id": 1633,
+      "title": "Percentage of Users Attended a Contest",
+      "slug": "percentage-of-users-attended-a-contest",
+      "url": "https://leetcode.com/problems/percentage-of-users-attended-a-contest/"
+    },
+    {
+      "id": 1661,
+      "title": "Average Time of Process per Machine",
+      "slug": "average-time-of-process-per-machine",
+      "url": "https://leetcode.com/problems/average-time-of-process-per-machine/"
+    },
+    {
+      "id": 1667,
+      "title": "Fix Names in a Table",
+      "slug": "fix-names-in-a-table",
+      "url": "https://leetcode.com/problems/fix-names-in-a-table/"
+    },
+    {
+      "id": 1683,
+      "title": "Invalid Tweets",
+      "slug": "invalid-tweets",
+      "url": "https://leetcode.com/problems/invalid-tweets/"
+    },
+    {
+      "id": 1693,
+      "title": "Daily Leads and Partners",
+      "slug": "daily-leads-and-partners",
+      "url": "https://leetcode.com/problems/daily-leads-and-partners/"
+    },
+    {
+      "id": 1729,
+      "title": "Find Followers Count",
+      "slug": "find-followers-count",
+      "url": "https://leetcode.com/problems/find-followers-count/"
+    },
+    {
+      "id": 1731,
+      "title": "The Number of Employees Which Report to Each Employee",
+      "slug": "the-number-of-employees-which-report-to-each-employee",
+      "url": "https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/"
+    },
+    {
+      "id": 1741,
+      "title": "Find Total Time Spent by Each Employee",
+      "slug": "find-total-time-spent-by-each-employee",
+      "url": "https://leetcode.com/problems/find-total-time-spent-by-each-employee/"
+    },
+    {
+      "id": 1757,
+      "title": "Recyclable and Low Fat Products",
+      "slug": "recyclable-and-low-fat-products",
+      "url": "https://leetcode.com/problems/recyclable-and-low-fat-products/"
+    },
+    {
+      "id": 1789,
+      "title": "Primary Department for Each Employee",
+      "slug": "primary-department-for-each-employee",
+      "url": "https://leetcode.com/problems/primary-department-for-each-employee/"
+    },
+    {
+      "id": 1795,
+      "title": "Rearrange Products Table",
+      "slug": "rearrange-products-table",
+      "url": "https://leetcode.com/problems/rearrange-products-table/"
+    },
+    {
+      "id": 1873,
+      "title": "Calculate Special Bonus",
+      "slug": "calculate-special-bonus",
+      "url": "https://leetcode.com/problems/calculate-special-bonus/"
+    }
+  ]
+}
