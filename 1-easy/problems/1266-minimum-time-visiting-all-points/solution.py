@@ -1,0 +1,11 @@
+from typing import List, Optional, Dict, Set, Tuple
+
+class Solution:
+    def minTimeToVisitAllPoints(self, points):
+        """
+        :type points: List[List[int]]
+        :rtype: int
+        """
+        return sum(max(abs(points[i+1][0] - points[i][0]),
+                       abs(points[i+1][1] - points[i][1]))
+                   for i in range(len(points)-1))
