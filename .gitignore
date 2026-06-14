@@ -203,3 +203,9 @@ docs/out/
 !2-medium/
 !2-medium/problems/
 !2-medium/problems/**
+
+# Local hard-problem build sources and reports
+3-hard/*
+!3-hard/
+!3-hard/problems/
+!3-hard/problems/**
