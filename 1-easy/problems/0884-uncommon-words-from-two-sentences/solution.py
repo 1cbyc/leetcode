@@ -1,0 +1,12 @@
+from typing import List, Optional, Dict, Set, Tuple
+
+class Solution:
+    def uncommonFromSentences(self, A, B):
+        """
+        :type A: str
+        :type B: str
+        :rtype: List[str]
+        """
+        count = collections.Counter(A.split())
+        count += collections.Counter(B.split())
+        return [word for word in count if count[word] == 1]
