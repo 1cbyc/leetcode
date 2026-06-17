@@ -209,3 +209,7 @@ docs/out/
 !3-hard/
 !3-hard/problems/
 !3-hard/problems/**
+
+# Never track Python bytecode caches inside problem folders
+**/__pycache__/
+*.pyc
