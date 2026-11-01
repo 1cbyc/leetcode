@@ -1,5 +1,5 @@
 NSISONG SOURCE-AVAILABLE LICENSE
-Version 1.0, 31 October 2026
+Version 1.1, 31 October 2026
 
 Copyright (c) Isaac Emmanuel (Nsisong). All rights reserved in material
 owned by Isaac Emmanuel.
@@ -16,13 +16,20 @@ run, copy, modify, adapt, distribute, publish, sublicense, sell, or incorporate
 the Material into another work or service. Prior written permission from
 Isaac Emmanuel is required, including for personal, educational, research,
 noncommercial, and commercial reuse. Giving credit alone is not permission.
+Before any reuse, contact Isaac Emmanuel at ei@nsisong.com or through
+https://linkedin.com/in/isaacnsisong and obtain written permission for
+your intended use. You must also give credit as required by section 3.
 A request, silence, or payment without an agreement does not grant permission.
 
-3. Attribution for authorized reuse
-Unless the written agreement expressly provides otherwise, authorized reuse
-must retain applicable copyright and license notices and credit
-"Isaac Emmanuel (Nsisong)" with a link to the original repository. Attribution
-does not imply endorsement or expand the permission granted.
+3. Attribution is required in addition to permission
+Every reuse authorized under this license must retain applicable copyright
+and license notices and give clear credit to "Isaac Emmanuel (Nsisong)"
+with a link to the original repository. Include this credit with copies,
+derivative works, and any product or service incorporating the Material,
+in its accompanying documentation or credits.
+Obtaining permission or paying a licensing fee does not remove this
+attribution requirement. Attribution does not replace prior contact and
+written permission, imply endorsement, or expand the permission granted.
 
 4. Artificial intelligence and machine learning
 No permission is granted to collect, reproduce, extract, transform, or use
